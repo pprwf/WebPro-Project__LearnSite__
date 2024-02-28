@@ -33,19 +33,10 @@
 </head>
 <body>
 
-<nav class="navbar bg-secondary-content flex justify-between">
-        <div class="">
-            <img src="resources/asset/LearnsiteLogo.jpg" alt="" class="size-11 rounded-full  ml-2">
-            <h1 id="" class="website_name text-3xl  ml-2">LearnSite</h1>
-        </div>
-        <div class="">
-            <a class="btn btn-ghost text-xl">Course</a>
-            <a class="btn btn-ghost text-xl">Register</a>
-            <a class="btn btn-ghost text-xl">Login</a>
-        </div>
-    </nav>
+    @include('navbar')
 
-    <div class="hero min-w-screen " style="background-image: url(https://images.pexels.com/photos/1687575/pexels-photo-1687575.jpeg?cs=srgb&dl=pexels-luis-rodrigues-1687575.jpg&fm=jpg);">
+    
+    <div class="hero min-w-screen " style="background-image: url({{ asset('assets/Learnsitebg.png') }});">
         <div class="flex-col herocon pl-24 text-base-100">
             <div class="flex-auto grid items-center">
                 <div class="mb-16">
