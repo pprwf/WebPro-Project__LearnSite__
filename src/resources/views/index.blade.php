@@ -13,7 +13,7 @@
 
     <style>
         body {
-            background-color: brown;
+            /* background-color: brown; */
         }
 
         .hero {
@@ -31,11 +31,12 @@
         }
     </style>
 </head>
+
 <body>
 
     @include('navbar')
 
-    
+
     <div class="hero min-w-screen " style="background-image: url({{ asset('assets/Learnsitebg.png') }});">
         <div class="flex-col herocon pl-24 text-base-100">
             <div class="flex-auto grid items-center">
@@ -53,6 +54,56 @@
                 <p class="text-1xl">Scroll for more</p>
             </div>
         </div>
+    </div>
+
+    <div class="flex flex-row">
+        <div class="leftbar w-48 border-orange-600 border-2"></div>
+
+        <div class="content flex flex-col">
+            <div class="flex flex-row mt-20">
+                <div class="pr-16 w-3/4">
+                    <h1 class="text-4xl pl-16 font-bold">WHAT WILL YOU GET</h1>
+                    <br class="mt-20">
+                    <br class="mt-20">
+                    <p class="pl-16 indent-8">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational aspirations.</p>
+                    <br>
+                    <p class="pl-16 indent-8">Explore our courses today and take the first step toward a brighter future. Join a community of passionate learners, connect with industry experts, and gain the skills that will set you apart. Whether you're looking to advance your career or explore a new field, LearnSite is here to support your educational aspirations. Start your learning journey today and discover the endless possibilities that education with us can offer. Your success story begins here.</p>
+                </div>
+                <div class="w-3/4 flex items-center">
+                    <img src="{{ asset('assets/computer.jpg') }}" class="w-3/4 shadow-2xl my-20" style="border-radius: 5rem;" alt="">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div>
+                <h1 class="text-xl pl-16 font-bold">We also have skilled instructor</h1>
+                <p class="pl-24">They make our community stay flow and go forward with their reliable and knowledge </p>
+                <div class="flex flex-row mt-16 ml-28">
+                    
+                    
+                    <div class="flex flex-col items-center relative ml-20">
+                        <img src="{{ asset('assets/nanachipfp.jpg') }}" class="size-48  rounded-full" alt="">
+                        <div class="size-48 rounded-2xl absolute border-orange-600 border-2 top-32 flex flex-col items-center text-ellipsis">
+                            <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center ">Nanachi</div>
+                            <p class="text-center text-ellipsis overflow-hidden mt-2">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational </p>
+                        </div>
+                        <div class="size-52 bg-sky-200 rounded-2xl relative" style="top: -4rem; z-index: -1;"></div>
+                    </div>
+
+                    <div class="flex flex-col items-center relative ml-20">
+                        <img src="{{ asset('assets/nanachipfp.jpg') }}" class="size-48  rounded-full" alt="">
+                        <div class="size-48 rounded-2xl absolute border-orange-600 border-2 top-32 flex flex-col items-center text-ellipsis">
+                            <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center ">Nanachi</div>
+                            <p class="text-center text-ellipsis overflow-hidden mt-2">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational </p>
+                        </div>
+                        <div class="size-52 bg-sky-200 rounded-2xl relative" style="top: -4rem; z-index: -1;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="rightbar w-2/5 border-orange-600 border-2"></div>
     </div>
 
 
