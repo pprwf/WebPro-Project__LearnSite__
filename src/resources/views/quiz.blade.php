@@ -37,11 +37,11 @@
                     <p class="ml-5 mt-5 text-xl">Your Email : nanachi@gmail.com</p>
                     <div class="border-2 border-neutral m-10 rounded-lg">
                         <p class="text-3xl m-5">How Elon Musk walk be like him and you will rich</p>
-                        <div class="flex flex-col ml-5 mt-5 mb-5">
-                            <label><input type="radio" name="ans" value="A"> With legs</label>
-                            <label><input type="radio" name="ans" value="B"> With arms</label>
-                            <label><input type="radio" name="ans" value="C"> With both</label>
-                            <label><input type="radio" name="ans" value="D"> Without</label>
+                        <div class="flex flex-col ml-8 mt-5 mb-5">
+                            <label><input type="radio" class="radio mt-2" name="ans" value="A"> With legs</label>
+                            <label><input type="radio" class="radio mt-2" name="ans" value="B"> With arms</label>
+                            <label><input type="radio" class="radio mt-2" name="ans" value="C"> With both</label>
+                            <label><input type="radio" class="radio mt-2" name="ans" value="D"> Without</label>
                         </div>
                     </div>
                 </div>
