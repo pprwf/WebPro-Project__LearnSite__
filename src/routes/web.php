@@ -27,6 +27,12 @@ Route::get("allcourse", function () {
     return view("course");
 }) -> name("course");
 
+//font end use
+Route::get("quiz", function () {
+    return view("quiz");
+}) -> name("quiz");
+
+
 Route::get("course/{subject}", function ($subject) {
     return view("$subject");
 });
