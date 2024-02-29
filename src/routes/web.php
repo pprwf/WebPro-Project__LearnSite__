@@ -14,9 +14,14 @@ Route::get("login", function () {
     return view("login");
 }) -> name("login");
 
-Route::get("user_{usr}", function ($usr) {
-    return view("home", $usr);
-}) -> name("user");
+//font-end use
+Route::get("home", function () {
+    return view("home");
+}) -> name("home");
+
+// Route::get("user_{usr}", function ($usr) {
+//     return view("home", $usr);
+// }) -> name("user");
 
 Route::get("allcourse", function () {
     return view("course");
