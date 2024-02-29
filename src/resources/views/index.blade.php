@@ -37,7 +37,7 @@
     @include('navbar')
 
 
-    <div class="hero min-w-screen " style="background-image: url({{ asset('assets/Learnsitebg.png') }});">
+    <div class="hero min-w-screen w-full" style="background-image: url({{ asset('assets/Learnsitebg.png') }});">
         <div class="flex-col herocon pl-24 text-base-100">
             <div class="flex-auto grid items-center">
                 <div class="mb-16">
@@ -56,11 +56,12 @@
         </div>
     </div>
 
-    <div class="flex flex-row">
+
+    <div class="flex flex-row w-full">
         <div class="leftbar w-48 border-orange-600 border-2"></div>
 
         <div class="content flex flex-col">
-            <div class="flex flex-row mt-20">
+            <div class="flex flex-row mt-20 grow">
                 <div class="pr-16 w-3/4">
                     <h1 class="text-4xl pl-16 font-bold">WHAT WILL YOU GET</h1>
                     <br class="mt-20">
@@ -73,14 +74,15 @@
                     <img src="{{ asset('assets/computer.jpg') }}" class="w-3/4 shadow-2xl my-20" style="border-radius: 5rem;" alt="">
                 </div>
             </div>
+
             <br>
             <br>
+
             <div>
                 <h1 class="text-xl pl-16 font-bold">We also have skilled instructor</h1>
                 <p class="pl-24">They make our community stay flow and go forward with their reliable and knowledge </p>
-                <div class="flex flex-row mt-16 ml-28">
-                    
-                    
+
+                <div class="flex flex-row mt-16 ml-28 w-full">
                     <div class="flex flex-col items-center relative ml-20">
                         <img src="{{ asset('assets/nanachipfp.jpg') }}" class="size-48  rounded-full" alt="">
                         <div class="size-48 rounded-2xl absolute border-orange-600 border-2 top-32 flex flex-col items-center text-ellipsis">
@@ -100,10 +102,43 @@
                     </div>
                 </div>
             </div>
+
+            <div class="flex flex-col w-full">
+                <div>Recommended Course</div>
+                <div class="w-full flex flex-row justify-center relative p-5">
+                    <div class="absolute flex justify-between top-2/4  w-[32rem]">
+                        <a class="btn btn-circle">❮</a>
+                        <a class="btn btn-circle">❯</a>
+                    </div>
+
+                    <div class="w-[35rem] h-96 border-green-600 border-2 rounded-3xl overflow-hidden ">
+                        <div class="border-orange-600 border-2 w-full h-40 bg-center" style="background-image: url(https://cdn.cloudflare.steamstatic.com/steam/apps/391540/header.jpg?t=1579096091);"></div>
+                        
+                        <div class="flex flex-col justify-between">
+                            <h1 class="text-2xl font-bold">Coding (Call of Duty: Modern Warfare 3)</h1>
+                            <br>
+                            <div class="flex flex-row">
+                                <div class="w-7/12">
+                                    <h2>Description</h2>
+                                    <hr>
+                                    <p>The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression</p>
+                                </div>
+
+                                <!-- small orange box -->
+                                <div class="bg-orange-300 w-5/12"> 
+                                    <div class="flex flex-row items-center"><p>instructor</p><img class="rounded-full size-10 ml-2" src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 
-        <div class="rightbar w-2/5 border-orange-600 border-2"></div>
+
+        <div class="rightbar w-2/12 flex-none border-orange-600 border-2"></div>
     </div>
 
 
