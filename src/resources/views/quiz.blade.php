@@ -26,8 +26,8 @@
 </head>
 
 <body>
-    <div class="grid items-center justify-center">
-        <div class=" flex items-center justify-center">
+    <div class="grid items-center justify-center h-srceen">
+        <div class="min-h-screen flex items-center justify-center">
             <div class="border-4 border-neutral m-10 rounded-lg">
                 <p class="text-2xl bg-emerald-500 border-2 border-neutral text-white p-4 rounded-lg m-2">Quiz : 01 How to manage money</p>
                 <div class="bg-white p-4 rounded-b-lg">
