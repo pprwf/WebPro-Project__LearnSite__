@@ -28,8 +28,8 @@
 <body>
     <div class="grid items-center justify-center h-screen">
         <div class="min-h-screen flex items-center justify-center">
-            <div class="border-4 border-neutral m-10 roundded-lg">
-                <p class="text-5xl bg-emerald-500 text-white p-4 rounded-t-lg">Quiz : 01 How to manage money</p>
+            <div class="border-4 border-neutral m-10 rounded-lg">
+                <p class="text-5xl bg-emerald-500 text-white p-4 rounded-lg">Quiz : 01 How to manage money</p>
                 <div class="bg-white p-4 rounded-b-lg">
                     <div class="grid items-center color-1">
                         <p class="ml-5 text-xl">the quiz make for</p>
