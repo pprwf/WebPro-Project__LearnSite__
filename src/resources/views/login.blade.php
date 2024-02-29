@@ -21,26 +21,25 @@
 </head>
 
 <body>
-    <div class="flex items-center justify-center h-screen">
-        <div class="content-center">
-            <div class="text-center">
-                <div class="text-8xl text-warning">Login to LearnSite</div>
-            </div>
-            <div class="border-4 border-base-100 m-10">
-                <div class="m-10">
-                    <div class="text-4xl mb-3 text-neutral">Username or Email Address</div>
-                    <input type="text" placeholder="Enter Username or Email Address" class="text-xl input input-bordered input-info w-full mb-3" />
-                    <div class="text-4xl mb-3 text-neutral">Password</div>
-                    <input type="text" placeholder="Enter Password" class="text-xl input input-bordered input-info w-full mb-3" />
+    <div class="grid place-items-center h-screen">
+        <div class="w-full max-w-md p-6 space-y-6 bg-white shadow-md rounded-lg">
+            <div class="text-5xl text-warning text-center">Login to LearnSite</div>
+            <div class="border-4 border-base-100 p-4">
+                <div class="space-y-4">
+                    <div class="text-xl text-neutral">Username or Email Address</div>
+                    <input type="text" placeholder="Enter Username" class="text-lg input input-bordered input-info w-full" />
+                    <div class="text-xl text-neutral">Password</div>
+                    <input type="password" placeholder="Enter Password" class="text-lg input input-bordered input-info w-full" />
                     <div class="flex justify-center">
-                        <button class="btn btn-secondary text-2xl mt-7 w-64">Sign in</button>
+                        <button class="btn btn-secondary text-2xl w-64">Sign in</button>
                     </div>
                 </div>
             </div>
             <div class="text-center">
-                <a href="{{ route('regis') }}" class="text-3xl link link-secondary">Don’t have an account?</a>
+                <a href="{{ route('regis') }}" class="text-xl link link-secondary">Don’t have an account?</a>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
