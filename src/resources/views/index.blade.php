@@ -26,6 +26,10 @@
             display: flex;
         }
 
+        .disable-click {
+            pointer-events: none;
+        }
+
         .mr-200 {
             margin-right: 50rem;
         }
@@ -57,10 +61,10 @@
     </div>
 
 
-    <div class="flex flex-row w-full">
+    <div id="whatwill" class="flex flex-row w-full">
         <div class="leftbar w-48 border-orange-600 border-2"></div>
 
-        <div class="content flex flex-col">
+        <div class="content flex flex-col w-full">
             <div class="flex flex-row mt-20 grow">
                 <div class="pr-16 w-3/4">
                     <h1 class="text-4xl pl-16 font-bold">WHAT WILL YOU GET</h1>
@@ -103,64 +107,115 @@
                 </div>
             </div>
 
-            <!-- Recommended Course -->
-            <div class="flex flex-col w-full">
-                <div>Recommended Course</div>
 
-                <div class="w-full flex flex-row justify-center relative p-5">
+            <!-- Recommended Course -->
+            <div id="recommended" class="grid w-full overflow-hidden relative ">
+                <div class="text-4xl pl-16 font-bold mb-5">Recommended Course</div>
+
+                <div class="w-full carousel flex flex-row overflow-scroll"> <!-- justify-center -->
 
                     <!-- Button -->
-                    <div class="absolute flex justify-between top-2/4  w-[44rem]">
-                        <a class="btn btn-circle scale-110">❮</a>
-                        <a class="btn btn-circle scale-110">❯</a>
+                    <div class="absolute flex justify-between top-1/2 left-1/2 -translate-x-1/2 w-[40rem] z-10">
+                        <a class="btn btn-circle scale-110" href="#box1">❮</a>
+                        <a class="btn btn-circle scale-110" href="#box2">❯</a>
+                    </div>
+
+                    <div id="box1" class="w-full flex-none border-red-600 border-2 flex justify-center carousel-item">
+                        <div class="flex-none w-[35rem] h-96 border-green-600 border-2 rounded-3xl overflow-hidden flex flex-col">
+                            <!-- Course img -->
+                            <div class="border-orange-600 border-2 w-full h-40 bg-center" style="background-image: url(https://cdn.cloudflare.steamstatic.com/steam/apps/391540/header.jpg?t=1579096091);"></div>
+
+                            <!-- Course Descript -->
+                            <div class="flex flex-col flex-auto justify-between p-4">
+
+                                <h1 class="text-2xl font-bold flex-auto">Coding (Call of Duty: Modern Warfare 3)</h1>
+
+                                <!-- Course Detail -->
+                                <div class="flex flex-row flex-intitial">
+                                    <div class="w-7/12">
+                                        <h2>Description</h2>
+                                        <hr>
+                                        <p class="text-sm">The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression</p>
+                                    </div>
+
+                                    <!-- small orange box -->
+                                    <div class="bg-orange-200 w-5/12 rounded-3xl p-2 text-sm">
+                                        <div class="flex flex-row items-center">
+                                            <p class="">instructor</p>
+                                            <img class="rounded-full size-10 ml-2" src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" alt="">
+                                            <img class="rounded-full size-10 ml-2" src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" alt="">
+                                            <img class="rounded-full size-10 ml-2" src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" alt="">
+                                        </div>
+                                        <div class="flex flex-row items-center mt-1">
+                                            <p class="">rating</p>
+                                            <div class="rating rating-sm ml-2">
+                                                <input type="radio" name="rating-5" class="star disable-click mask mask-star-2 bg-red-600" />
+                                                <input type="radio" name="rating-5" class="star disable-click mask mask-star-2 bg-red-600" checked />
+                                                <input type="radio" name="rating-5" class="star disable-click mask mask-star-2 bg-red-600" />
+                                                <input type="radio" name="rating-5" class="star disable-click mask mask-star-2 bg-red-600" />
+                                                <input type="radio" name="rating-5" class="star disable-click mask mask-star-2 bg-red-600" />
+                                            </div>
+                                        </div>
+                                        <p class="text-xs mt-1">approximate time 2532 hr</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
                     </div>
 
 
-                    <div class="w-[35rem] h-96 border-green-600 border-2 rounded-3xl overflow-hidden flex flex-col">
-                        <!-- Course img -->
-                        <div class="border-orange-600 border-2 w-full h-40 bg-center" style="background-image: url(https://cdn.cloudflare.steamstatic.com/steam/apps/391540/header.jpg?t=1579096091);"></div>
+                    <div id="box2" class="w-full flex-none border-red-600 border-2 flex justify-center carousel-item">
+                        <div class="flex-none w-[35rem] h-96 border-green-600 border-2 rounded-3xl overflow-hidden flex flex-col">
+                            <!-- Course img -->
+                            <div class="border-orange-600 border-2 w-full h-40 bg-center" style="background-image: url(https://cdn.cloudflare.steamstatic.com/steam/apps/391540/header.jpg?t=1579096091);"></div>
 
-                        <!-- Course Descript -->
-                        <div class="flex flex-col flex-auto justify-between p-4">
+                            <!-- Course Descript -->
+                            <div class="flex flex-col flex-auto justify-between p-4">
 
-                            <h1 class="text-2xl font-bold flex-auto">Coding (Call of Duty: Modern Warfare 3)</h1>
+                                <h1 class="text-2xl font-bold flex-auto">Coding (Call of Duty: Modern Warfare 3)</h1>
 
-                            <!-- Course Detail -->
-                            <div class="flex flex-row flex-intitial">
-                                <div class="w-7/12">
-                                    <h2>Description</h2>
-                                    <hr>
-                                    <p class="text-sm">The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression</p>
-                                </div>
-
-                                <!-- small orange box -->
-                                <div class="bg-orange-200 w-5/12 rounded-3xl p-2">
-                                    <div class="flex flex-row items-center text-sm">
-                                        <p class="">instructor</p>
-                                        <img class="rounded-full size-10 ml-2" src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" alt="">
-                                        <img class="rounded-full size-10 ml-2" src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" alt="">
-                                        <img class="rounded-full size-10 ml-2" src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" alt="">
+                                <!-- Course Detail -->
+                                <div class="flex flex-row flex-intitial">
+                                    <div class="w-7/12">
+                                        <h2>Description</h2>
+                                        <hr>
+                                        <p class="text-sm">The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression</p>
                                     </div>
-                                    <div class="rating rating-hidden">
-                                        <input type="radio" name="rating-1" class="mask mask-star" />
-                                        <input type="radio" name="rating-1" class="mask mask-star" checked />
-                                        <input type="radio" name="rating-1" class="mask mask-star" />
-                                        <input type="radio" name="rating-1" class="mask mask-star" />
-                                        <input type="radio" name="rating-1" class="mask mask-star" />
-                                    </div>
-                                </div>
 
+                                    <!-- small orange box -->
+                                    <div class="bg-orange-200 w-5/12 rounded-3xl p-2 text-sm">
+                                        <div class="flex flex-row items-center">
+                                            <p class="">instructor</p>
+                                            <img class="rounded-full size-10 ml-2" src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" alt="">
+                                            <img class="rounded-full size-10 ml-2" src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" alt="">
+                                            <img class="rounded-full size-10 ml-2" src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" alt="">
+                                        </div>
+                                        <div class="flex flex-row items-center mt-1">
+                                            <p class="">rating</p>
+                                            <div class="rating rating-sm ml-2">
+                                                <input type="radio" name="rating-5" class="star disable-click mask mask-star-2 bg-red-600" />
+                                                <input type="radio" name="rating-5" class="star disable-click mask mask-star-2 bg-red-600" checked />
+                                                <input type="radio" name="rating-5" class="star disable-click mask mask-star-2 bg-red-600" />
+                                                <input type="radio" name="rating-5" class="star disable-click mask mask-star-2 bg-red-600" />
+                                                <input type="radio" name="rating-5" class="star disable-click mask mask-star-2 bg-red-600" />
+                                            </div>
+                                        </div>
+                                        <p class="text-xs mt-1">approximate time 2532 hr</p>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
         </div>
 
-
-
-        <div class="rightbar w-2/12 flex-none border-orange-600 border-2"></div>
+        @include('rightbar')
     </div>
 
 
