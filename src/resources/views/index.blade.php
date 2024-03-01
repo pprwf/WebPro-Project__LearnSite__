@@ -34,16 +34,39 @@
             margin-right: 50rem;
         }
     </style>
+
+    <script>
+        getRemoteData("superheroes.json");
+        async function getRemoteData(url) {
+            let datObject = await fetch(url);
+            let superheroes = await datObject.json();
+
+            let text = "<h1>" + superheroes.squadName + "</h1>";
+
+            document.getElementById("out").innerHTML = text;
+        }
+    </script>
 </head>
 
 <body>
 
+    <!-- navbar (name => link)-->
+    <?php
+
+use Illuminate\Support\Arr;
+
+    $navList = array(
+        "Course" => "course",
+        "Register" => "register",
+        "Login" => "login",
+    );
+    ?>
     @include('navbar')
 
 
-    <div class="hero min-w-screen w-full" style="background-image: url({{ asset('assets/Learnsitebg.png') }});">
+    <div class="hero min-w-screen w-full overflow-hidden" style="background-image: url({{ asset('assets/Learnsitebg.png') }});">
         <div class="flex-col herocon pl-24 text-base-100">
-            <div class="flex-auto grid items-center">
+            <div class="flex-auto grid items-center overflow-hidden">
                 <div class="mb-16">
                     <p class="text-2xl">Wellcome to</p>
                     <h1 class="website_name text-8xl font-bold mt-12 text-cyan-300">LearnSite</h1>
@@ -60,12 +83,19 @@
         </div>
     </div>
 
+    <div id="whatwill"></div>
 
-    <div id="whatwill" class="flex flex-row w-full">
-        <div class="leftbar w-48 border-orange-600 border-2"></div>
+    <!-- div under Hero -->
+    <div class="flex flex-row w-full ">
 
-        <div class="content flex flex-col w-full">
-            <div class="flex flex-row mt-20 grow">
+        <!-- just leftbar -->
+        <div class="leftbar w-[2%] flex-none border-orange-600 border-2"></div>
+
+        <!-- content -->
+        <div class="content flex flex-col flex-auto">
+
+            <!-- whatwill -->
+            <div class="flex flex-row mt-20">
                 <div class="pr-16 w-3/4">
                     <h1 class="text-4xl pl-16 font-bold">WHAT WILL YOU GET</h1>
                     <br class="mt-20">
@@ -82,12 +112,21 @@
             <br>
             <br>
 
-            <div>
+            <!-- skilled instructor -->
+            <div class="overflow-hidden">
                 <h1 class="text-xl pl-16 font-bold">We also have skilled instructor</h1>
                 <p class="pl-24">They make our community stay flow and go forward with their reliable and knowledge </p>
 
-                <div class="flex flex-row mt-16 ml-28 w-full">
-                    <div class="flex flex-col items-center relative ml-20">
+                <div class="flex flex-row mt-16 ml-28 overflow-hidden">
+
+                    <!-- <div class="border-orange-600 border-2 w-1/5 flex flex-col h-96 relative ml-20" >
+                        <img src="{{ asset('assets/nanachipfp.jpg') }}" class="w-full rounded-full z-10" alt="">
+                        <div class="absolute bg-sky-200 rounded-2xl w-[110%] pt-[100%] top-[40%] left-1/2 -translate-x-1/2"></div>
+                        <div class="absolute bg-sky-400 rounded-2xl text-center w-fit min-w-24 rounded-2xl p-1 top-[60%] left-1/2 -translate-x-1/2 z-20">Nanachi</div>
+                    </div> -->
+
+
+                    <div class="flex flex-col items-center relative ml-20 overflow-hidden">
                         <img src="{{ asset('assets/nanachipfp.jpg') }}" class="size-48  rounded-full" alt="">
                         <div class="size-48 rounded-2xl absolute border-orange-600 border-2 top-32 flex flex-col items-center text-ellipsis">
                             <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center ">Nanachi</div>
@@ -96,7 +135,7 @@
                         <div class="size-52 bg-sky-200 rounded-2xl relative" style="top: -4rem; z-index: -1;"></div>
                     </div>
 
-                    <div class="flex flex-col items-center relative ml-20">
+                    <div class="flex flex-col items-center relative ml-20 overflow-hidden">
                         <img src="{{ asset('assets/nanachipfp.jpg') }}" class="size-48  rounded-full" alt="">
                         <div class="size-48 rounded-2xl absolute border-orange-600 border-2 top-32 flex flex-col items-center text-ellipsis">
                             <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center ">Nanachi</div>
@@ -112,7 +151,7 @@
             <div id="recommended" class="grid w-full overflow-hidden relative ">
                 <div class="text-4xl pl-16 font-bold mb-5">Recommended Course</div>
 
-                <div class="w-full carousel flex flex-row overflow-scroll"> <!-- justify-center -->
+                <div class="w-full carousel flex flex-row "> <!-- justify-center -->
 
                     <!-- Button -->
                     <div class="absolute flex justify-between top-1/2 left-1/2 -translate-x-1/2 w-[40rem] z-10">
@@ -120,6 +159,21 @@
                         <a class="btn btn-circle scale-110" href="#box2">❯</a>
                     </div>
 
+
+                    <?php
+                        $recCourseList = array(
+                            array(
+                                "title" => "Coding",
+                                "titleImg" => "https://cdn.cloudflare.steamstatic.com/steam/apps/391540/header.jpg?t=1579096091",
+                                "description" => "The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression",
+                                "instructor1" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
+                                "instructor2" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
+                                "instructor3" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
+                                "rating" => "4",
+                                "time" => "25"
+                                )
+                        );
+                    ?>
                     <div id="box1" class="w-full flex-none border-red-600 border-2 flex justify-center carousel-item">
                         <div class="flex-none w-[35rem] h-96 border-green-600 border-2 rounded-3xl overflow-hidden flex flex-col">
                             <!-- Course img -->
@@ -215,6 +269,14 @@
 
         </div>
 
+        <!-- rightbar (id to find => text) -->
+        <?php
+        $rightbarList = array(
+            "#navbar" => "Welcome",
+            "#whatwill" => "What will you get",
+            "#recommended" => "Recommended Course",
+        );
+        ?>
         @include('rightbar')
     </div>
 
