@@ -23,19 +23,19 @@ Route::get("userhome", function () {
 //     return view("home", $usr);
 // }) -> name("user");
 
-Route::get("allcourse", function () {
+Route::get("course", function () {
     return view("course");
 }) -> name("course");
 
-//font end use
-Route::get("quiz", function () {
+//font end use + test
+Route::get("course/quiz", function () {
     return view("quiz");
 }) -> name("quiz");
 
 
-Route::get("course/{subject}", function ($subject) {
-    return view("$subject");
-});
+// Route::get("course/{subject}", function ($subject) {
+//     return view("$subject");
+// });
 
 Route::fallback(function() {
     return view("error");
