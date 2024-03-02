@@ -25,3 +25,20 @@
         <a class="btn btn-ghost text-xl" href="">Login</a> -->
     </div>
 </nav>
+
+<?php
+                                // $checked = false;
+                                // for($i=0;$i<=5;$i++){
+                                //     echo '<input type="radio" name="rating-5" class="star disable-click mask mask-star-2 bg-red-600"';
+                                    
+                                //     if($recCourse["rating"]*10 < $i*10+5 && $checked == false){
+                                //         echo '<p>';
+                                //         echo $recCourse["rating"]*10;
+                                //         echo ' '.$i*10+5;
+                                //         echo '</p>';
+                                //         // echo 'checked';
+                                //         $checked = true;
+                                //     }
+                                //     echo '/>';
+                                // }
+                            ?>
