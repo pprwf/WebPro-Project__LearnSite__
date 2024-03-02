@@ -1,4 +1,4 @@
-<div id="box1" class="w-full flex-none border-red-600 border-2 flex justify-center carousel-item">
+<div id="box<?php echo $recCourseOrder;?>" class="w-full flex-none border-red-600 border-2 flex justify-center carousel-item">
     <a href="<?php echo $recCourse["link"] ?>">
     <div class="flex-none w-[35rem] h-96 border-green-600 border-2 rounded-3xl overflow-hidden flex flex-col">
         <!-- Course img -->
