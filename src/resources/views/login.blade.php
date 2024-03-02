@@ -23,15 +23,15 @@
 <body>
     <div class="grid place-items-center h-screen">
         <div class="w-full max-w-md p-6 space-y-6 bg-white shadow-md rounded-lg">
-            <div class="text-5xl text-warning text-center">Login to LearnSite</div>
+            <div class="text-3xl text-warning text-center">Login to LearnSite</div>
             <div class="border-4 border-base-100 p-4">
                 <div class="space-y-4">
-                    <div class="text-xl text-neutral">Username or Email Address</div>
-                    <input type="text" placeholder="Enter Username" class="text-lg input input-bordered input-info w-full" />
-                    <div class="text-xl text-neutral">Password</div>
-                    <input type="password" placeholder="Enter Password" class="text-lg input input-bordered input-info w-full" />
+                    <div class="text-lg text-neutral">Username or Email Address</div>
+                    <input type="text" placeholder="Enter Username" class="text-base input input-bordered input-info w-full" />
+                    <div class="text-lg text-neutral">Password</div>
+                    <input type="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full" />
                     <div class="flex justify-center">
-                        <button class="btn btn-secondary text-2xl w-64">Sign in</button>
+                        <button class="btn btn-secondary text-xl w-64">Sign in</button>
                     </div>
                 </div>
             </div>

@@ -23,28 +23,28 @@
 <body>
     <div class="grid place-items-center h-screen">
         <div class="w-full max-w-md p-6 space-y-6 bg-white shadow-md rounded-lg">
-            <div class="text-4xl text-warning text-center">Register to LearnSite</div>
+            <div class="text-3xl text-warning text-center">Register to LearnSite</div>
             <div class="border-4 border-base-100 p-4">
                 <div class="space-y-4">
-                    <div class="text-xl text-neutral">Username</div>
-                    <input type="text" placeholder="Enter Username" class="text-lg input input-bordered input-info w-full" />
-                    <div class="text-xl text-neutral">Email Address</div>
-                    <input type="text" placeholder="Enter Email Address" class="text-lg input input-bordered input-info w-full" />
-                    <div class="text-xl text-neutral">Password</div>
-                    <input type="text" placeholder="Enter Password" class="text-lg input input-bordered input-info w-full" />
-                    <div class="text-xl text-neutral">Confirm Password</div>
-                    <input type="text" placeholder="Enter Confirm Password" class="text-lg input input-bordered input-info w-full" />
-                    <div class="text-xl text-neutral">Select a Role</div>
-                    <select class="select text-xl">
+                    <div class="text-lg text-neutral">Username</div>
+                    <input type="text" placeholder="Enter Username" class="text-base input input-bordered input-info w-full" />
+                    <div class="text-lg text-neutral">Email Address</div>
+                    <input type="email" placeholder="Enter Email Address" class="text-base input input-bordered input-info w-full" />
+                    <div class="text-lg text-neutral">Password</div>
+                    <input type="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full" />
+                    <div class="text-lg text-neutral">Confirm Password</div>
+                    <input type="password" placeholder="Enter Confirm Password" class="text-base input input-bordered input-info w-full" />
+                    <div class="text-lg text-neutral">Select a Role</div>
+                    <select class="select text-base">
                         <option disabled selected>Select Role</option>
                         <option>Student</option>
                         <option>Teacher</option>
                     </select>
-                    <button class="btn btn-secondary text-2xl w-full">Register</button>
+                    <button class="btn btn-secondary text-xl w-full">Register</button>
                 </div>
             </div>
             <div class="text-center">
-                <a href="{{ route('login') }}" class="text-3xl link link-secondary">I have an account</a>
+                <a href="{{ route('login') }}" class="text-xl link link-secondary">I have an account</a>
             </div>
         </div>
     </div>
