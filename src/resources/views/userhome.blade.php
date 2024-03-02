@@ -191,15 +191,4 @@
 
 </body>
 
-</html>"#recommended" => "Recommended Course",
-        );
-        ?>
-        @include('rightbar')
-    </div>
-
-    @include('footer')
-
-
-</body>
-
 </html>
