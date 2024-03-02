@@ -15,9 +15,9 @@ Route::get("login", function () {
 }) -> name("login");
 
 //font-end use
-Route::get("home", function () {
-    return view("home");
-}) -> name("home");
+Route::get("userhome", function () {
+    return view("userhome");
+}) -> name("userhome");
 
 // Route::get("user_{usr}", function ($usr) {
 //     return view("home", $usr);

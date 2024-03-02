@@ -1,4 +1,4 @@
-<div id="recommended" class="grid w-full overflow-hidden relative ">
+<div id="recommended" class="grid w-full overflow-hidden relative mb-16">
                 <div class="text-4xl pl-16 font-bold mb-5">Recommended Course</div>
 
                 <div class="w-full carousel flex flex-row ">
@@ -39,8 +39,8 @@
                     <?php
                     $recCourseList = array(
                         array(
-                            "title" => "Coding",
-                            "titleImg" => "https://cdn.cloudflare.steamstatic.com/steam/apps/391540/header.jpg?t=1579096091",
+                            "title" => "Elden Ring",
+                            "titleImg" => "https://assets.xboxservices.com/assets/1d/5b/1d5bc84f-2135-4e2f-8ca6-bb000d97db7f.jpg?n=Elden-Ring_GLP-Poster-Image-1084_1920x1080.jpg",
                             "description" => "The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression",
                             "instructor1" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
                             "instructor2" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
@@ -51,14 +51,14 @@
                         ),
                         array(
                             "title" => "Minecraft",
-                            "titleImg" => "https://cdn.cloudflare.steamstatic.com/steam/apps/391540/header.jpg?t=1579096091",
+                            "titleImg" => "https://store-images.s-microsoft.com/image/apps.60323.13774133678237924.758ba261-9ad2-4b6c-aae4-54f1307835d0.5c6bbf61-af87-400b-ae20-330496c5a9ac?q=90&w=480&h=270",
                             "description" => "The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression",
                             "instructor1" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
                             "instructor2" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
                             "instructor3" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
                             "rating" => "3.4",
                             "time" => "25",
-                            "link" => ""
+                            "link" => "https://www.minecraft.net/en-us"
                         ),
                         array(
                             "title" => "Dog",

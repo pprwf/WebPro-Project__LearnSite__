@@ -35,17 +35,6 @@
         }
     </style>
 
-    <script>
-        getRemoteData("superheroes.json");
-        async function getRemoteData(url) {
-            let datObject = await fetch(url);
-            let superheroes = await datObject.json();
-
-            let text = "<h1>" + superheroes.squadName + "</h1>";
-
-            document.getElementById("out").innerHTML = text;
-        }
-    </script>
 </head>
 
 <body>
@@ -82,7 +71,7 @@
 
     <div id="whatwill"></div>
 
-    <!-- div under Hero -->
+    <!-- div under Hero (leftbar content rightbar)-->
     <div class="flex flex-row w-full ">
 
         <!-- just leftbar -->
@@ -159,6 +148,8 @@
         ?>
         @include('rightbar')
     </div>
+
+    @include('footer')
 
 
 </body>

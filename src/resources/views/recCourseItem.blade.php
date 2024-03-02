@@ -2,7 +2,7 @@
     <a href="<?php echo $recCourse["link"] ?>">
     <div class="flex-none w-[35rem] h-96 border-green-600 border-2 rounded-3xl overflow-hidden flex flex-col">
         <!-- Course img -->
-        <div class="border-orange-600 border-2 w-full h-40 bg-center" style="background-image: url(<?php echo $recCourse["titleImg"] ?>);"></div>
+        <div class="border-orange-600 border-2 w-full h-40 bg-center bg-cover" style="background-image: url(<?php echo $recCourse["titleImg"] ?>);"></div>
 
         <!-- Course Descript -->
         <div class="flex flex-col flex-auto justify-between p-4">
