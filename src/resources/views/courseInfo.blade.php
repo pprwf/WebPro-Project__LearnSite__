@@ -14,36 +14,32 @@
     <style>
         body {
             /* background-color: brown; */
+            scroll-behavior: smooth;
+        }
+
+        .hero {
+            height: 85%;
+        }
+
+        .herocon {
+            width: 100%;
+            height: 100%;
+            display: flex;
         }
 
         .disable-click {
             pointer-events: none;
         }
 
-        .yellow {
-            background-color: #FFFA88;
-        }
-
-        .green {
-            background-color: #88FFC6;
+        .mr-200 {
+            margin-right: 50rem;
         }
     </style>
+
 </head>
 
 <body>
-    <!-- navbar (name => link)-->
-    <?php
-    $navList = array(
-        "Course" => "course",
-        "Register" => "register",
-        "Login" => "login",
-    );
-    ?>
-    @include('navbar')
 
-
-
-    <!-- modal when search -->
     <dialog id="my_modal_4" class="modal">
         <div class="modal-box w-11/12 max-w-5xl">
             <h3 class="font-bold text-lg">Search: wdqwdqwfwqf</h3>
@@ -89,12 +85,12 @@
                     "link" => ""
                 )
             );
-            $recCourseOrder = 1000;
+            $recCourseOrder = 10;
             ?>
             <div class="w-full flex flex-col ">
                 <?php foreach ($recCourseList as $recCourse) : ?>
                     <?php $recCourseOrder += 1; ?>
-                    
+
                     @include('recCourseItem')
                     <br>
                 <?php endforeach; ?>
@@ -102,17 +98,30 @@
         </div>
     </dialog>
 
-    <div class="w-full h-[35%] grid bg-sky-800 text-base-200 pt-10 pb-10 pl-24">
-        <p class="text-2xl">HELLO Pakinza007</p>
-        <p class="text-xs mt-2.5">Welcome back, Have you learned something today</p>
-        <div class="mt-5">
-            <p class="text-xs mt-2.5">finding course</p>
-            <input type="text" placeholder="insert name" class="input input-bordered input-sm w-1/5 max-w-xs text-xs mt-1.5 text-info-content" />
-            <input type="submit" onclick="my_modal_4.showModal()" class=" btn  btn-sm w-10s text-xs mt-1.5 text-base-200" />
-        </div>
-    </div>
+    <?php
+    $recCourse = array(
+        "title" => "Minecraft",
+        "titleImg" => "https://store-images.s-microsoft.com/image/apps.60323.13774133678237924.758ba261-9ad2-4b6c-aae4-54f1307835d0.5c6bbf61-af87-400b-ae20-330496c5a9ac?q=90&w=480&h=270",
+        "description" => "The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression",
+        "instructor1" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
+        "instructor2" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
+        "instructor3" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
+        "rating" => "3.4",
+        "time" => "25",
+        "link" => "https://www.minecraft.net/en-us"
+    );
+    ?>
 
-    <!-- div under Hero (leftbar content rightbar)-->
+    <!-- navbar (name => link)-->
+    <?php
+    $navList = array(
+        "Course" => "course",
+        "Register" => "register",
+        "Login" => "login",
+    );
+    ?>
+    @include('navbar')
+
     <div class="flex flex-row w-full ">
 
         <!-- just leftbar -->
@@ -120,61 +129,55 @@
 
         <!-- content -->
         <div class="content flex flex-col flex-auto">
-            <h1 class="text-4xl pl-16 font-bold mt-12">Continue on</h1>
 
-            <div class="grid grid-cols-4 justify-items-center pl-[15%] pr-[15%] pt-10">
+            <!-- course head -->
+            <div class="flex flex-row grid-cols-2 w-full h-[60%]">
+                <!-- img & review -->
+                <div class="bg-green-200 w-1/2 h-full flex-none items-center flex flex-col">
+                    <img class="w-8/12 h-60 rounded-xl" src="https://assets.xboxservices.com/assets/1d/5b/1d5bc84f-2135-4e2f-8ca6-bb000d97db7f.jpg?n=Elden-Ring_GLP-Poster-Image-1084_1920x1080.jpg" alt="">
 
-                @include('smallcourseitem')
-                @include('smallcourseitem')
-                @include('smallcourseitem')
-
-                <a href="">
-                    <div class="card card-compact w-60 bg-base-100 shadow-xl m-2">
-                        <figure><img src="https://assets.xboxservices.com/assets/1d/5b/1d5bc84f-2135-4e2f-8ca6-bb000d97db7f.jpg?n=Elden-Ring_GLP-Poster-Image-1084_1920x1080.jpg" alt="Shoes" /></figure>
-                        <div class="card-body overflow-hidden green rounded-b-2xl">
-                            <h2 class="card-title text-lg">Elden Ring</h2>
-                            <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-                            <div class="flex flex-row items-center">
-                                <progress class="progress w-40" value="69" max="100"></progress>
-                                <p class="ml-4">69%</p>
-                            </div>
-                            <div class="card-actions justify-start mt-3">
-                                <div class="avatar-group -space-x-6 rtl:space-x-reverse">
-                                    <div class="avatar">
-                                        <div class="w-8">
-                                            <img src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" />
-                                        </div>
-                                    </div>
-                                    <div class="avatar">
-                                        <div class="w-8">
-                                            <img src="https://tr.rbxcdn.com/a71f2918a69a2c57946264dbcaf875ab/420/420/Image/Png" />
-                                        </div>
-                                    </div>
-                                    <div class="avatar">
-                                        <div class="w-8">
-                                            <img src="{{ asset('assets/nanachipfp.jpg') }}" />
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="w-8/12">
+                        <p>INTRODUCTION TO NETWORK SYSTEMS / COMPUTER NETWORK (1/2023)</p>
+                        <p>approximate time 2532 hr</p>
+                        <!-- rating -->
+                        <div class="flex flex-row items-center mt-1">
+                            <p class="">rating</p>
+                            <div class="rating rating-sm ml-2">
+                                <?php
+                                $checked = false;
+                                for ($i = 1; $i <= 5; $i++) {
+                                    echo '<input type="radio" name="rating-6" class="mask disable-click mask-star-2 bg-red-600"';
+                                    if ($recCourse["rating"] * 10 < $i * 10 + 5 && $checked == false) {
+                                        echo 'checked';
+                                        $checked = true;
+                                    }
+                                    echo '/>';
+                                }
+                                ?>
                             </div>
                         </div>
+                        <br>
+                        <input type="submit" onclick="my_modal_4.showModal()" class=" btn btn-sm w-10s text-xs mt-1.5 text-amber-700" />
                     </div>
-                </a>
+                </div>
 
-
+                <div class="bg-orange-200 h-full flex-auto">
+                    <div class="h-32 bg-orange-400 text-3xl font-medium">INTRODUCTION TO NETWORK SYSTEMS / COMPUTER NETWORK (1/2023)</div>
+                    <div>
+                        <p>The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapo</p>
+                        <hr>
+                        <div></div>
+                    </div>
+                </div>
             </div>
 
-
-            <br>
-            <br>
-
-
-
-            <!-- Recommended Course -->
-            
-            @include('recCourse')
-
+            <div class="w-full h-96"></div>
         </div>
+
+
+
+
+
 
         <!-- rightbar (id to find => text) -->
         <?php

@@ -14,6 +14,7 @@
     <style>
         body {
             /* background-color: brown; */
+            scroll-behavior: smooth;
         }
 
         .hero {
@@ -132,7 +133,7 @@
                 </div>
             </div>
 
-
+            <?php $currentPath = ""; ?>
             <!-- Recommended Course -->
             @include('recCourse')
 

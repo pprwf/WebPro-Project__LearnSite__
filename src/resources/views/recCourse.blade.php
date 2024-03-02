@@ -13,7 +13,7 @@
                             let ref = document.getElementById("btn-rc-l").getAttribute("href");
                             let beforeClickOrder = parseInt(ref.replace(/\D/g, "")) + 1;
                             if (beforeClickOrder > 1) {
-                                window.location.href = document.getElementById('btn-rc-l').href;
+                                window.location.hash = document.getElementById('btn-rc-l').href;
                                 setTimeout(function() { //onclick do before go to href if don't use this IDK!
                                     document.getElementById("btn-rc-l").setAttribute("href", "#box" + (beforeClickOrder - 2));
                                     document.getElementById("btn-rc-r").setAttribute("href", "#box" + (beforeClickOrder));
@@ -26,7 +26,7 @@
                             let beforeClickOrder = parseInt(ref.replace(/\D/g, "")) + 1;
                             let maxRecCourse = 3; //will change when php count recommendcourse (But it was not, so assign as you like)
                             if (beforeClickOrder < maxRecCourse) {
-                                window.location.href = document.getElementById('btn-rc-r').href;
+                                window.location.hash = document.getElementById('btn-rc-r').href;
                                 setTimeout(function() {
                                     document.getElementById("btn-rc-l").setAttribute("href", "#box" + (beforeClickOrder));
                                     document.getElementById("btn-rc-r").setAttribute("href", "#box" + (beforeClickOrder+2));
