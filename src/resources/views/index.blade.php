@@ -48,7 +48,7 @@
         "Login" => "login",
     );
     ?>
-    @include('navbar')
+    @include('components.navbar')
 
 
     <div class="hero min-w-screen w-full overflow-hidden" style="background-image: url({{ asset('assets/Learnsitebg.png') }});">
@@ -135,7 +135,7 @@
 
             <?php $currentPath = ""; ?>
             <!-- Recommended Course -->
-            @include('recCourse')
+            @include('components.recCourse')
 
         </div>
 
@@ -147,11 +147,10 @@
             "#recommended" => "Recommended Course",
         );
         ?>
-        @include('rightbar')
+        @include('components.rightbar')
     </div>
 
-    @include('footer')
-
+    @include('components.footer')
 
 </body>
 

@@ -50,7 +50,8 @@
     </div>
 
     <!--Footer -->
-    @include('footer')
+    @include('components.footer')
+
 </body>
 
 </html>

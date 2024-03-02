@@ -39,7 +39,7 @@
         "Login" => "login",
     );
     ?>
-    @include('navbar')
+    @include('components.navbar')
 
 
 
@@ -95,7 +95,7 @@
                 <?php foreach ($recCourseList as $recCourse) : ?>
                     <?php $recCourseOrder += 1; ?>
                     
-                    @include('recCourseItem')
+                    @include('components.recCourseItem')
                     <br>
                 <?php endforeach; ?>
             </div>
@@ -124,9 +124,9 @@
 
             <div class="grid grid-cols-4 justify-items-center pl-[15%] pr-[15%] pt-10">
 
-                @include('smallcourseitem')
-                @include('smallcourseitem')
-                @include('smallcourseitem')
+                @include('components.smallcourseitem')
+                @include('components.smallcourseitem')
+                @include('components.smallcourseitem')
 
                 <a href="">
                     <div class="card card-compact w-60 bg-base-100 shadow-xl m-2">
@@ -171,8 +171,7 @@
 
 
             <!-- Recommended Course -->
-            
-            @include('recCourse')
+            @include('components.recCourse')
 
         </div>
 
@@ -182,6 +181,17 @@
             "#navbar" => "Welcome",
             "#whatwill" => "What will you get",
             "#recommended" => "Recommended Course",
+        );
+        ?>
+        @include('components.rightbar')
+    </div>
+
+    @include('components.footer')
+
+
+</body>
+
+</html>"#recommended" => "Recommended Course",
         );
         ?>
         @include('rightbar')
