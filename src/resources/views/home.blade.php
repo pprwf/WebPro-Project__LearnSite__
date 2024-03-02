@@ -11,7 +11,7 @@
 
 <body>
 
-    @include('navbar2')
+    @include('components.navbar2')
 
 
 </body>

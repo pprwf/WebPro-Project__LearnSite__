@@ -77,7 +77,7 @@
 
                     <?php foreach ($recCourseList as $recCourse) : ?>
                         <?php $recCourseOrder += 1; ?>
-                        @include('recCourseItem')
+                        @include('components.recCourseItem')
                     <?php endforeach; ?>
 
 
