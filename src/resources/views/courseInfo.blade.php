@@ -169,8 +169,8 @@
                         <hr>
 
                         <!-- instructor -->
-                        <div class="grid"> 
-                            <?php for($i=0;$i<3;$i++):?>
+                        <div class="grid">
+                            <?php for ($i = 0; $i < 3; $i++) : ?>
                                 <div class="flex flex-row h-16">
                                     <img class="rounded-full" src="{{ asset('assets/nanachipfp.jpg') }}" alt="">
                                     <div>
@@ -189,15 +189,40 @@
             <div class="w-full min-h-96 flex flex-col">
 
                 <!-- week label -->
-                <div class="grid m-5 bg-gray-200">
-                    <h1>Week 01: Introducing Today Technology [Kitsuchart Pasupa]</h1>
-                    <p class="flex flex-row w-full" >Course Syllabus - Lecture <input type="checkbox" checked="checked" class="checkbox self-end" /></p>
-                    <p>Course Syllabus - Lab</p>
-                    <p>Course Syllabus - Lecture</p>
-                    <p>Course Syllabus - Lab</p>
+                <div class="flex flex-row w-full min-h-96 p-8">
+                    <!-- content -->
+                    <div class="grid bg-gray-200 flex-1 content-start">
+                        <h1>Week 01: Introducing Today Technology [Kitsuchart Pasupa]</h1>
+
+                        <div class="flex flex-row">
+                            <p class="flex flex-row w-full">Course Syllabus - Lecture</p>
+                            <input type="checkbox" checked="checked" class="checkbox self-end" />
+                        </div>
+                        <p>Course Syllabus - Lab</p>
+                        <p>Course Syllabus - Lecture</p>
+                        <p>Course Syllabus - Lab</p>
+
+
+
+                    </div>
+
+                    <!-- setting inner -->
+                    <div class="flex flex-col border-2 border-current items-center">
+                        <button class="btn btn-square">setting</button>
+                        <button class="btn btn-xs btn-square">-</button>
+                        <button class="btn btn-xs btn-square">+</button>
+                        <button class="btn btn-xs btn-square">up</button>
+                        <button class="btn btn-xs btn-square">dn</button>
+                    </div>
+
+                    <!-- setting outter -->
+                    <div class="flex flex-col items-center justify-center border-2 border-current ">
+                    <button class="btn btn-xs btn-square"> up</button>
+                        <button class="btn btn-xs btn-square">down</button>
+                    </div>
                 </div>
             </div>
-            
+
         </div>
 
         <!-- rightbar (id to find => text) -->
