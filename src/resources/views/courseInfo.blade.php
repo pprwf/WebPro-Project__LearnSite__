@@ -191,7 +191,7 @@
                 <!-- week label -->
                 <div class="grid m-5 bg-gray-200">
                     <h1>Week 01: Introducing Today Technology [Kitsuchart Pasupa]</h1>
-                    <p>Course Syllabus - Lecture <input type="checkbox" checked="checked" class="checkbox" /></p>
+                    <p class="flex flex-row w-full" >Course Syllabus - Lecture <input type="checkbox" checked="checked" class="checkbox self-end" /></p>
                     <p>Course Syllabus - Lab</p>
                     <p>Course Syllabus - Lecture</p>
                     <p>Course Syllabus - Lab</p>
