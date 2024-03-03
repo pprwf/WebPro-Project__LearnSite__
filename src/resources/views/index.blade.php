@@ -43,7 +43,7 @@
     <!-- navbar (name => link)-->
     <?php
     $navList = array(
-        "Course" => "course",
+        "Course" => "courseinfo",
         "Register" => "register",
         "Login" => "login",
     );

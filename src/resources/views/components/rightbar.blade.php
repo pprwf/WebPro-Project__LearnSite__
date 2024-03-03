@@ -1,6 +1,6 @@
 
 
-<div class="rightbar w-2/12 flex-none border-orange-600 border-2">
+<div class="rightbar w-50 flex-none border-orange-600 border-2">
     <div class="sticky top-0 overflow-hidden">
         <ul class="menu bg-base-200 w-full ">
 

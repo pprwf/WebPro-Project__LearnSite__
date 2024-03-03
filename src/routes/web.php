@@ -27,15 +27,18 @@ Route::get("courseinfo", function () {
 //     return view("home", $usr);
 // }) -> name("user");
 
-Route::get("course", function () {
-    return view("course");
-}) -> name("course");
+Route::get("allcourse", function () {
+    return view("allcourse");
+}) -> name("allcourse");
 
 //font end use + test
 Route::get("course/quiz", function () {
     return view("quiz");
 }) -> name("quiz");
 
+Route::get("profile", function () {
+    return view("profile");
+}) -> name("profile");
 
 // Route::get("course/{subject}", function ($subject) {
 //     return view("$subject");
