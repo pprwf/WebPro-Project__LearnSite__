@@ -120,7 +120,7 @@
         "Login" => "login",
     );
     ?>
-    @include('navbar')
+    @include('components.navbar')
 
     <div class="flex flex-row w-full ">
 
@@ -166,18 +166,26 @@
                     <div>
                         <p>The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapo</p>
                         <hr>
-                        <div></div>
+
+                        <div class="grid">
+                            
+                            <?php for($i=0;$i<3;$i++):?>
+                                <div class="flex flex-row h-16">
+                                    <img class="rounded-full" src="{{ asset('assets/nanachipfp.jpg') }}" alt="">
+                                    <div>
+                                        <p>Ms. Nanachi made in abyss</p>
+                                        <p>20 lectures 5 quizs</p>
+                                    </div>
+                                </div>
+                            <?php endfor; ?>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="w-full h-96"></div>
         </div>
-
-
-
-
-
 
         <!-- rightbar (id to find => text) -->
         <?php
@@ -187,10 +195,10 @@
             "#recommended" => "Recommended Course",
         );
         ?>
-        @include('rightbar')
+        @include('components.rightbar')
     </div>
 
-    @include('footer')
+    @include('components.footer')
 
 
 </body>
