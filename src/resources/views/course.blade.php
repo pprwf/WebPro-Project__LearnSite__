@@ -22,7 +22,12 @@
 
         <!-- content -->
         <div class="content flex flex-col flex-auto">
-            
+            <div class="flex flex-row">
+                
+                <div class="">
+
+                </div>
+            </div>
 
         </div>
 
