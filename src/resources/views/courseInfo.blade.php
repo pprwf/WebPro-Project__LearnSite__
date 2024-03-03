@@ -161,14 +161,15 @@
                     </div>
                 </div>
 
+                <!-- name & description -->
                 <div class="bg-orange-200 h-full flex-auto">
                     <div class="h-32 bg-orange-400 text-3xl font-medium">INTRODUCTION TO NETWORK SYSTEMS / COMPUTER NETWORK (1/2023)</div>
                     <div>
                         <p>The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapo</p>
                         <hr>
 
-                        <div class="grid">
-                            
+                        <!-- instructor -->
+                        <div class="grid"> 
                             <?php for($i=0;$i<3;$i++):?>
                                 <div class="flex flex-row h-16">
                                     <img class="rounded-full" src="{{ asset('assets/nanachipfp.jpg') }}" alt="">
@@ -178,13 +179,25 @@
                                     </div>
                                 </div>
                             <?php endfor; ?>
-                            
                         </div>
                     </div>
                 </div>
+
             </div>
 
-            <div class="w-full h-96"></div>
+            <!-- content zone -->
+            <div class="w-full min-h-96 flex flex-col">
+
+                <!-- week label -->
+                <div class="grid m-5 bg-gray-200">
+                    <h1>Week 01: Introducing Today Technology [Kitsuchart Pasupa]</h1>
+                    <p>Course Syllabus - Lecture <input type="checkbox" checked="checked" class="checkbox" /></p>
+                    <p>Course Syllabus - Lab</p>
+                    <p>Course Syllabus - Lecture</p>
+                    <p>Course Syllabus - Lab</p>
+                </div>
+            </div>
+            
         </div>
 
         <!-- rightbar (id to find => text) -->
