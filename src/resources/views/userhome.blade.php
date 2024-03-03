@@ -1,4 +1,4 @@
-<html lang="en">
+<html data-theme="emerald">
 
 <head>
     <meta charset="UTF-8">
@@ -28,15 +28,8 @@
 </head>
 
 <body>
-    <!-- navbar (name => link)-->
-    <?php
-    $navList = array(
-        "Course" => "course",
-        "Register" => "register",
-        "Login" => "login",
-    );
-    ?>
-    @include('components.navbar')
+    
+    @include('components.navbar2')
 
 
 
