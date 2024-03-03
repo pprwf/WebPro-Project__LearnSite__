@@ -44,6 +44,10 @@ Route::get("profile", function () {
 //     return view("$subject");
 // });
 
+Route::get("database", function () {
+    return view("database");
+});
+
 Route::fallback(function() {
     return view("error");
 });
