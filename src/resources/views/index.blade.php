@@ -1,4 +1,4 @@
-<html lang="en">
+<html data-theme="emerald">
 
 <head>
     <meta charset="UTF-8">
