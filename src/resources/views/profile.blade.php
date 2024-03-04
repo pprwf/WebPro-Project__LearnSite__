@@ -47,7 +47,7 @@
             </div>
         </main>
 
-        <aside class="w-full md:w-1/4 bg-gray-200 p-4 md:border-l md:border-gray-300">
+        <aside class="w-full md:w-1/4 bg-base-200 p-4 md:border-l md:border-gray-300">
             <!-- Right Sidebar Content -->
             <?php
             $rightbarList = array(
