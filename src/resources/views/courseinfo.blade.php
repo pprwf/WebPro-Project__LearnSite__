@@ -41,7 +41,7 @@
 <body>
 
     <dialog id="my_modal_4" class="modal">
-        <div class="modal-box w-11/12 max-w-5xl">
+        <div class="modal-box w-11/12 max-w-5xl m-5">
             <h3 class="font-bold text-lg">Search: wdqwdqwfwqf</h3>
             <p class="py-4">here are result</p>
             <div class="modal-action">
@@ -87,11 +87,11 @@
             );
             $recCourseOrder = 10;
             ?>
-            <div class="w-full flex flex-col ">
+            <div class="w-full flex flex-col">
                 <?php foreach ($recCourseList as $recCourse) : ?>
                     <?php $recCourseOrder += 1; ?>
 
-                    @include('recCourseItem')
+                    @include('components.recCourseItem')
                     <br>
                 <?php endforeach; ?>
             </div>
@@ -146,10 +146,10 @@
             <div class="flex flex-row grid-cols-2 w-full h-[60%]">
                 <!-- img & review -->
                 <div class="bg-green-200 w-1/2 h-full flex-none items-center flex flex-col">
-                    <img class="w-8/12 h-60 rounded-xl" src="https://assets.xboxservices.com/assets/1d/5b/1d5bc84f-2135-4e2f-8ca6-bb000d97db7f.jpg?n=Elden-Ring_GLP-Poster-Image-1084_1920x1080.jpg" alt="">
+                    <img class="w-8/12 h-60 rounded-xl mt-5" src="https://assets.xboxservices.com/assets/1d/5b/1d5bc84f-2135-4e2f-8ca6-bb000d97db7f.jpg?n=Elden-Ring_GLP-Poster-Image-1084_1920x1080.jpg" alt="">
 
                     <div class="w-8/12">
-                        <p>INTRODUCTION TO NETWORK SYSTEMS / COMPUTER NETWORK (1/2023)</p>
+                        <p class="mt-5">INTRODUCTION TO NETWORK SYSTEMS / COMPUTER NETWORK (1/2023)</p>
                         <p>approximate time 2532 hr</p>
                         <!-- rating -->
                         <div class="flex flex-row items-center mt-1">
@@ -175,77 +175,79 @@
 
                 <!-- name & description -->
                 <div class="bg-orange-200 h-full flex-auto">
-                    <div class="h-32 bg-orange-400 text-3xl font-medium">INTRODUCTION TO NETWORK SYSTEMS / COMPUTER NETWORK (1/2023)</div>
-                    <div class="relative">
-                        <p>The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapo</p>
+                    
+                    <div class="h-auto bg-orange-400 text-3xl font-medium"><div class="ml-5">INTRODUCTION TO NETWORK SYSTEMS / COMPUTER NETWORK (1/2023)</div></div>
+                    
+                    <div class="relative m-5">
+                        <p class="sm:text-sm md:text-base lg:text-lg xl:text-xl">The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapo</p>
                         <hr>
-                        <input type="submit" onclick="my_modal_5.showModal()" value="leave course" class="absolute btn btn-sm w-10s text-xs mt-1.5 text-gray-100 bg-red-500 bottom-3 right-3" />
+                        <input type="submit" onclick="my_modal_5.showModal()" value="leave course" class="absolute btn btn-sm w-10s text-xs mt-1.5 text-gray-100 bg-red-500 bottom-3 right-3 sm:bottom-5 sm:right-5 md:w-20 lg:w-24 xl:w-28" />
 
                         <!-- instructor -->
                         <div class="grid">
                             <?php for ($i = 0; $i < 3; $i++) : ?>
-                                <div class="flex flex-row h-16">
-                                    <img class="rounded-full" src="{{ asset('assets/nanachipfp.jpg') }}" alt="">
-                                    <div>
-                                        <p>Ms. Nanachi made in abyss</p>
-                                        <p>20 lectures 5 quizs</p>
+                                <div class="flex flex-row h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 m-5">
+                                    <img class="rounded-full h-full" src="{{ asset('assets/nanachipfp.jpg') }}" alt="">
+                                    <div class="ml-2">
+                                        <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">Ms. Nanachi made in abyss</p>
+                                        <p class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">20 lectures 5 quizs</p>
                                     </div>
                                 </div>
                             <?php endfor; ?>
                         </div>
                     </div>
                 </div>
+            </div>
+
+
+                <!-- content zone -->
+                <div class="w-full flex flex-col">
+                    <?php for ($a = 0; $a < 3; $a++) : ?>
+                        <!-- week label -->
+                        <div class="flex flex-row w-full min-h-96 p-8">
+                            <!-- content -->
+                            <div class="grid bg-gray-200 flex-1 content-start">
+                                <h1>Week 01: Introducing Today Technology [Kitsuchart Pasupa]</h1>
+                                <?php for ($i = 0; $i < 3; $i++) : ?>
+                                    <div class="flex flex-row border-2 border-current p-1 ml-">
+                                        <p class="flex flex-row w-full">Course Syllabus - Lecture</p>
+                                        <input type="checkbox" checked="checked" class="checkbox self-end" />
+                                    </div>
+                                <?php endfor; ?>
+                            </div>
+
+                            <!-- setting inner -->
+                            <div class="flex flex-col border-2 border-current items-center">
+                                <button class="btn btn-square">setting</button>
+                                <button class="btn btn-xs btn-square">-</button>
+                                <button class="btn btn-xs btn-square">+</button>
+                                <button class="btn btn-xs btn-square">up</button>
+                                <button class="btn btn-xs btn-square">dn</button>
+                            </div>
+
+                            <!-- setting outter -->
+                            <div class="flex flex-col items-center justify-center border-2 border-current ">
+                                <button class="btn btn-xs btn-square"> up</button>
+                                <button class="btn btn-xs btn-square">down</button>
+                            </div>
+                        </div>
+                    <?php endfor; ?>
+                </div>
 
             </div>
 
-            <!-- content zone -->
-            <div class="w-full flex flex-col">
-                <?php for ($a = 0; $a < 3; $a++) : ?>
-                    <!-- week label -->
-                    <div class="flex flex-row w-full min-h-96 p-8">
-                        <!-- content -->
-                        <div class="grid bg-gray-200 flex-1 content-start">
-                            <h1>Week 01: Introducing Today Technology [Kitsuchart Pasupa]</h1>
-                            <?php for ($i = 0; $i < 3; $i++) : ?>
-                                <div class="flex flex-row border-2 border-current p-1 ml-">
-                                    <p class="flex flex-row w-full">Course Syllabus - Lecture</p>
-                                    <input type="checkbox" checked="checked" class="checkbox self-end" />
-                                </div>
-                            <?php endfor; ?>
-                        </div>
-
-                        <!-- setting inner -->
-                        <div class="flex flex-col border-2 border-current items-center">
-                            <button class="btn btn-square">setting</button>
-                            <button class="btn btn-xs btn-square">-</button>
-                            <button class="btn btn-xs btn-square">+</button>
-                            <button class="btn btn-xs btn-square">up</button>
-                            <button class="btn btn-xs btn-square">dn</button>
-                        </div>
-
-                        <!-- setting outter -->
-                        <div class="flex flex-col items-center justify-center border-2 border-current ">
-                            <button class="btn btn-xs btn-square"> up</button>
-                            <button class="btn btn-xs btn-square">down</button>
-                        </div>
-                    </div>
-                <?php endfor; ?>
-            </div>
-
+            <!-- rightbar (id to find => text) -->
+            <?php
+            $rightbarList = array(
+                "#navbar" => "Welcome",
+                "#whatwill" => "What will you get",
+                "#recommended" => "Recommended Course",
+            );
+            ?>
+            @include('components.rightbar')
         </div>
 
-        <!-- rightbar (id to find => text) -->
-        <?php
-        $rightbarList = array(
-            "#navbar" => "Welcome",
-            "#whatwill" => "What will you get",
-            "#recommended" => "Recommended Course",
-        );
-        ?>
-        @include('components.rightbar')
-    </div>
-
-    @include('components.footer')
+        @include('components.footer')
 
 
 </body>
