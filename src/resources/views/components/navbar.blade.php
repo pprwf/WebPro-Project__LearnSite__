@@ -11,7 +11,7 @@
 ?>
 <nav id="navbar" class="navbar bg-secondary flex justify-between">
     <div class="">
-        <img src="{{ asset('assets/LearnSiteLogo.jpg') }}" alt="" class="size-11 rounded-full  ml-2">
+        <img src="{{ asset('assets/LearnsiteLogo.jpg') }}" alt="" class="size-11 rounded-full  ml-2">
         <h1 id="" class="website_name text-3xl  ml-2">LearnSite</h1>
     </div>
     <div class="">

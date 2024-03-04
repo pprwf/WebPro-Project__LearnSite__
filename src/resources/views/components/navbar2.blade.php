@@ -3,7 +3,7 @@
     <div class="flex-1">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
             <div class="w-25 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src="{{asset('assets/LearnSiteLogo.jpg')}}" />
+                <img alt="Tailwind CSS Navbar component" src="{{asset('assets/LearnsiteLogo.jpg')}}" />
             </div>
         </div>
         <a class="btn btn-ghost text-3xl ml-5">LearnSite</a>
