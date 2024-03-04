@@ -98,6 +98,18 @@
         </div>
     </dialog>
 
+    <dialog id="my_modal_5" class="modal">
+        <div class="modal-box w-11/12 max-w-5xl">
+            <h3 class="font-bold text-lg">Are you sure to leave course</h3>
+            <p class="py-4">if you leave course use must enroll again to enter the course</p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn btn-md btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
     <?php
     $recCourse = array(
         "title" => "Minecraft",
@@ -164,9 +176,10 @@
                 <!-- name & description -->
                 <div class="bg-orange-200 h-full flex-auto">
                     <div class="h-32 bg-orange-400 text-3xl font-medium">INTRODUCTION TO NETWORK SYSTEMS / COMPUTER NETWORK (1/2023)</div>
-                    <div>
+                    <div class="relative">
                         <p>The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapo</p>
                         <hr>
+                        <input type="submit" onclick="my_modal_5.showModal()" value="leave course" class="absolute btn btn-sm w-10s text-xs mt-1.5 text-gray-100 bg-red-500 bottom-3 right-3" />
 
                         <!-- instructor -->
                         <div class="grid">
@@ -186,41 +199,37 @@
             </div>
 
             <!-- content zone -->
-            <div class="w-full min-h-96 flex flex-col">
-
-                <!-- week label -->
-                <div class="flex flex-row w-full min-h-96 p-8">
-                    <!-- content -->
-                    <div class="grid bg-gray-200 flex-1 content-start">
-                        <h1>Week 01: Introducing Today Technology [Kitsuchart Pasupa]</h1>
-
-                        <div class="flex flex-row">
-                            <p class="flex flex-row w-full">Course Syllabus - Lecture</p>
-                            <input type="checkbox" checked="checked" class="checkbox self-end" />
+            <div class="w-full flex flex-col">
+                <?php for ($a = 0; $a < 3; $a++) : ?>
+                    <!-- week label -->
+                    <div class="flex flex-row w-full min-h-96 p-8">
+                        <!-- content -->
+                        <div class="grid bg-gray-200 flex-1 content-start">
+                            <h1>Week 01: Introducing Today Technology [Kitsuchart Pasupa]</h1>
+                            <?php for ($i = 0; $i < 3; $i++) : ?>
+                                <div class="flex flex-row border-2 border-current p-1 ml-">
+                                    <p class="flex flex-row w-full">Course Syllabus - Lecture</p>
+                                    <input type="checkbox" checked="checked" class="checkbox self-end" />
+                                </div>
+                            <?php endfor; ?>
                         </div>
-                        <p>Course Syllabus - Lab</p>
-                        <p>Course Syllabus - Lecture</p>
-                        <p>Course Syllabus - Lab</p>
 
+                        <!-- setting inner -->
+                        <div class="flex flex-col border-2 border-current items-center">
+                            <button class="btn btn-square">setting</button>
+                            <button class="btn btn-xs btn-square">-</button>
+                            <button class="btn btn-xs btn-square">+</button>
+                            <button class="btn btn-xs btn-square">up</button>
+                            <button class="btn btn-xs btn-square">dn</button>
+                        </div>
 
-
+                        <!-- setting outter -->
+                        <div class="flex flex-col items-center justify-center border-2 border-current ">
+                            <button class="btn btn-xs btn-square"> up</button>
+                            <button class="btn btn-xs btn-square">down</button>
+                        </div>
                     </div>
-
-                    <!-- setting inner -->
-                    <div class="flex flex-col border-2 border-current items-center">
-                        <button class="btn btn-square">setting</button>
-                        <button class="btn btn-xs btn-square">-</button>
-                        <button class="btn btn-xs btn-square">+</button>
-                        <button class="btn btn-xs btn-square">up</button>
-                        <button class="btn btn-xs btn-square">dn</button>
-                    </div>
-
-                    <!-- setting outter -->
-                    <div class="flex flex-col items-center justify-center border-2 border-current ">
-                    <button class="btn btn-xs btn-square"> up</button>
-                        <button class="btn btn-xs btn-square">down</button>
-                    </div>
-                </div>
+                <?php endfor; ?>
             </div>
 
         </div>

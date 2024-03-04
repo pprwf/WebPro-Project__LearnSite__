@@ -10,8 +10,8 @@
     </div>
 
     <ul class="p-2 bg-secondary rounded-t-none">
-        <li class="btn btn-ghost ml-5 text-xl"><a>All Course</a></li>
-        <li class="btn btn-ghost ml-5 mr-5 text-xl"><a>My Course</a></li>
+        <li class="btn btn-ghost ml-5 text-xl"><a href="allcourse">All Course</a></li>
+        <li class="btn btn-ghost ml-5 mr-5 text-xl"><a href="userhome">My Course</a></li>
     </ul>
 
     <div class="dropdown dropdown-end ml-3 mr-3">
