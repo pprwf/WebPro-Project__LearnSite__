@@ -34,15 +34,15 @@
                 </div>
                 <div class="m-5">
                     <div class="mb-3 text-xl">First Name</div>
-                    <input type="text" class="text-base input input-bordered w-96" value="nanachi" />
+                    <input type="text" class="text-base input input-bordered w-96" value="nanachi" disabled />
                     <div class="mb-3 mt-3 text-xl">Last Name</div>
-                    <input type="text" class="text-base input input-bordered w-96" value="nanachi" />
+                    <input type="text" class="text-base input input-bordered w-96" value="nanachi" disabled />
                     <div class="mb-3 mt-3 text-xl">E-mail</div>
-                    <input type="email" class="text-base input input-bordered w-96" value="nanachi@gmail.com" />
+                    <input type="email" class="text-base input input-bordered w-96" value="nanachi@gmail.com" disabled/>
                     <div class="mb-3 mt-3 text-xl">Username</div>
-                    <input type="text" class="text-base input input-bordered w-96" value="nanachiteacher" />
+                    <input type="text" class="text-base input input-bordered w-96" value="nanachiteacher" disabled />
                     <div class="mb-3 mt-3 text-xl">Phone</div>
-                    <input type="text" class="text-base input input-bordered w-96" value="069-6969696" />
+                    <input type="text" class="text-base input input-bordered w-96" value="069-6969696" disabled />
                 </div>
             </div>
         </main>
@@ -65,6 +65,15 @@
     <footer>
         @include('components.footer')
     </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector('#editprofile').addEventListener('click', function () {
+            window.location.href = "{{ route('edit-profile') }}";
+        });
+    });
+</script>
+
 </body>
 
 </html>
