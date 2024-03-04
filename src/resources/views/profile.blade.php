@@ -66,13 +66,6 @@
         @include('components.footer')
     </footer>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        document.querySelector('#editprofile').addEventListener('click', function () {
-            window.location.href = "{{ route('edit-profile') }}";
-        });
-    });
-</script>
 
 </body>
 
