@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/HP/OneDrive/Desktop/KMITL/ปี 2 เทอม 2/Project/Fun_Web/WebPro-Project__LearnSite__/src/database/learnsite.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2299"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainContents"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE Users (
+    UserId INT PRIMARY KEY,
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255) ,
+    Username VARCHAR(255) UNIQUE NOT NULL,
+    Password VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Phone VARCHAR(255) ,
+    UserType VARCHAR(255) NOT NULL,
+    Status VARCHAR(255) NOT NULL,
+    CreatedDate DATETIME NOT NULL,
+    UpdatedDate DATETIME NOT NULL
+);
+
+CREATE TABLE Courses (
+    CourseId INT PRIMARY KEY,
+    CourseName VARCHAR(255) NOT NULL,
+    Description TEXT,
+    CourseType VARCHAR(255) NOT NULL,
+    Status VARCHAR(255) NOT NULL,
+    CreatedDate DATETIME NOT NULL,
+    UpdatedDate DATETIME NOT NULL
+);
+
+CREATE TABLE Registers (
+    RegisterId INT PRIMARY KEY,
+    UserId INT ,
+    CourseId INT ,
+    Status VARCHAR(255) NOT NULL,
+    RegisteredDate DATETIME NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(UserId),
+    FOREIGN KEY (CourseId) REFERENCES Courses(CourseId)
+);
+
+CREATE TABLE Tests (
+    TestId INT PRIMARY KEY,
+    CourseId INT ,
+    TestName VARCHAR(255) NOT NULL,
+    TestType VARCHAR(255) NOT NULL,
+    Duration INT NOT NULL,
+    FullScore FLOAT NOT NULL,
+    CreatedDate DATETIME NOT NULL,
+    UpdatedDate DATETIME NOT NULL,
+    FOREIGN KEY (CourseId) REFERENCES Courses(CourseId)
+);
+
+CREATE TABLE Contents (
+    ContentId INT PRIMARY KEY,
+    CourseId INT,
+    Topic VARCHAR(255) NOT NULL,
+    ContentType VARCHAR(255) NOT NULL,
+    Content TEXT NOT NULL,
+    CreatedDate DATETIME NOT NULL,
+    UpdatedDate DATETIME NOT NULL,
+    FOREIGN KEY (CourseId) REFERENCES Courses(CourseId)
+);
+
+
+
+CREATE TABLE Reviews (
+    ReviewId INT PRIMARY KEY,
+    UserId INT NOT NULL,
+    CourseId INT NOT NULL,
+    Score FLOAT,
+    Comment TEXT NULL,
+    ReviewDate DATETIME,
+    FOREIGN KEY (UserId) REFERENCES Users(UserId),
+    FOREIGN KEY (CourseId) REFERENCES Courses(CourseId)
+);
+
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
