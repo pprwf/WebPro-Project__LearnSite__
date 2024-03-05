@@ -32,15 +32,15 @@
 
 
     <!-- div under Hero (leftbar content rightbar)-->
-    <div class="flex flex-row w-full ">
+    <div class="flex flex-row w-full m-auto">
 
         <!-- just leftbar -->
-        <div class="leftbar w-[2%] flex-none border-orange-600 border-2"></div>
+        <div class="leftbar w-full md:w-auto border-orange-600 border-2"></div>
 
         <!-- content -->
-        <div class="content flex flex-col flex-auto">
-            <h1 class="text-4xl pl-16 font-bold mb-5 mt-8">All Course</h1>
-            <div class="grid grid-cols-2 ml-10 mr-10 gap-8">
+        <div class="content flex flex-col flex-auto md:w-full">
+                <h1 class="text-4xl pl-4 md:pl-16 font-bold mb-5 mt-8">All Course</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-0 mt-5 mb-5 ml-7 mr-7">
 
             <?php
                     $recCourseList = array(

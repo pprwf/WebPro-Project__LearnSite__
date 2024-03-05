@@ -18,9 +18,9 @@
                     <div class="bg-orange-200 w-full md:w-5/12 rounded-3xl p-2 text-sm mt-4 md:mt-0 md:ml-4">
                         <div class="flex flex-row items-center">
                             <p class="">instructor</p>
-                            <img class="rounded-full size-10 ml-2" src="<?php echo $recCourse["instructor1"] ?>" alt="">
-                            <img class="rounded-full size-10 ml-2" src="<?php echo $recCourse["instructor2"] ?>" alt="">
-                            <img class="rounded-full size-10 ml-2" src="<?php echo $recCourse["instructor3"] ?>" alt="">
+                            <img class="rounded-full size-10 ml-2 max-w-full h-auto" src="<?php echo $recCourse["instructor1"] ?>" alt="">
+                            <img class="rounded-full size-10 ml-2 max-w-full h-auto" src="<?php echo $recCourse["instructor2"] ?>" alt="">
+                            <img class="rounded-full size-10 ml-2 max-w-full h-auto" src="<?php echo $recCourse["instructor3"] ?>" alt="">
                         </div>
 
                         <div class="flex flex-row items-center mt-1">

@@ -26,21 +26,23 @@
             <div class="text-3xl text-warning text-center">Register to LearnSite</div>
             <div class="border-4 border-base-100 p-4">
                 <div class="space-y-4">
-                    <div class="text-lg text-neutral">Username</div>
-                    <input type="text" placeholder="Enter Username" class="text-base input input-bordered input-info w-full" />
-                    <div class="text-lg text-neutral">Email Address</div>
-                    <input type="email" placeholder="Enter Email Address" class="text-base input input-bordered input-info w-full" />
-                    <div class="text-lg text-neutral">Password</div>
-                    <input type="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full" />
-                    <div class="text-lg text-neutral">Confirm Password</div>
-                    <input type="password" placeholder="Enter Confirm Password" class="text-base input input-bordered input-info w-full" />
-                    <div class="text-lg text-neutral">Select a Role</div>
-                    <select class="select text-base">
-                        <option disabled selected>Select Role</option>
-                        <option>Student</option>
-                        <option>Teacher</option>
-                    </select>
-                    <button class="btn btn-secondary text-xl w-full">Register</button>
+                    <form action="" method="get">
+                        <div class="text-lg text-neutral">Username</div>
+                        <input type="text" placeholder="Enter Username" class="text-base input input-bordered input-info w-full" />
+                        <div class="text-lg text-neutral">Email Address</div>
+                        <input type="email" placeholder="Enter Email Address" class="text-base input input-bordered input-info w-full" />
+                        <div class="text-lg text-neutral">Password</div>
+                        <input type="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full" />
+                        <div class="text-lg text-neutral">Confirm Password</div>
+                        <input type="password" placeholder="Enter Confirm Password" class="text-base input input-bordered input-info w-full" />
+                        <div class="text-lg text-neutral">Select a Role</div>
+                        <select class="select text-base">
+                            <option disabled selected>Select Role</option>
+                            <option>Student</option>
+                            <option>Teacher</option>
+                        </select>
+                        <button class="btn btn-secondary text-xl w-full">Register</button>
+                    </form>
                 </div>
             </div>
             <div class="text-center">
