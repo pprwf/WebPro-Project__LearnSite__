@@ -27,6 +27,10 @@ Route::get("courseinfo", function () {
     return view("courseinfo");
 }) -> name("courseinfo");
 
+Route::get("phpinfo", function () {
+    return view("phpinfo");
+}) -> name("phpinfo");
+
 // Route::get("user_{usr}", function ($usr) {
 //     return view("home", $usr);
 // }) -> name("user");

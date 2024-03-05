@@ -108,7 +108,7 @@
                 <div class="flex flex-row mt-16 ml-28 overflow-hidden">
                     <?php
                     // 1. Connect to Database 
-                    class MyDB extends SQLite3
+                    class MyDb extends SQLite3
                     {
                         function __construct()
                         {
@@ -117,7 +117,7 @@
                     }
 
                     // 2. Open Database 
-                    $db = new MyDB();
+                    $db = new MyDb();
                     if (!$db) {
                         echo $db->lastErrorMsg();
                     } else {
