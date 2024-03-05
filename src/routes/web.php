@@ -48,6 +48,7 @@ Route::get("profile", function () {
 //     return view("$subject");
 // });
 
+
 Route::get("database", function () {
     return view("database");
 });
@@ -55,3 +56,4 @@ Route::get("database", function () {
 Route::fallback(function() {
     return view("error");
 });
+
