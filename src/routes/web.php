@@ -35,6 +35,10 @@ Route::get("allcourse", function () {
     return view("allcourse");
 }) -> name("allcourse");
 
+Route::get("coursemanage", function () {
+    return view("coursemanage");
+}) -> name("coursemanage");
+
 //font end use + test
 Route::get("course/quiz", function () {
     return view("quiz");
