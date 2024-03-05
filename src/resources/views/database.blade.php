@@ -9,20 +9,29 @@
 
 <body>
     <?php
-    $servername = "localhost";
-    $username = "root"; //ตามที่กำหนดให้
-    $password = ""; //ตามที่กำหนดให้
-    $dbname = "test";    //ตามที่กำหนดให้
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+    // 1. Connect to Database 
+    class MyDB extends SQLite3
+    {
+        function __construct()
+        {
+            $this->open('learnsite.db');
+        }
     }
-    echo "Connected successfully";
 
-    // close connection
-    mysqli_close($conn);
+    // 2. Open Database 
+    $db = new MyDB();
+    if (!$db) {
+        echo $db->lastErrorMsg();
+    } else {
+        echo "Opened database successfully<br>";
+    }
+
+    // 3. Query Execution
+    // SQL Statements
+
+
+    // 4. Close database
+    $db->close();
     ?>
 </body>
 
