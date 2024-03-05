@@ -76,7 +76,7 @@
     <div class="flex flex-row w-full ">
 
         <!-- just leftbar -->
-        <div class="leftbar w-[2%] flex-none border-orange-600 border-2"></div>
+        <div class="leftbar w-[2%] flex-none border-sky-600 border-2 "></div>
 
         <!-- content -->
         <div class="content flex flex-col flex-auto">
@@ -104,33 +104,48 @@
                 <h1 class="text-xl pl-16 font-bold">We also have skilled instructor</h1>
                 <p class="pl-24">They make our community stay flow and go forward with their reliable and knowledge </p>
 
+
                 <div class="flex flex-row mt-16 ml-28 overflow-hidden">
+                    <?php
+                    // 1. Connect to Database 
+                    class MyDB extends SQLite3
+                    {
+                        function __construct()
+                        {
+                            $this->open('fwp-db-file.db');
+                        }
+                    }
 
-                    <!-- <div class="border-orange-600 border-2 w-1/5 flex flex-col h-96 relative ml-20" >
-                        <img src="<?php echo e(asset('assets/nanachipfp.jpg')); ?>" class="w-full rounded-full z-10" alt="">
-                        <div class="absolute bg-sky-200 rounded-2xl w-[110%] pt-[100%] top-[40%] left-1/2 -translate-x-1/2"></div>
-                        <div class="absolute bg-sky-400 rounded-2xl text-center w-fit min-w-24 rounded-2xl p-1 top-[60%] left-1/2 -translate-x-1/2 z-20">Nanachi</div>
-                    </div> -->
+                    // 2. Open Database 
+                    $db = new MyDB();
+                    if (!$db) {
+                        echo $db->lastErrorMsg();
+                    } else {
+                        echo "Opened database successfully<br>";
+                    }
 
+                    // 3. Query Execution
+                    $sql = "SELECT * FROM Users WHERE Status='star' ";
+                    $ret = $db->query($sql);
+                    ?>
 
-                    <div class="flex flex-col items-center relative ml-20 overflow-hidden">
-                        <img src="<?php echo e(asset('assets/nanachipfp.jpg')); ?>" class="size-48  rounded-full" alt="">
-                        <div class="size-48 rounded-2xl absolute border-orange-600 border-2 top-32 flex flex-col items-center text-ellipsis">
-                            <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center ">Nanachi</div>
-                            <p class="text-center text-ellipsis overflow-hidden mt-2">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational </p>
+                    <?php while ($row = $ret->fetchArray(SQLITE3_ASSOC)) : ?>
+                        <div class="flex flex-col items-center relative ml-20 overflow-hidden">
+                            <img src="<?php echo "{{ asset('assets/nanachipfp.jpg') }};" ?>" class="size-48  rounded-full" alt="">
+                            <div class="size-48 rounded-2xl absolute border-orange-600 border-2 top-32 flex flex-col items-center text-ellipsis">
+                                <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center "><?php echo $row['Username']; ?></div>
+                                <p class="text-center text-ellipsis overflow-hidden mt-2">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational </p>
+                            </div>
+                            <div class="size-52 bg-sky-200 rounded-2xl relative" style="top: -4rem; z-index: -1;"></div>
                         </div>
-                        <div class="size-52 bg-sky-200 rounded-2xl relative" style="top: -4rem; z-index: -1;"></div>
-                    </div>
+                    <?php endwhile; ?>
 
-                    <div class="flex flex-col items-center relative ml-20 overflow-hidden">
-                        <img src="<?php echo e(asset('assets/nanachipfp.jpg')); ?>" class="size-48  rounded-full" alt="">
-                        <div class="size-48 rounded-2xl absolute border-orange-600 border-2 top-32 flex flex-col items-center text-ellipsis">
-                            <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center ">Nanachi</div>
-                            <p class="text-center text-ellipsis overflow-hidden mt-2">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational </p>
-                        </div>
-                        <div class="size-52 bg-sky-200 rounded-2xl relative" style="top: -4rem; z-index: -1;"></div>
-                    </div>
+                    <?php
+                    // 4. Close database
+                    $db->close();
+                    ?>
                 </div>
+                
             </div>
 
             <?php $currentPath = ""; ?>

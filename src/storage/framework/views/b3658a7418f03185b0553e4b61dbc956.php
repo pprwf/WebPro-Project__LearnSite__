@@ -1,12 +1,10 @@
 <!-- NAVBAR -->
 <div class="navbar bg-base-100 bg-secondary">
     <div class="flex-1">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-            <div class="w-25 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src="<?php echo e(asset('assets/LearnsiteLogo.jpg')); ?>" />
-            </div>
-        </div>
-        <a class="btn btn-ghost text-3xl ml-5">LearnSite</a>
+        <a  href="/" class=" flex flex-row">
+            <img src="<?php echo e(asset('assets/LearnsiteLogo.jpg')); ?>" alt="" class="size-11 rounded-full  ml-2">
+            <h1 id="" class="website_name text-3xl  ml-2">LearnSite</h1>
+        </a>
     </div>
 
     <ul class="p-2 bg-secondary rounded-t-none">
@@ -26,6 +24,7 @@
         </ul>
     </div>
 
+    <?php if(false): ?>
     <!--Change Theme-->
     <label class="swap swap-rotate ml-3">
 
@@ -41,7 +40,7 @@
         <svg class="swap-off fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
         </svg>
-
+    <?php endif;?>
     </label>
 </div>
 </div><?php /**PATH C:\Users\NITRO\Desktop\WebFund\LS_docker\WebPro-Project__LearnSite__\WebPro-Project__LearnSite__\src\resources\views/components/navbar2.blade.php ENDPATH**/ ?>
