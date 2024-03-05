@@ -19,6 +19,10 @@ Route::get("userhome", function () {
     return view("userhome");
 }) -> name("userhome");
 
+Route::get("instructorhome", function () {
+    return view("instructorhome");
+}) -> name("instructorhome");
+
 Route::get("courseinfo", function () {
     return view("courseinfo");
 }) -> name("courseinfo");
