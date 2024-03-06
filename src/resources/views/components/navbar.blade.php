@@ -9,7 +9,7 @@
 
 
 ?>
-<nav id="navbar" class="navbar bg-secondary flex justify-between bg-slate-50">
+<nav id="navbar" class="navbar bg-secondary flex justify-between bg-slate-50 shadow-md">
     <a  href="/">
         <img src="{{ asset('assets/LearnsiteLogo.jpg') }}" alt="" class="size-11 rounded-full  ml-2">
         <h1 id="" class="website_name text-3xl  ml-2">LearnSite</h1>

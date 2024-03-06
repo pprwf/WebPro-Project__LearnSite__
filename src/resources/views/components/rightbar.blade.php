@@ -1,6 +1,6 @@
 
 
-<div class="rightbar w-50 flex-none shadow-lg">
+<div class="rightbar w-50 flex-none shadow-lg sm:hidden lg:block">
     <div class="sticky top-0 overflow-hidden">
         <ul class="menu bg-gray-100 w-full ">
 

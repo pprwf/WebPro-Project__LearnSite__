@@ -1,6 +1,6 @@
 <div id="box<?php echo $recCourseOrder;?>" class="w-full flex-none flex justify-center carousel-item">
     <a href="<?php echo $recCourse["link"] ?>">
-        <div class="flex-none w-full md:w-[35rem] h-auto md:h-96 rounded-3xl overflow-hidden flex flex-col">
+        <div class="flex-none w-full md:w-[35rem] h-auto md:h-96 rounded-3xl overflow-hidden flex flex-col shadow-md">
             <!-- Course img -->
             <div class=" w-full h-40 md:h-[20rem] bg-center bg-cover" style="background-image: url(<?php echo $recCourse["titleImg"] ?>);"></div>
 
