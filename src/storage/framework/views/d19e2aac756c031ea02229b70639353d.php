@@ -26,21 +26,23 @@
             <div class="text-3xl text-warning text-center">Login to LearnSite</div>
             <div class="border-4 border-base-100 p-4">
                 <div class="space-y-4">
-                    <div class="text-lg text-neutral">Username or Email Address</div>
-                    <input type="text" placeholder="Enter Username" class="text-base input input-bordered input-info w-full" />
-                    <div class="text-lg text-neutral">Password</div>
-                    <input type="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full" />
-                    <div class="flex justify-center">
-                        <button class="btn btn-secondary text-xl w-64">Sign in</button>
-                    </div>
+                    <form action="" method="get">
+                        <div class="text-md text-neutral">Username or Email Address</div>
+                        <input type="text" placeholder="Enter Username" class="text-base input input-bordered input-info w-full" />
+
+                        <div class="text-md text-neutral mt-3">Password</div>
+                        <input type="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full" />
+                        <div class="flex justify-center mt-6">
+                            <button class="btn btn-secondary text-xl w-64">Sign in</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="text-center">
-                <a href="<?php echo e(route('regis')); ?>" class="text-xl link link-secondary">Don’t have an account?</a>
+                <a href="<?php echo e(route('regis')); ?>" class="text-lg link link-secondary">Don’t have an account?</a>
             </div>
         </div>
     </div>
 </body>
 
-</html>
-<?php /**PATH C:\Users\NITRO\Desktop\WebFund\LS_docker\WebPro-Project__LearnSite__\WebPro-Project__LearnSite__\src\resources\views/login.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\Users\NITRO\Desktop\WebFund\LS_docker\WebPro-Project__LearnSite__\WebPro-Project__LearnSite__\src\resources\views/login.blade.php ENDPATH**/ ?>

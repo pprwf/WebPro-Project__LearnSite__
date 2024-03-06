@@ -21,24 +21,25 @@
 </head>
 
 <body>
-    <div class="grid place-items-center h-screen">
+    <div class="grid place-items-center h-screen p-8">
         <div class="w-full max-w-md p-6 space-y-6 bg-white shadow-md rounded-lg">
             <div class="text-3xl text-warning text-center">Login to LearnSite</div>
             <div class="border-4 border-base-100 p-4">
                 <div class="space-y-4">
                     <form action="" method="get">
-                        <div class="text-lg text-neutral">Username or Email Address</div>
+                        <div class="text-md text-neutral">Username or Email Address</div>
                         <input type="text" placeholder="Enter Username" class="text-base input input-bordered input-info w-full" />
-                        <div class="text-lg text-neutral">Password</div>
+
+                        <div class="text-md text-neutral mt-3">Password</div>
                         <input type="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full" />
-                        <div class="flex justify-center">
+                        <div class="flex justify-center mt-6">
                             <button class="btn btn-secondary text-xl w-64">Sign in</button>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="text-center">
-                <a href="{{ route('regis') }}" class="text-xl link link-secondary">Don’t have an account?</a>
+                <a href="{{ route('regis') }}" class="text-lg link link-secondary">Don’t have an account?</a>
             </div>
         </div>
     </div>

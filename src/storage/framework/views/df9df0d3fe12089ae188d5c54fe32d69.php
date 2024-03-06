@@ -106,44 +106,14 @@
 
 
                 <div class="flex flex-row mt-16 ml-28 overflow-hidden">
-                    <?php
-                    // 1. Connect to Database 
-                    class MyDb extends SQLite3
-                    {
-                        function __construct()
-                        {
-                            $this->open('learnsite.db');
-                        }
-                    }
-
-                    // 2. Open Database 
-                    $db = new MyDb();
-                    if (!$db) {
-                        echo $db->lastErrorMsg();
-                    } else {
-                        echo "Opened database successfully<br>";
-                    }
-
-                    // 3. Query Execution
-                    $sql = "SELECT * FROM Users WHERE Status='star' ";
-                    $ret = $db->query($sql);
-                    ?>
-
-                    <?php while ($row = $ret->fetchArray(SQLITE3_ASSOC)) : ?>
-                        <div class="flex flex-col items-center relative ml-20 overflow-hidden">
-                            <img src="<?php echo "{{ asset('assets/nanachipfp.jpg') }};" ?>" class="size-48  rounded-full" alt="">
-                            <div class="size-48 rounded-2xl absolute border-orange-600 border-2 top-32 flex flex-col items-center text-ellipsis">
-                                <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center "><?php echo $row['Username']; ?></div>
-                                <p class="text-center text-ellipsis overflow-hidden mt-2">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational </p>
-                            </div>
-                            <div class="size-52 bg-sky-200 rounded-2xl relative" style="top: -4rem; z-index: -1;"></div>
+                    <div class="flex flex-col items-center relative ml-20 overflow-hidden">
+                        <img src="<?php echo e(asset('assets/nanachipfp.jpg')); ?>"  class="size-48  rounded-full" alt="">
+                        <div class="size-48 rounded-2xl absolute border-orange-600 border-2 top-32 flex flex-col items-center text-ellipsis">
+                            <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center ">Nanachi</div>
+                            <p class="text-center text-ellipsis overflow-hidden mt-2">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational </p>
                         </div>
-                    <?php endwhile; ?>
-
-                    <?php
-                    // 4. Close database
-                    $db->close();
-                    ?>
+                        <div class="size-52 bg-sky-200 rounded-2xl relative" style="top: -4rem; z-index: -1;"></div>
+                    </div>
                 </div>
 
             </div>
