@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <div class="grid place-items-center h-screen">
+    <div class="grid place-items-center h-screen p-8">
         <div class="w-full max-w-md p-6 space-y-6 bg-white shadow-md rounded-lg">
             <div class="text-3xl text-warning text-center">Login to LearnSite</div>
             <div class="border-4 border-base-100 p-4">

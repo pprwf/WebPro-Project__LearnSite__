@@ -79,8 +79,8 @@
         <div class="leftbar w-[2%] flex-none border-sky-600 border-2 "></div>
 
         <!-- content -->
-        <div class="content flex flex-col flex-auto">
-
+        <div class="content flex flex-col flex-auto relative">
+        <div class="w-full h-[50rem] absolute bottom-0 bg-gradient-to-t from-blue-900 from-30% to"></div>
             <!-- whatwill -->
             <div class="flex flex-row mt-20">
                 <div class="pr-16 w-3/4">
@@ -108,9 +108,9 @@
                 <div class="flex flex-row mt-16 ml-28 overflow-hidden">
                     <div class="flex flex-col items-center relative ml-20 overflow-hidden">
                         <img src="<?php echo e(asset('assets/nanachipfp.jpg')); ?>"  class="size-48  rounded-full" alt="">
-                        <div class="size-48 rounded-2xl absolute border-orange-600 border-2 top-32 flex flex-col items-center text-ellipsis">
+                        <div class="size-48 rounded-2xl absolute top-32 flex flex-col items-center text-ellipsis">
                             <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center ">Nanachi</div>
-                            <p class="text-center text-ellipsis overflow-hidden mt-2">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational </p>
+                            <p class="text-center text-ellipsis overflow-hidden mt-3">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational </p>
                         </div>
                         <div class="size-52 bg-sky-200 rounded-2xl relative" style="top: -4rem; z-index: -1;"></div>
                     </div>

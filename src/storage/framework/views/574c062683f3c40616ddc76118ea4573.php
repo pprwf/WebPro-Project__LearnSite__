@@ -1,11 +1,11 @@
-<div id="box<?php echo $recCourseOrder;?>" class="w-full flex-none border-red-600 border-2 flex justify-center carousel-item">
+<div id="box<?php echo $recCourseOrder;?>" class="w-full flex-none flex justify-center carousel-item">
     <a href="<?php echo $recCourse["link"] ?>">
-        <div class="flex-none w-full md:w-[35rem] h-auto md:h-96 border-green-600 border-2 rounded-3xl overflow-hidden flex flex-col">
+        <div class="flex-none w-full md:w-[35rem] h-auto md:h-96 rounded-3xl overflow-hidden flex flex-col">
             <!-- Course img -->
-            <div class="border-orange-600 border-2 w-full h-40 md:h-[20rem] bg-center bg-cover" style="background-image: url(<?php echo $recCourse["titleImg"] ?>);"></div>
+            <div class=" w-full h-40 md:h-[20rem] bg-center bg-cover" style="background-image: url(<?php echo $recCourse["titleImg"] ?>);"></div>
 
             <!-- Course Descript -->
-            <div class="flex flex-col flex-auto justify-between p-4">
+            <div class="flex flex-col flex-auto justify-between p-4 bg-white">
                 <h1 class="text-2xl font-bold flex-auto"> <?php echo $recCourse["title"] ?> </h1>
                 <!-- Course Detail -->
                 <div class="flex flex-row flex-initial flex-wrap md:flex-nowrap">
