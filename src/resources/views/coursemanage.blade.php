@@ -40,12 +40,12 @@
         <!-- content -->
         <div class="content flex flex-col flex-auto md:w-full">
             <div class="pl-4 md:pl-16">
-                <label for="" class="text-lx mt-2.5">Finding course</label><br>
+                <label for="" class="text-lx mt-2.5">ค้นหาคอร์ส</label><br>
                 <input type="text" placeholder="insert name" class="input input-bordered input-sm w-60 max-w-xs text-xs mt-1.5 text-info-content" />
             </div>
             <br>
             <div class="pl-4 md:pl-16">
-                <label for="" class="text-lx mt-2.5">Add course</label><br>
+                <label for="" class="text-lx mt-2.5">เพิ่มคอร์ส</label><br>
                 <input type="text" placeholder="course name" class="input input-bordered input-sm w-60 max-w-xs text-xs mt-1.5 text-info-content" />
                 <input type="text" placeholder="description" class="input input-bordered input-sm w-60 max-w-xs text-xs mt-1.5 text-info-content" />
                 
@@ -56,7 +56,7 @@
 
                 </form>
             </div>
-            <h1 class="text-4xl pl-4 md:pl-16 font-bold mb-5 mt-8">All Course</h1>
+            <h1 class="text-4xl pl-4 md:pl-16 font-bold mb-5 mt-8">ทุกคอร์ส</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-0 mt-5 mb-5 ml-7 mr-7">
                 <!-- <p>create 12/12/62</p> -->
                 <?php
@@ -110,9 +110,9 @@
         <!-- rightbar (id to find => text) -->
         <?php
         $rightbarList = array(
-            "#navbar" => "Welcome",
-            "#whatwill" => "What will you get",
-            "#recommended" => "Recommended Course",
+            "#navbar" => "ยินดีต้อนรับ",
+            "#whatwill" => "สิ่งที่คุณจะได้รับ",
+            "#recommended" => "คอร์สแนะนำ",
         );
         ?>
         @include('components.rightbar')

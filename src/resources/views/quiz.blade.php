@@ -51,6 +51,7 @@
         </div>
     </div>
     </div>
+    
 
     <!--Footer -->
     @include('components.footer')
