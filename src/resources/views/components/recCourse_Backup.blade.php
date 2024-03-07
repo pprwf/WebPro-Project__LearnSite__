@@ -1,5 +1,5 @@
 <div id="recommended" class="grid w-full overflow-hidden relative mb-16 mt-4">
-    <div class="text-4xl pl-16 font-bold mb-12">Recommended Course</div>
+    <div class="text-4xl pl-16 font-bold mb-12">คอร์สแนะนำ/div>
 
 
     <div class="w-full carousel flex flex-row mt-6 " >

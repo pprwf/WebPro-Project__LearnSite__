@@ -21,8 +21,8 @@
         // }
         ?>
 
-        <a class="btn btn-ghost text-xl text-slate-200" href="allcourse">All course</a>
-        <a class="btn btn-ghost text-xl text-slate-200" href="userhome">My course</a>
+        <a class="btn btn-ghost text-xl text-slate-200" href="allcourse">ทุกคอร์ส</a>
+        <a class="btn btn-ghost text-xl text-slate-200" href="userhome">คอร์สของฉัน</a>
 
         <div class="dropdown dropdown-end ml-3 mr-3">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
