@@ -1,4 +1,4 @@
-<a href="">
+<a href="" class="shadow-md">
     <div class="card card-compact w-60 bg-base-100 shadow-xl m-2 shadow-2xl">
         <figure><img src="https://assets.xboxservices.com/assets/1d/5b/1d5bc84f-2135-4e2f-8ca6-bb000d97db7f.jpg?n=Elden-Ring_GLP-Poster-Image-1084_1920x1080.jpg" alt="Shoes" /></figure>
         <div class="card-body overflow-hidden yellow rounded-b-2xl">

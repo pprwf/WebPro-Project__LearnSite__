@@ -41,59 +41,70 @@
 <body>
 
     <dialog id="my_modal_4" class="modal">
-        <div class="modal-box w-11/12 max-w-5xl m-5">
-            <h3 class="font-bold text-lg">Search: wdqwdqwfwqf</h3>
-            <p class="py-4">here are result</p>
+        <div class="modal-box w-5/12 max-w-5xl m-5">
+            <!-- upper box -->
+            <form class="flex flex-row mt-2">
+                <div class="flex-none">
+                    <h3 class="font-bold text-2xl">Rating and Review</h3>
+                    <div class="flex flex-row items-center mt-3">
+                        <!-- star -->
+                        <p class="text-2xl font-bold">4.1</p>
+                        <div class="rating rating-sm ml-2">
+                            <?php
+                            $checked = false;
+                            for ($i = 1; $i <= 5; $i++) {
+                                echo '<input type="radio" name="rating-6" class="mask disable-click mask-star-2 bg-red-600"';
+                                if (3 * 10 < $i * 10 + 5 && $checked == false) {
+                                    echo 'checked';
+                                    $checked = true;
+                                }
+                                echo '/>';
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 ml-12 mr-10 border rounded-md">
+                    <textarea class="textarea textarea-ghost w-full" placeholder="Write your"></textarea>
+                    <hr class="w-[90%]  mx-auto">
+                    <div class="grid grid-cols-2 items-center ml-2 p-2">
+                        <!-- star -->
+                        <div class="rating rating-sm">
+                            <?php
+                            $checked = false;
+                            for ($i = 1; $i <= 5; $i++) {
+                                echo '<input type="radio" name="rating-6" class="mask mask-star-2 bg-red-600"';
+                                if (3 * 10 < $i * 10 + 5 && $checked == false) {
+                                    echo 'checked';
+                                    $checked = true;
+                                }
+                                echo '/>';
+                            }
+                            ?>
+                        </div>
+                        <input type="submit" onclick="my_modal_4.showModal()" class=" btn btn-sm w-10s text-xs text-gray-100 bg-blue-500 shadow-md justify-self-end" value="Submit" />
+                    </div>
+                </div>
+            </form>
+            <!-- lower box -->
+            <div>
+                <div class="w-full border rounded-md mt-12 min-h-20 bg-slate-50">
+                    <!-- each review box -->
+                    <div class="w-10/12 border border-slate-400 rounded-lg mx-12 my-8 min-h-20 p-4">
+                        <div class="flex flex-row items-center">
+                            <img class="rounded-full h-12 " src="{{ asset('assets/nanachipfp.jpg') }}" alt="">
+                            <p class="ml-4">NA</p>
+                        </div>
+                        <p class="text-sm mt-3">Chippy Chippy</p>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="modal-action">
                 <form method="dialog">
                     <button class="btn btn-md btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
-            </div>
-            <?php
-            $recCourseList = array(
-                array(
-                    "title" => "Elden Ring",
-                    "titleImg" => "https://assets.xboxservices.com/assets/1d/5b/1d5bc84f-2135-4e2f-8ca6-bb000d97db7f.jpg?n=Elden-Ring_GLP-Poster-Image-1084_1920x1080.jpg",
-                    "description" => "The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression",
-                    "instructor1" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-                    "instructor2" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-                    "instructor3" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-                    "rating" => "3.4",
-                    "time" => "25",
-                    "link" => ""
-                ),
-                array(
-                    "title" => "Minecraft",
-                    "titleImg" => "https://store-images.s-microsoft.com/image/apps.60323.13774133678237924.758ba261-9ad2-4b6c-aae4-54f1307835d0.5c6bbf61-af87-400b-ae20-330496c5a9ac?q=90&w=480&h=270",
-                    "description" => "The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression",
-                    "instructor1" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-                    "instructor2" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-                    "instructor3" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-                    "rating" => "3.4",
-                    "time" => "25",
-                    "link" => "https://www.minecraft.net/en-us"
-                ),
-                array(
-                    "title" => "Dog",
-                    "titleImg" => "https://cdn.cloudflare.steamstatic.com/steam/apps/391540/header.jpg?t=1579096091",
-                    "description" => "The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression",
-                    "instructor1" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-                    "instructor2" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-                    "instructor3" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-                    "rating" => "3.4",
-                    "time" => "25",
-                    "link" => ""
-                )
-            );
-            $recCourseOrder = 10;
-            ?>
-            <div class="w-full flex flex-col">
-                <?php foreach ($recCourseList as $recCourse) : ?>
-                    <?php $recCourseOrder += 1; ?>
-
-                    @include('components.recCourseItem')
-                    <br>
-                <?php endforeach; ?>
             </div>
         </div>
     </dialog>
@@ -116,7 +127,7 @@
             <!-- <p class="py-4">if you leave course use must enroll again to enter the course</p> -->
             <form action="" class="grid content-start">
                 <div class="text-md text-neutral mt-5">Title</div>
-                <input type="text" id="title" name="title" placeholder="Enter title" class="text-base input input-md input-bordered input-info w-full mt-1" required/>
+                <input type="text" id="title" name="title" placeholder="Enter title" class="text-base input input-md input-bordered input-info w-full mt-1" required />
                 <input type="submit" onclick="" class="btn btn-sm w-10s text-xs mt-1.5 text-gray-100 bg-green-600 bottom-3 right-3 shadow-md justify-self-end" value="Submit" />
             </form>
 
@@ -155,7 +166,7 @@
     <div class="flex flex-row w-full ">
 
         <!-- just leftbar -->
-        <div class="leftbar w-[2%] flex-none border-orange-600 border-2"></div>
+        <div class="leftbar w-[2%] flex-none border-sky-600 border-r-2 "></div>
 
         <!-- content -->
         <div class="content flex flex-col flex-auto">
@@ -222,14 +233,14 @@
 
             <!-- content zone -->
             <div class="w-full flex flex-col">
-                <div class="flex flex-row w-full ">
-                <input type="submit" onclick="modal_add_label.showModal()" class=" btn btn-sm btn-outline border-dashed text-xs ml-12 mt-5 mb-3 text-gray-800 shadow-md rounded-full" value="+ Add label" />
+                <div class="flex flex-row w-full justify-center">
+                    <input type="submit" onclick="modal_add_label.showModal()" class=" btn btn-sm btn-outline border-dashed text-xs mt-6 mb-8 text-gray-800 shadow-md rounded-full" value="+ Add label" />
                 </div>
                 <?php for ($a = 0; $a < 3; $a++) : ?>
                     <!-- week label -->
-                    <div class="flex flex-row w-full min-h-96 px-12 mb-8">
+                    <div class="flex flex-row w-full min-h-60 px-16 mb-12">
                         <!-- content -->
-                        <div class="grid bg-gray-200 flex-1 content-start p-2 pl-4">
+                        <div class="grid bg-gray-100 flex-1 content-start p-2 pl-4">
                             <h1 class="text-lg mb-2">Week 01: Introducing Today Technology [Kitsuchart Pasupa]</h1>
                             <?php for ($i = 0; $i < 3; $i++) : ?>
                                 <div class="flex flex-row p-1 ml-5 mb-2">
@@ -238,12 +249,12 @@
                                 </div>
                             <?php endfor; ?>
                         </div>
-                        
+
                         <!-- setting inner -->
-                        <div class="flex flex-col items-center bg-gray-300 p-2">
+                        <div class="flex flex-col items-center bg-stone-200 p-2">
                             <label class="btn btn-md btn-circle bg-white swap swap-rotate shadow-md">
                                 <!-- this hidden checkbox controls the state -->
-                                <input type="checkbox" onclick="settingVisibleControll(this.parentNode.parentNode.children[1])"/>
+                                <input type="checkbox" onclick="settingVisibleControll(this.parentNode.parentNode.children[1])" />
                                 <!-- hamburger icon -->
                                 <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
                                     <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
@@ -272,16 +283,17 @@
                 <?php endfor; ?>
 
                 <script>
-                    function settingVisibleControll(target){
-                        if(target.style.display == "none"){
+                    function settingVisibleControll(target) {
+                        if (target.style.display == "none") {
                             target.style.display = "flex";
                             target.style.flexDirection = "column";
-                        }else{
+                        } else {
                             target.style.display = "none";
                             // alert("none");
                         }
                     }
-                    function getSettingForm(parent){
+
+                    function getSettingForm(parent) {
                         document.getElementById("")
                     }
                 </script>

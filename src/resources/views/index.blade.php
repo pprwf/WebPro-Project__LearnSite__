@@ -77,11 +77,11 @@
     <div class="flex flex-row w-full ">
 
         <!-- just leftbar -->
-        <div class="leftbar w-[2%] flex-none border-sky-600 border-2 "></div>
+        <div class="leftbar w-[2%] flex-none border-sky-600 border-r-2 "></div>
 
         <!-- content -->
-        <div class="content flex flex-col flex-auto relative">
-        <div class="w-full h-[50rem] absolute bottom-0 bg-gradient-to-t from-blue-950 from-30% to-90%"></div>
+        <div class="content flex flex-col flex-auto relative overflow-hidden">
+            <div class="absolute w-full h-[50rem] bottom-0 bg-gradient-to-t from-slate-100 from-30% to-90% -z-[1]"></div>
             <!-- whatwill -->
             <div class="flex flex-row mt-20">
                 <div class="pr-16 w-3/4">

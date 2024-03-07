@@ -45,4 +45,5 @@
     </div>
 </body>
 
-</html><?php /**PATH C:\Users\NITRO\Desktop\WebFund\LS_docker\WebPro-Project__LearnSite__\WebPro-Project__LearnSite__\src\resources\views/login.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH C:\Users\NITRO\Desktop\WebFund\LS_docker\WebPro-Project__LearnSite__\WebPro-Project__LearnSite__\src\resources\views/login.blade.php ENDPATH**/ ?>

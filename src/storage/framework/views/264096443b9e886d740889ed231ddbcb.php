@@ -1,5 +1,5 @@
-<div id="recommended" class="grid w-full overflow-hidden relative mb-16">
-    <div class="text-4xl pl-16 font-bold mb-5">Recommended Course</div>
+<div id="recommended" class="grid w-full overflow-hidden relative mb-16 mt-4">
+    <div class="text-4xl pl-16 font-bold mb-12">Recommended Course</div>
 
 
     <div class="w-full carousel flex flex-row mt-6 " >
@@ -45,8 +45,8 @@
 
         <!-- Button -->
         <div class="absolute flex justify-between top-1/2 left-1/2 -translate-x-1/2 w-[48rem] z-10">
-            <a id="btn-rc-l" class="btn btn-circle scale-110 btn-lg" href="#box0" onclick="changeOrderToLeft()">❮</a>
-            <a id="btn-rc-r" class="btn btn-circle scale-110 btn-lg" href="#box2" onclick="changeOrderToRight()">❯</a>
+            <a id="btn-rc-l" class="btn btn-circle scale-110 btn-lg bg-white border-2 border-slate-500" href="#box0" onclick="changeOrderToLeft()">❮</a>
+            <a id="btn-rc-r" class="btn btn-circle scale-110 btn-lg bg-white border-2 border-slate-500" href="#box2" onclick="changeOrderToRight()">❯</a>
         </div>
         <script>
             disable_pointer("btn-rc-l");

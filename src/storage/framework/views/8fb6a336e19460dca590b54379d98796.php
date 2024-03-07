@@ -10,7 +10,7 @@
 
 ?>
 <nav id="navbar" class="navbar bg-secondary flex justify-between bg-slate-50 shadow-md">
-    <a  href="/">
+    <a href="/">
         <img src="<?php echo e(asset('assets/LearnsiteLogo.jpg')); ?>" alt="" class="size-11 rounded-full  ml-2">
         <h1 id="" class="website_name text-3xl  ml-2">LearnSite</h1>
     </a>
@@ -20,11 +20,6 @@
             echo '<a class="btn btn-ghost text-xl" href="' . $link . '">' . $name . '</a>';
         }
         ?>
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-            <div class="w-25 rounded-full">
-            <img src="<?php echo e(asset('assets/nanachipfp.jpg')); ?>" class="size-48  rounded-full border-orange-600 border-4" alt="">
-            </div>
-        </div>
     </div>
 </nav>
 

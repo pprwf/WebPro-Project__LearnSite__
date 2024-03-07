@@ -19,6 +19,7 @@
 
         .hero {
             height: 85%;
+            background-image: url('assets/Learnsitebg.png');
         }
 
         .herocon {
@@ -51,7 +52,7 @@
     <?php echo $__env->make('components.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
-    <div class="hero min-w-screen w-full overflow-hidden" style="background-image: url(<?php echo e(asset('assets/Learnsitebg.png')); ?>);">
+    <div class="hero min-w-screen w-full overflow-hidden">
         <div class="flex-col herocon pl-24 text-base-100">
             <div class="flex-auto grid items-center overflow-hidden">
                 <div class="mb-16">
@@ -76,11 +77,11 @@
     <div class="flex flex-row w-full ">
 
         <!-- just leftbar -->
-        <div class="leftbar w-[2%] flex-none border-sky-600 border-2 "></div>
+        <div class="leftbar w-[2%] flex-none border-sky-600 border-r-2 "></div>
 
         <!-- content -->
-        <div class="content flex flex-col flex-auto relative">
-        <div class="w-full h-[50rem] absolute bottom-0 bg-gradient-to-t from-blue-950 from-30% to-90%"></div>
+        <div class="content flex flex-col flex-auto relative overflow-hidden">
+            <div class="absolute w-full h-[50rem] bottom-0 bg-gradient-to-t from-slate-100 from-30% to-90% -z-[1]"></div>
             <!-- whatwill -->
             <div class="flex flex-row mt-20">
                 <div class="pr-16 w-3/4">
@@ -139,4 +140,5 @@
 
 </body>
 
-</html><?php /**PATH C:\Users\NITRO\Desktop\WebFund\LS_docker\WebPro-Project__LearnSite__\WebPro-Project__LearnSite__\src\resources\views/index.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH C:\Users\NITRO\Desktop\WebFund\LS_docker\WebPro-Project__LearnSite__\WebPro-Project__LearnSite__\src\resources\views/index.blade.php ENDPATH**/ ?>
