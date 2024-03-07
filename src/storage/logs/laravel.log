@@ -7917,3 +7917,29 @@ Did you mean one of these?
 #53 C:\\Users\\NITRO\\Desktop\\WebFund\\LS_docker\\WebPro-Project__LearnSite__\\WebPro-Project__LearnSite__\\src\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\NITRO\\\\...')
 #54 {main}
 "} 
+[2024-03-07 14:27:21] local.ERROR: Command "migate" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"migate\" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status at C:\\Users\\HP\\OneDrive\\Desktop\\KMITL\\ปี 2 เทอม 2\\Project\\Fun_Web\\WebPro-Project__LearnSite__\\src\\vendor\\symfony\\console\\Application.php:737)
+[stacktrace]
+#0 C:\\Users\\HP\\OneDrive\\Desktop\\KMITL\\ปี 2 เทอม 2\\Project\\Fun_Web\\WebPro-Project__LearnSite__\\src\\vendor\\symfony\\console\\Application.php(266): Symfony\\Component\\Console\\Application->find('migate')
+#1 C:\\Users\\HP\\OneDrive\\Desktop\\KMITL\\ปี 2 เทอม 2\\Project\\Fun_Web\\WebPro-Project__LearnSite__\\src\\vendor\\symfony\\console\\Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 C:\\Users\\HP\\OneDrive\\Desktop\\KMITL\\ปี 2 เทอม 2\\Project\\Fun_Web\\WebPro-Project__LearnSite__\\src\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(201): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\HP\\OneDrive\\Desktop\\KMITL\\ปี 2 เทอม 2\\Project\\Fun_Web\\WebPro-Project__LearnSite__\\src\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 {main}
+"} 

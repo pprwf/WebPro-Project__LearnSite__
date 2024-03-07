@@ -45,7 +45,7 @@
                                 <label><input type="radio" class="radio mt-2" name="ans" value="D"> Without</label>
                             </div>
                         </div>
-                        <button class="btn btn-outline ml-96" type="submit">Submit</button>
+                        <button class="btn btn-outline ml-96" type="submit">ส่งข้อสอบ</button>
                 </form>
             </div>
         </div>
