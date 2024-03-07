@@ -19,8 +19,22 @@
         }
     </style>
 </head>
-
 <body>
+    <?php
+        //* access which table
+        use App\Models\User;
+
+        var_dump(User::get());
+        // User::create([
+        //     "username" => $_GET["username"],
+        //     "password" => $_GET["password"],
+        //     "email" => $_GET["email"],
+        //     "fname" => $_GET["fname"],
+        //     "lname" => $_GET["lname"],
+        //     "phone" => $_GET["phone"],
+        //     "role" => ($_GET["role"] == "Teacher") ? 1 : 0
+        // ]);
+    ?>
     <div class="grid place-items-center min-h-screen p-8 ">
         <div class="w-full max-w-md p-6 space-y-3 bg-white shadow-md rounded-lg">
             <div class="text-3xl text-warning text-center">Register to LearnSite</div>
@@ -33,16 +47,16 @@
                     <form action="{{ route('userhome') }}" method="get">
                         
                         <div class="text-md text-neutral">Firstname</div>
-                        <input type="text" placeholder="Enter Firstname" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="text" name="fname" placeholder="Enter Firstname" class="text-base input input-bordered input-info w-full mt-1" required/>
                         <div class="text-md text-neutral mt-5">Lastname</div>
-                        <input type="text" placeholder="Enter Lastname" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="text" name="lname" placeholder="Enter Lastname" class="text-base input input-bordered input-info w-full mt-1" required/>
                         <div class="text-md text-neutral mt-5">Phone number</div>
-                        <input type="text" placeholder="Enter Phone number" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="text" name="phone" placeholder="Enter Phone number" class="text-base input input-bordered input-info w-full mt-1" required/>
                         <div class="text-md text-neutral mt-5">Select a Role</div>
-                        <select class="select text-base bg-sky-100 mt-1">
+                        <select name="role" class="select text-base bg-sky-100 mt-1">
                             <option disabled selected>Select Role</option>
-                            <option>Student</option>
-                            <option>Teacher</option>
+                            <option value=1>Student</option>
+                            <option value=2>Teacher</option>
                         </select>
                         <button class="btn btn-secondary text-xl w-full mt-8">Register</button>
                     </form>
@@ -52,11 +66,11 @@
                     <?php else: ?>
                     <form action="{{ route('regis') }}" method="get">
                         <div class="text-md text-neutral">Username</div>
-                        <input type="text" placeholder="Enter Username" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="text" name="username" placeholder="Enter Username" class="text-base input input-bordered input-info w-full mt-1" required/>
                         <div class="text-md text-neutral mt-5">Email Address</div>
-                        <input type="email" placeholder="Enter Email Address" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="email" name="email" placeholder="Enter Email Address" class="text-base input input-bordered input-info w-full mt-1" required/>
                         <div class="text-md text-neutral mt-5">Password</div>
-                        <input type="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="password" name="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full mt-1" required/>
                         <div class="text-md text-neutral mt-5">Confirm Password</div>
                         <input type="password" placeholder="Enter Confirm Password" class="text-base input input-bordered input-info w-full mt-1" required/>
                         <button class="btn btn-secondary text-xl w-full mt-8" name="next">Next</button>

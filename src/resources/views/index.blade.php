@@ -19,6 +19,7 @@
 
         .hero {
             height: 85%;
+            background-image: url('assets/Learnsitebg.png');
         }
 
         .herocon {
@@ -51,7 +52,7 @@
     @include('components.navbar')
 
 
-    <div class="hero min-w-screen w-full overflow-hidden" style="background-image: url({{ asset('assets/Learnsitebg.png') }});">
+    <div class="hero min-w-screen w-full overflow-hidden">
         <div class="flex-col herocon pl-24 text-base-100">
             <div class="flex-auto grid items-center overflow-hidden">
                 <div class="mb-16">
