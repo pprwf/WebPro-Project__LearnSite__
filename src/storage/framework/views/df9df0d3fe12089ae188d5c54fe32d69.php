@@ -56,17 +56,17 @@
         <div class="flex-col herocon pl-24 text-base-100">
             <div class="flex-auto grid items-center overflow-hidden">
                 <div class="mb-16">
-                    <p class="text-2xl">Wellcome to</p>
+                    <p class="text-2xl">ยินดีต้อนรับเข้าสู่</p>
                     <h1 class="website_name text-8xl font-bold mt-12 text-cyan-300">LearnSite</h1>
                     <hr class="mr-200">
-                    <p class="text-xs mt-2.5">If you looking for the place to learning through website <strong>JOIN US!</strong>
-                        <br>we have ton of course you must like
+                    <p class="text-xs mt-2.5">ถ้าคุณกำลังมองหาเว็บไซต์สำหรับเรียนออนไลน์อยู่ล่ะก็ <strong>มาเข้าร่วมกับเราสิ!</strong>
+                        <br>พวกเรามีคอร์สเรียนมากมายที่คุณจะต้องชอบอย่างแน่นอน
                     </p>
                 </div>
             </div>
 
             <div class="flex-none mb-4">
-                <p class="text-1xl">Scroll for more</p>
+                <p class="text-1xl">เลื่อนลงเพื่อดูเพิ่มเติม</p>
             </div>
         </div>
     </div>
@@ -85,7 +85,7 @@
             <!-- whatwill -->
             <div class="flex flex-row mt-20">
                 <div class="pr-16 w-3/4">
-                    <h1 class="text-4xl pl-16 font-bold">WHAT WILL YOU GET</h1>
+                    <h1 class="text-4xl pl-16 font-bold">เกี่ยวกับ Learnsite</h1>
                     <br class="mt-20">
                     <br class="mt-20">
                     <p class="pl-16 indent-8">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational aspirations.</p>
