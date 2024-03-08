@@ -55,8 +55,8 @@
             $rightbarList = array(
                 "#name" => "<h1 class='text-lg'>Phakin Janjumlong</h1>",
                 "#username" => "<p>@Pakinza007</p>",
-                "#editprofile" => "Edit Profile",
-                "#logout" => "Logout",
+                "#editprofile" => "แก้ไขโปรไฟล์",
+                "#logout" => "ลงทะเบียนออก",
             );
             ?>
             @include('components.rightbar')
