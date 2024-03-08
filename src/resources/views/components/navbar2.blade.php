@@ -31,8 +31,8 @@
                 </div>
             </div>
             <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                <li><a href="{{ route('profile') }}" class="justify-between">Profile<span class="badge">New</span></a></li>
-                <li><a href="{{ route('home') }}">Logout</a></li>
+                <li><a href="{{ route('profile') }}" class="justify-between">โปรไฟล์<span class="badge">ใหม่</span></a></li>
+                <li><a href="{{ route('home') }}">ลงทะเบียนออก</a></li>
             </ul>
         </div>
     </div>
