@@ -40,6 +40,8 @@
 
 <body>
 
+<!--Card For Rating and Review-->
+
     <dialog id="my_modal_4" class="modal">
         <div class="modal-box w-5/12 max-w-5xl m-5">
             <!-- upper box -->
@@ -109,6 +111,10 @@
         </div>
     </dialog>
 
+<!-- END CARD -->
+
+<!-- Card Leave Course-->
+
     <dialog id="my_modal_5" class="modal">
         <div class="modal-box w-11/12 max-w-5xl">
             <h3 class="font-bold text-lg">Are you sure to leave course</h3>
@@ -120,6 +126,11 @@
             </div>
         </div>
     </dialog>
+
+<!-- END CARD -->
+
+
+<!-- Card Leave Course-->
 
     <dialog id="modal_add_label" class="modal">
         <div class="modal-box w-5/12">
@@ -138,6 +149,8 @@
             </div>
         </div>
     </dialog>
+
+<!-- END CARD -->
 
     <?php
     $recCourse = array(
@@ -199,6 +212,7 @@
                         </div>
                         <br>
                         <input type="submit" onclick="my_modal_4.showModal()" class=" btn btn-sm w-10s text-xs mt-1.5 text-gray-100 bg-blue-500 shadow-md" value="Rating" />
+                        <!-- USE showModal() For Show Card -->
                     </div>
                 </div>
 
@@ -276,7 +290,7 @@
 
                         <!-- setting outter -->
                         <div class="flex flex-col items-center justify-center border-2 border-current hidden">
-                            <button class="btn btn-xs btn-square"> up</button>
+                            <button class="btn btn-xs btn-square">up</button>
                             <button class="btn btn-xs btn-square">down</button>
                         </div>
                     </div>
@@ -304,9 +318,9 @@
         <!-- rightbar (id to find => text) -->
         <?php
         $rightbarList = array(
-            "#navbar" => "Welcome",
-            "#whatwill" => "What will you get",
-            "#recommended" => "Recommended Course",
+            "#navbar" => "ยินดีต้อนรับ",
+            "#whatwill" => "สิ่งที่คุณจะได้รับ",
+            "#recommended" => "คอร์สแนะนำ",
         );
         ?>
         <?php echo $__env->make('components.rightbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

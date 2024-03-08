@@ -23,23 +23,23 @@
 <body>
     <div class="grid place-items-center h-screen p-8">
         <div class="w-full max-w-md p-6 space-y-6 bg-white shadow-md rounded-lg">
-            <div class="text-3xl text-warning text-center">Login to LearnSite</div>
+            <div class="text-3xl text-warning text-center">เข้าสู่ระบบ</div>
             <div class="border-4 border-base-100 p-4">
                 <div class="space-y-4">
                     <form action="" method="get">
-                        <div class="text-md text-neutral">Username or Email Address</div>
+                        <div class="text-md text-neutral">Username หรือ อีเมล</div>
                         <input type="text" placeholder="Enter Username" class="text-base input input-bordered input-info w-full" />
 
-                        <div class="text-md text-neutral mt-3">Password</div>
+                        <div class="text-md text-neutral mt-3">รหัสผ่าน</div>
                         <input type="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full" />
                         <div class="flex justify-center mt-6">
-                            <button class="btn btn-secondary text-xl w-64">Sign in</button>
+                            <button class="btn btn-secondary text-xl w-64">เข้าสู่ระบบ</button>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="text-center">
-                <a href="<?php echo e(route('regis')); ?>" class="text-lg link link-secondary">Don’t have an account?</a>
+                <a href="<?php echo e(route('regis')); ?>" class="text-lg link link-secondary">ยังไม่มีบัญชี?</a>
             </div>
         </div>
     </div>

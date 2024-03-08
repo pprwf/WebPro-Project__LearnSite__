@@ -44,9 +44,9 @@
     <!-- navbar (name => link)-->
     <?php
     $navList = array(
-        "Course" => "courseinfo",
-        "Register" => "register",
-        "Login" => "login",
+        "คอร์สทั้งหมด" => "courseinfo",
+        "สมัครสมาชิก" => "register",
+        "เข้าสู่ระบบ" => "login",
     );
     ?>
     <?php echo $__env->make('components.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -59,7 +59,7 @@
                     <p class="text-2xl">ยินดีต้อนรับเข้าสู่</p>
                     <h1 class="website_name text-8xl font-bold mt-12 text-cyan-300">LearnSite</h1>
                     <hr class="mr-200">
-                    <p class="text-xs mt-2.5">ถ้าคุณกำลังมองหาเว็บไซต์สำหรับเรียนออนไลน์อยู่ล่ะก็ <strong>มาเข้าร่วมกับเราสิ!</strong>
+                    <p class="text-sm mt-4">ถ้าคุณกำลังมองหาเว็บไซต์สำหรับเรียนออนไลน์อยู่ล่ะก็ <strong>มาเข้าร่วมกับเราสิ!</strong>
                         <br>พวกเรามีคอร์สเรียนมากมายที่คุณจะต้องชอบอย่างแน่นอน
                     </p>
                 </div>
@@ -88,12 +88,12 @@
                     <h1 class="text-4xl pl-16 font-bold">เกี่ยวกับ Learnsite</h1>
                     <br class="mt-20">
                     <br class="mt-20">
-                    <p class="pl-16 indent-8">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational aspirations.</p>
+                    <p class="pl-16 indent-8">Learnsite เป็นเป็นสำหรับเรียนออนไลน์ที่เปิดให้คุณมีอิสระในการเลือกคอร์สเรียนด้วยตัวเอง โดยเรามีคอร์สเรียนให้เลือกมากมายตั้งแต่คอร์สเรียนระดับพื้นฐานไปจนถึงคอร์สเรียนแบบเฉพาะด้านที่ถูกกำกับดูแลโดยผู้เชี่ยวชาญในด้านนั้นๆ ทั้งยังมีเนื้อหาที่ครอบคลุมในด้านการเรียนการสอนความรู้รอบตัวจากประสบการณ์ในการทำงานของผู้สอนอีกด้วย</p>
                     <br>
-                    <p class="pl-16 indent-8">Explore our courses today and take the first step toward a brighter future. Join a community of passionate learners, connect with industry experts, and gain the skills that will set you apart. Whether you're looking to advance your career or explore a new field, LearnSite is here to support your educational aspirations. Start your learning journey today and discover the endless possibilities that education with us can offer. Your success story begins here.</p>
+                    <p class="pl-16 indent-8">มาเริ่มสำรวจคอร์สเรียนกันเลยในวันนี้เพื่อที่จะได้ก้าวเข้าสู่คลังความรู้ที่พวกเราได้จัดเตรียมไว้ให้ เพิ่มทักษะด้วยการลองทำแบบทดสอบต่างๆ มองหาเนื้อหาที่สดใหม่ ทุกอย่างพวกเราจัดเตรียมไว้ให้คุณแล้ว ความสำเร็จอันก้าวหน้าหรือความใฝ่ฝันที่ต้องการให้เป็นจริงอาจเริ่มต้นขึ้นที่ตรงนี้ก็ได้</p>
                 </div>
                 <div class="w-3/4 flex items-center">
-                    <img src="<?php echo e(asset('assets/computer.jpg')); ?>" class="w-3/4 shadow-2xl my-20" style="border-radius: 5rem;" alt="">
+                    <img src="<?php echo e(asset('assets/computer.jpg')); ?>" class="w-3/4 shadow-2xl my-16" style="border-radius: 5rem;" alt="">
                 </div>
             </div>
 
@@ -102,16 +102,16 @@
 
             <!-- skilled instructor -->
             <div class="overflow-hidden">
-                <h1 class="text-xl pl-16 font-bold">We also have skilled instructor</h1>
-                <p class="pl-24">They make our community stay flow and go forward with their reliable and knowledge </p>
+                <h1 class="text-xl pl-16 font-bold">เรามีผู้สอนที่เชี่ยวชาญเฉพาะด้านด้วยนะ</h1>
+                <p class="pl-24 mt-1">ความรู้และประสบการณ์ที่มีของพวกเขาถูกถ่ายทอดออกมาเป็นเนื้อหาที่ผู้คนสนใจสุดๆเลย ถ้าเห็นพวกเขาในคอร์สไหนล่ะก็คุณอาจจะต้องลองเปิดดูคอร์สนั้นดูสักหน่อยแล้ว</p>
 
 
                 <div class="flex flex-row mt-16 ml-28 overflow-hidden">
                     <div class="flex flex-col items-center relative ml-20 overflow-hidden">
-                        <img src="<?php echo e(asset('assets/nanachipfp.jpg')); ?>"  class="size-48  rounded-full shadow-md" alt="">
+                        <img src="https://ih1.redbubble.net/image.5059831822.1588/st,extra_large,507x507-pad,600x600,f8f8f8.jpg"  class="size-48  rounded-full shadow-md" alt="">
                         <div class="size-48 rounded-2xl absolute top-32 flex flex-col items-center text-ellipsis">
-                            <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center ">Nanachi</div>
-                            <p class="text-center text-ellipsis overflow-hidden mt-3">We are committed to providing you with a comprehensive learning experience that goes beyond traditional education. When you enroll in our courses, you can personalized learning paths, allowing you to progress at your own pace. Tailor your study schedule to fit your busy lifestyle while achieving your educational </p>
+                            <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center ">สมเกียร์ติ</div>
+                            <p class="text-center text-ellipsis overflow-hidden mt-3">เชี่ยวชาญในการทำ Database นอกจากนั้นก็ทำอะไรไม่ได้เลย แต่อย่างน้อยเขาก็ทำ Database เก่งที่สุด</p>
                         </div>
                         <div class="size-52 bg-sky-200 rounded-2xl relative shadow-md" style="top: -4rem; z-index: -1;"></div>
                     </div>
@@ -128,9 +128,9 @@
         <!-- rightbar (id to find => text) -->
         <?php
         $rightbarList = array(
-            "#navbar" => "Welcome",
-            "#whatwill" => "What will you get",
-            "#recommended" => "Recommended Course",
+            "#navbar" => "ยินดีต้อนรับ",
+            "#whatwill" => "เกี่ยวกับ Learnsite",
+            "#recommended" => "คอร์สแนะนำ",
         );
         ?>
         <?php echo $__env->make('components.rightbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
