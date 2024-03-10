@@ -20,21 +20,7 @@
     </style>
 </head>
 <body>
-    <?php
-        //* access which table
-        use App\Models\User;
 
-        var_dump(User::get());
-        // User::create([
-        //     "username" => $_GET["username"],
-        //     "password" => $_GET["password"],
-        //     "email" => $_GET["email"],
-        //     "fname" => $_GET["fname"],
-        //     "lname" => $_GET["lname"],
-        //     "phone" => $_GET["phone"],
-        //     "role" => ($_GET["role"] == "Teacher") ? 1 : 0
-        // ]);
-    ?>
     <div class="grid place-items-center min-h-screen p-8 ">
         <div class="w-full max-w-md p-6 space-y-3 bg-white shadow-md rounded-lg">
             <div class="text-3xl text-warning text-center">ลงทะเบียนเข้าสู่ระบบ</div>
