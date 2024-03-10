@@ -20,26 +20,24 @@
     </style>
 </head>
 <body>
-    <div class="grid place-items-center min-h-screen p-8 ">
+    <div class="grid place-items-center min-h-screen p-2">
         <div class="w-full max-w-md p-6 space-y-3 bg-white shadow-md rounded-lg">
-            <div class="text-3xl text-warning text-center">ลงทะเบียนเข้าสู่ระบบ</div>
+            <div class="text-3xl text-error text-center">ลงทะเบียนเข้าสู่ระบบ</div>
             <div class="flex justify-center"><progress class="progress w-56 progress-warning"></progress></div>
             <div class="border-4 border-base-100 p-4">
                 <div class="space-y-4">
 
                     <!-- page2 -->
-                    <?php if($data != []): ?>
+                    <?php if($data == true): ?>
                     <form action="/webregis2" method="POST">
                         @csrf
                         <div class="text-md text-neutral">ชื่อจริง</div>
-                        <input type="text" name="fname" placeholder="Enter Firstname" class="text-base input input-bordered input-info w-full mt-1"/>
+                        <input type="text" name="fname" placeholder="Enter Firstname" class="text-base input input-bordered input-info w-full mt-1" required />
                         <div class="text-md text-neutral mt-5">นามสกุล</div>
-                        <input type="text" name="lname" placeholder="Enter Lastname" class="text-base input input-bordered input-info w-full mt-1"/>
-                        <div class="text-md text-neutral mt-5">เบอร์โทร</div>
-                        <input type="number" name="phone" placeholder="Enter Phone number" class="text-base input input-bordered input-info w-full mt-1"/>
+                        <input type="text" name="lname" placeholder="Enter Lastname" class="text-base input input-bordered input-info w-full mt-1" required />
                         <div class="text-md text-neutral mt-5">เลือกบทบาท</div>
-                        <select name="role" class="select text-base bg-sky-100 mt-1">
-                            <option disabled selected>เลือกบทบาท</option>
+                        <select name="role" class="select text-base bg-sky-100 mt-1" required>
+                            <option value = "" disabled selected hidden>เลือกบทบาท</option>
                             <option value = 1 >นักเรียน</option>
                             <option value = 2 >ผู้สอน</option>
                         </select>
@@ -51,23 +49,33 @@
                     <?php else: ?>
                     <form action="/webregis" method="POST">
                         @csrf
-                        <div class="text-md text-neutral">Username</div>
-                        <input type="text" name="username" placeholder="Enter Username" class="text-base input input-bordered input-info w-full mt-1" require>
+                        <div class="text-md text-neutral">ชื่อบัญชีผู้ใช้งาน</div>
+                        <input type="text" name="username" placeholder="Enter Username" class="text-base input input-bordered input-info w-full mt-1" required />
                         @error("username")
                         <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
                         @enderror
+                        <div class="text-md text-neutral mt-5">เบอร์โทร</div>
+                        <input type="number" name="phone" placeholder="Enter Phone number" class="text-base input input-bordered input-info w-full mt-1" required />
+                        @error("phone")
+                        <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
+                        @enderror
                         <div class="text-md text-neutral mt-5">อีเมล</div>
-                        <input type="email" name="email" placeholder="Enter Email Address" class="text-base input input-bordered input-info w-full mt-1"/>
+                        <input type="text" name="email" placeholder="Enter Email Address" class="text-base input input-bordered input-info w-full mt-1" required />
                         @error("email")
                         <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
                         @enderror
                         <div class="text-md text-neutral mt-5">รหัสผ่าน</div>
-                        <input type="password" name="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full mt-1"/>
+                        <input type="password" name="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full mt-1" required />
                         @error("password")
                         <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
                         @enderror
                         <div class="text-md text-neutral mt-5">ยืนยันรหัสผ่าน</div>
-                        <input type="password" placeholder="Enter Confirm Password" class="text-base input input-bordered input-info w-full mt-1"/>
+                        <input type="password" name="password_confirmation" placeholder="Enter Confirm Password" class="text-base input input-bordered input-info w-full mt-1" required />
+                        @error("password")
+                            @if($message == "• กรุณากรอกรหัสผ่านให้ตรงกัน")
+                                <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
+                            @endif
+                        @enderror
                         <button class="btn btn-secondary text-xl w-full mt-8" name="next">ถัดไป</button>
                     </form>
 

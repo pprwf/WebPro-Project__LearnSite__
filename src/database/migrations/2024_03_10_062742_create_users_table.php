@@ -13,14 +13,12 @@ return new class extends Migration
             $table -> id("uid");
             $table -> string("username");
             $table -> string("email") -> unique();
-            $table -> string("password") -> unique();
+            $table -> string("password");
             $table -> string("fname");
             $table -> string("lname");
             $table -> string("phone") -> unique();
             $table -> boolean("role");
             $table -> binary("picture") -> nullable();
-            $table -> rememberToken();
-            $table -> timestamps();
         });
     }
 

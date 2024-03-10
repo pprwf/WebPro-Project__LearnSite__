@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
 
 class RouteController extends Controller
 {
@@ -13,12 +12,12 @@ class RouteController extends Controller
     }
 
     function register () {
-        $data = [];
+        $data = false;
         return view("regis", compact("data"));
     }
 
     function register2 () {
-        $data = Session::get("data");
+        $data = true;
         return view("regis", compact("data"));
     }
     
