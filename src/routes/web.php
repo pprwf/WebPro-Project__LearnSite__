@@ -6,9 +6,17 @@ use App\Http\Controllers\FunctionController;
 
 Route::get("/", [RouteController::class, "index"]) -> name("home");
 
-Route::get("register", [RouteController::class, "register"]) -> name("regis");
+Route::get("register", [RouteController::class, "register"]);
 
-Route::post("webregis", [FunctionController::class, "register"]);
+Route::post("register", [RouteController::class, "register"]);
+
+Route::get("register2", [RouteController::class, "register2"]);
+
+Route::post("register2", [RouteController::class, "register2"]);
+
+Route::post("webregis", [FunctionController::class, "registerAuth"]);
+
+Route::post("webregis2", [FunctionController::class, "registerDetail"]);
 
 Route::get("login", [RouteController::class, "login"]) -> name("login");
 

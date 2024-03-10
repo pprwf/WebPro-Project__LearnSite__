@@ -20,7 +20,6 @@
     </style>
 </head>
 <body>
-
     <div class="grid place-items-center min-h-screen p-8 ">
         <div class="w-full max-w-md p-6 space-y-3 bg-white shadow-md rounded-lg">
             <div class="text-3xl text-warning text-center">ลงทะเบียนเข้าสู่ระบบ</div>
@@ -29,9 +28,9 @@
                 <div class="space-y-4">
 
                     <!-- page2 -->
-                    <?php if(isset($_GET['next'])): ?>
-                    <form action="{{ route('userhome') }}" method="get">
-                        
+                    <?php if($data != []): ?>
+                    <form action="/webregis2" method="POST">
+                        @csrf
                         <div class="text-md text-neutral">ชื่อจริง</div>
                         <input type="text" name="fname" placeholder="Enter Firstname" class="text-base input input-bordered input-info w-full mt-1" required/>
                         <div class="text-md text-neutral mt-5">นามสกุล</div>
@@ -46,11 +45,16 @@
                         </select>
                         <button class="btn btn-secondary text-xl w-full mt-8">ลงทะเบียน</button>
                     </form>
+                    <!-- <input type="hidden" name="data" value="{{ json_encode($data) }}"> -->
+                    <input type="hidden" name="hid1" value="$data['username']">
+                    <input type="hidden" name="hid2" value="$data['email']">
+                    <input type="hidden" name="hid3" value="$data['password']">
 
                     <!-- page1 -->
 
                     <?php else: ?>
-                    <form action="{{ route('regis') }}" method="get">
+                    <form action="/webregis" method="POST">
+                        @csrf
                         <div class="text-md text-neutral">Username</div>
                         <input type="text" name="username" placeholder="Enter Username" class="text-base input input-bordered input-info w-full mt-1" required/>
                         <div class="text-md text-neutral mt-5">อีเมล</div>
