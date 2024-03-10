@@ -8,11 +8,11 @@ Route::get("/", [RouteController::class, "index"]) -> name("home");
 
 Route::get("register", [RouteController::class, "register"]);
 
-Route::post("register", [RouteController::class, "register"]);
+// Route::post("register", [RouteController::class, "register"]);
 
 Route::get("register2", [RouteController::class, "register2"]);
 
-Route::post("register2", [RouteController::class, "register2"]);
+// Route::post("register2", [RouteController::class, "register2"]);
 
 Route::post("webregis", [FunctionController::class, "registerAuth"]);
 

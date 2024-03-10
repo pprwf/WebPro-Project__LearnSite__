@@ -30,11 +30,13 @@ class FunctionController extends Controller
     function registerDetail (Request $request) {
 
         // $detail = json_decode($request -> input("data"), true);
-
+        // dd($request->hid2);
+        // dd($request->fname);
+        $data = Session::get("data");
         $insert = [
-            "username" => $request -> hid1,
-            "email" => $request -> hid2,
-            "password" => $request -> hid3,
+            "username" => $data ["username"],
+            "email" => $data ["email"],
+            "password" => $data ["password"],
             "fname" => $request -> fname,
             "lname" => $request -> lname,
             "phone" => $request -> phone,
