@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="{{ route('regis') }}" class="text-lg link link-secondary">ยังไม่มีบัญชี?</a>
+                <a href="/register" class="text-lg link link-secondary">ยังไม่มีบัญชี?</a>
             </div>
         </div>
     </div>
