@@ -1,19 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\RouteController;
+use App\Http\Controllers\FunctionController;
 
-Route::get("/", function () {
-    return view('index');
-}) -> name("home");
+Route::get("/", [RouteController::class, "index"]) -> name("home");
 
-Route::get("register", function () {
-    return view("regis");
-}) -> name("regis");
+Route::get("register", [RouteController::class, "register"]) -> name("regis");
 
-Route::get("login", function () {
-    return view("login");
-}) -> name("login");
+Route::post("webregis", [FunctionController::class, "register"]);
+
+Route::get("login", [RouteController::class, "login"]) -> name("login");
 
 //font-end use
 Route::get("userhome", function () {
