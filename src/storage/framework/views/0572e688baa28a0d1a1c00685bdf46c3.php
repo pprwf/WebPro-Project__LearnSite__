@@ -1,7 +1,7 @@
 
 
 <div class="rightbar w-44 flex-none shadow-lg border-l-4 border-sky-800 bg-stone-100 sm:hidden lg:block ">
-    <div class="sticky top-0 overflow-hidden">
+    <div class="top-0 overflow-hidden">
         <div class="grid justify-center mt-4">
             <img src="<?php echo e(asset('assets/LearnsiteLogo.jpg')); ?>" alt="" class="max-w-20 rounded-full">
         </div>  

@@ -92,9 +92,9 @@
         <!-- rightbar (id to find => text) -->
         <?php
         $rightbarList = array(
-            "#navbar" => "Welcome",
-            "#whatwill" => "What will you get",
-            "#recommended" => "Recommended Course",
+            "#navbar" => "ยินดีต้อนรับ",
+            "#whatwill" => "สิ่งที่คุณจะได้รับ",
+            "#recommended" => "คอร์สแนะนำ",
         );
         ?>
         <?php echo $__env->make('components.rightbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
