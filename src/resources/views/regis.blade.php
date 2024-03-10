@@ -32,23 +32,19 @@
                     <form action="/webregis2" method="POST">
                         @csrf
                         <div class="text-md text-neutral">ชื่อจริง</div>
-                        <input type="text" name="fname" placeholder="Enter Firstname" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="text" name="fname" placeholder="Enter Firstname" class="text-base input input-bordered input-info w-full mt-1"/>
                         <div class="text-md text-neutral mt-5">นามสกุล</div>
-                        <input type="text" name="lname" placeholder="Enter Lastname" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="text" name="lname" placeholder="Enter Lastname" class="text-base input input-bordered input-info w-full mt-1"/>
                         <div class="text-md text-neutral mt-5">เบอร์โทร</div>
-                        <input type="text" name="phone" placeholder="Enter Phone number" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="number" name="phone" placeholder="Enter Phone number" class="text-base input input-bordered input-info w-full mt-1"/>
                         <div class="text-md text-neutral mt-5">เลือกบทบาท</div>
                         <select name="role" class="select text-base bg-sky-100 mt-1">
                             <option disabled selected>เลือกบทบาท</option>
-                            <option value=1>นักเรียน</option>
-                            <option value=2>ผู้สอน</option>
+                            <option value = 1 >นักเรียน</option>
+                            <option value = 2 >ผู้สอน</option>
                         </select>
                         <button class="btn btn-secondary text-xl w-full mt-8">ลงทะเบียน</button>
                     </form>
-                    <!-- <input type="hidden" name="data" value="{{ json_encode($data) }}"> -->
-                    <input type="hidden" name="hid1" value="$data['username']">
-                    <input type="hidden" name="hid2" value="$data['email']">
-                    <input type="hidden" name="hid3" value="$data['password']">
 
                     <!-- page1 -->
 
@@ -56,13 +52,22 @@
                     <form action="/webregis" method="POST">
                         @csrf
                         <div class="text-md text-neutral">Username</div>
-                        <input type="text" name="username" placeholder="Enter Username" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="text" name="username" placeholder="Enter Username" class="text-base input input-bordered input-info w-full mt-1" require>
+                        @error("username")
+                        <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
+                        @enderror
                         <div class="text-md text-neutral mt-5">อีเมล</div>
-                        <input type="email" name="email" placeholder="Enter Email Address" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="email" name="email" placeholder="Enter Email Address" class="text-base input input-bordered input-info w-full mt-1"/>
+                        @error("email")
+                        <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
+                        @enderror
                         <div class="text-md text-neutral mt-5">รหัสผ่าน</div>
-                        <input type="password" name="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="password" name="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full mt-1"/>
+                        @error("password")
+                        <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
+                        @enderror
                         <div class="text-md text-neutral mt-5">ยืนยันรหัสผ่าน</div>
-                        <input type="password" placeholder="Enter Confirm Password" class="text-base input input-bordered input-info w-full mt-1" required/>
+                        <input type="password" placeholder="Enter Confirm Password" class="text-base input input-bordered input-info w-full mt-1"/>
                         <button class="btn btn-secondary text-xl w-full mt-8" name="next">ถัดไป</button>
                     </form>
 
