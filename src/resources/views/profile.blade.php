@@ -20,14 +20,14 @@
     </nav>
 
     <ul>
-    @isset($usernames)
+        @isset($usernames)
         @foreach($usernames as $username)
-            <li>{{ $username }}</li>
+        <li>{{ $username }}</li>
         @endforeach
-    @endisset
-</ul>
+        @endisset
+    </ul>
 
-    
+
     <div class="flex flex-col md:flex-row w-full">
         <aside class="leftbar md:w-1/12 flex-none border-orange-600 border-2">
 
@@ -37,24 +37,22 @@
             <img src="{{ asset('assets/nanachipfp.jpg') }}" class="size-48  rounded-full border-orange-600 border-4" alt="">
             <div class="card w-full bg-base-100 shadow-xl mt-8 md:ml-12 md:mt-0 rounded-lg border-orange-600 border-2">
                 <div class="bg-primary">
-                    <h1 class="text-3xl mt-5 ml-5">Nanachi Madeinabyss</h1>
-                    <p class="text-base ml-5 mb-5">@nanachiteacher</p>
-                    <h1 class="text-3xl mt-5 ml-5 mb-5 text-secondary">Instructor</h1>
+                    <form action="/showProfile" method="POST">
+                        <h1 class="text-3xl mt-5 ml-5">Nanachi Madeinabyss</h1>
+                        <p class="text-base ml-5 mb-5">@nanachiteacher</p>
+                        <h1 class="text-3xl mt-5 ml-5 mb-5 text-secondary">Instructor</h1>
                 </div>
                 <div class="m-5">
-                    <form action="{{ route('showProfile') }}" method="post"> <!-- Use the route() helper to generate the URL -->
-                        @csrf <!-- Add CSRF token for security -->
-                        <div class="mb-3 text-xl">ชื่อ</div>
-                        <input type="text" name="name" class="text-base input input-bordered w-96" value="{{ $userData->name }}" />
-                        <div class="mb-3 mt-3 text-xl">นามสกุล</div>
-                        <input type="text" name="lastname" class="text-base input input-bordered w-96" value="{{ $userData->lastname }}" />
-                        <div class="mb-3 mt-3 text-xl">อีเมล</div>
-                        <input type="email" name="email" class="text-base input input-bordered w-96" value="{{ $userData->email }}" />
-                        <div class="mb-3 mt-3 text-xl">Username</div>
-                        <input type="text" name="username" class="text-base input input-bordered w-96" value="{{ $userData->username }}" />
-                        <div class="mb-3 mt-3 text-xl">เบอร์โทร</div>
-                        <input type="text" name="phone" class="text-base input input-bordered w-96" value="{{ $userData->phone }}" />
-                        <button type="submit" class="btn btn-primary">Save</button> <!-- Submit button -->
+                    <div class="mb-3 text-xl">ชื่อ</div>
+                    <input type="text" class="text-base input input-bordered w-96" value="{{ $userData['fname'] ?? '' }}" disabled />
+                    <div class="mb-3 mt-3 text-xl">นามสกุล</div>
+                    <input type="text" class="text-base input input-bordered w-96" value="nanachi" disabled />
+                    <div class="mb-3 mt-3 text-xl">อีเมล</div>
+                    <input type="email" class="text-base input input-bordered w-96" value="nanachi@gmail.com" disabled />
+                    <div class="mb-3 mt-3 text-xl">Username</div>
+                    <input type="text" class="text-base input input-bordered w-96" value="nanachiteacher" disabled />
+                    <div class="mb-3 mt-3 text-xl">เบอร์โทร</div>
+                    <input type="text" class="text-base input input-bordered w-96" value="069-6969696" disabled />
                     </form>
                 </div>
             </div>

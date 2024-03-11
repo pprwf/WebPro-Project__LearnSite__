@@ -62,34 +62,22 @@ class FunctionController extends Controller
 
     function login(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             "account" => "required",
-            "password" => "required"
+            "password" => "required | min: 8"
         ], [
-            "account.required" => "กรุณาระบุชื่อผู้ใช้งานหรืออีเมลที่ท่านทำการลงทะเบียนไว้",
-            "password.required" => "กรุณากรอกรหัสผ่านของท่านที่ลงทะเบียนไว้",
+            "account.required" => "• กรุณาระบุชื่อผู้ใช้งานหรืออีเมลที่ท่านทำการลงทะเบียนไว้",
+            "password.required" => "• กรุณากรอกรหัสผ่านของท่านที่ลงทะเบียนไว้",
+            "password.min" => "• รหัสผ่านมีความยาวไม่ถึง 8 ตัวอักษร"
         ]);
 
+        $query = User::where("username", $request->account)->orWhere("email", $request->account)->first();
 
-
-        $query = User::where("username", $validatedData['account'])
-            ->orWhere("email", $validatedData['account'])
-            ->first();
-
-        if ($query != null) {
-            if (Hash::check($validatedData['password'], $query->password)) {
-                // Save user data in session
-                $request->session()->put('user', $query);
-                return redirect()->route("profile", ['uid' => $query->uid]);
-            } else {
-                // Password is incorrect
-                $message = "รหัสผ่านผิด";
-                return redirect()->back()->with('error', $message);
-            }
+        if ($query != null && Hash::check($request->password, $query->password)) {
+            return redirect()->route("profile", ['uid' => $query->uid]);
         } else {
-            // Account does not exist
-            $message = "บัญชีผู้ใช้ดังกล่าวยังไม่เคยถูกลงทะเบียน";
-            return redirect()->back()->with('error', $message);
+            $message = "• รหัสผ่านผิด หรือ <br>บัญชีผู้ใช้ดังกล่าวยังไม่เคยถูกลงทะเบียน";
+            return redirect()->back();
         }
     }
 
@@ -97,16 +85,19 @@ class FunctionController extends Controller
 
 
 
+
+
     function showProfile(Request $request)
     {
-        // ดึงข้อมูลผู้ใช้จาก session
-        $user = $request->session()->get('user');
+        // Check if user data exists in the cookie
+        if ($request->cookie('user_data')) {
+            // Retrieve user data from the cookie
+            $userData = json_decode($request->cookie('user_data'), true);
 
-        // ตรวจสอบว่ามีข้อมูลผู้ใช้ใน session หรือไม่
-        if ($user) {
-            return view('profile', ['userData' => $user]); // Passing $user as 'userData'
+            // Pass the user data to the view
+            return view('profile', compact('userData'));
         } else {
-            // หากไม่พบข้อมูลผู้ใช้ใน session ให้เปลี่ยนเส้นทางไปยังหน้าล็อกอิน
+            // If user data is not found in the cookie, redirect to login with an error message
             return redirect("/login")->with('error', 'กรุณาล็อกอินเพื่อดูโปรไฟล์');
         }
     }

@@ -23,7 +23,7 @@ Route::get('profile/{uid}', [RouteController::class, 'profile'])->name('profile'
 
 
 // Route for showing user profiles
-Route::post("showProfile", [FunctionController::class, "showProfile"])->name('showProfile');
+Route::post("showProfile/{uid}", [FunctionController::class, "showProfile"])->name('showProfile');
 
 
 //front-end use
