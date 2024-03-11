@@ -18,8 +18,10 @@ Route::get("login", [RouteController::class, "login"]) -> name("login");
 
 Route::post("linog", [FunctionController::class, "login"]) -> name("login");
 
-Route::get("profile", [RouteController::class, "profile"]);
+// Route for user profile
+Route::get("profile", [RouteController::class, "profile"])->name("profile");
 
+// Route for showing user profiles
 Route::post("showProfile", [FunctionController::class, "showProfile"]);
 
 //front-end use

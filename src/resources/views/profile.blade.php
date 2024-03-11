@@ -20,10 +20,13 @@
     </nav>
 
     <ul>
+    @isset($usernames)
         @foreach($usernames as $username)
             <li>{{ $username }}</li>
         @endforeach
-    </ul>
+    @endisset
+</ul>
+
     
     <div class="flex flex-col md:flex-row w-full">
         <aside class="leftbar md:w-1/12 flex-none border-orange-600 border-2">

@@ -81,5 +81,6 @@ class FunctionController extends Controller
     function showProfile(Request $request) {
         $query = User::where("username", 'like', 'a%')->pluck('username');
         return view('profile', ['usernames' => $query]);
+        
     }
 }
