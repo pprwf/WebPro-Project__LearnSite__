@@ -6,17 +6,19 @@ use App\Http\Controllers\FunctionController;
 
 Route::get("/", [RouteController::class, "index"]) -> name("home");
 
-Route::get("register", [RouteController::class, "register"]);
+Route::get("register", [RouteController::class, "register"]) -> name("register");
 
-Route::get("register2", [RouteController::class, "register2"]);
+Route::get("register2", [RouteController::class, "register2"]) -> name("register");
 
-Route::post("webregis", [FunctionController::class, "registerAuth"]);
+Route::post("webregis", [FunctionController::class, "registerAuth"]) -> name("register");
 
-Route::post("webregis2", [FunctionController::class, "registerDetail"]);
+Route::post("webregis2", [FunctionController::class, "registerDetail"]) -> name("register");
 
 Route::get("login", [RouteController::class, "login"]) -> name("login");
 
-//font-end use
+Route::post("linog", [FunctionController::class, "login"]) -> name("login");
+
+//front-end use
 Route::get("userhome", function () {
     return view("userhome");
 }) -> name("userhome");

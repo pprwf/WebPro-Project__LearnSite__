@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <a href="{{ route('login') }}" class="text-lg link link-secondary">มีบัญชีอยู่แล้ว</a>
+                <a href="/login" class="text-lg link link-secondary">มีบัญชีอยู่แล้ว</a>
             </div>
         </div>
     </div>

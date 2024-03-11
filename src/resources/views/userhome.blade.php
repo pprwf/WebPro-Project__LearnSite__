@@ -31,8 +31,6 @@
     
     @include('components.navbar2')
 
-
-
     <!-- modal when search -->
     <dialog id="my_modal_4" class="modal">
         <div class="modal-box w-11/12 max-w-5xl">
