@@ -16,6 +16,11 @@
     </a>
     <div class="mr-3">
         <?php
+        $navList = array(
+            "คอร์สทั้งหมด" => "allcourse",
+            "สมัครสมาชิก" => "register",
+            "เข้าสู่ระบบ" => "login",
+        );
         foreach ($navList as $name => $link) {
             echo '<a class="btn btn-ghost text-xl" href="' . $link . '">' . $name . '</a>';
         }

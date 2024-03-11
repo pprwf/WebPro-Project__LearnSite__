@@ -94,7 +94,7 @@
 
     <div class="w-full h-[35%] grid bg-sky-800 text-base-200 pt-10 pb-10 pl-24">
         <p class="text-2xl">สวัสดี Pakinza007</p>
-        <p class="text-xs mt-2.5">ยินดีต้อนรับกลับ, คูณได้เรียนอะไรไปบ้างหรือยังในวันนี้</p>
+        <p class="text-xs mt-2.5">ยินดีต้อนรับกลับ, คุณได้เรียนอะไรไปบ้างหรือยังในวันนี้</p>
         <div class="mt-5">
             <p class="text-xs mt-2.5">ค้นหาคอร์ส</p>
             <input type="text" placeholder="ค้นหาคอร์ส" class="input input-bordered input-sm w-1/5 max-w-xs text-xs mt-1.5 text-info-content" />

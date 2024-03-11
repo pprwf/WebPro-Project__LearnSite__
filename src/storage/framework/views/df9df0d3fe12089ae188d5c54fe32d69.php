@@ -34,7 +34,7 @@
     <!-- navbar (name => link)-->
     <?php
     $navList = array(
-        "คอร์สทั้งหมด" => "courseinfo",
+        "คอร์สทั้งหมด" => "allcourse",
         "สมัครสมาชิก" => "register",
         "เข้าสู่ระบบ" => "login",
     );
