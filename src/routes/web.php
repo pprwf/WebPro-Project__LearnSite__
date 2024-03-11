@@ -19,10 +19,12 @@ Route::get("login", [RouteController::class, "login"]) -> name("login");
 Route::post("linog", [FunctionController::class, "login"]) -> name("login");
 
 // Route for user profile
-Route::get("profile", [RouteController::class, "profile"])->name("profile");
+Route::get('profile/{uid}', [RouteController::class, 'profile'])->name('profile');
+
 
 // Route for showing user profiles
-Route::post("showProfile", [FunctionController::class, "showProfile"]);
+Route::post("showProfile", [FunctionController::class, "showProfile"])->name('showProfile');
+
 
 //front-end use
 Route::get("userhome", function () {
@@ -58,9 +60,9 @@ Route::get("course/quiz", function () {
     return view("quiz");
 }) -> name("quiz");
 
-Route::get("profile", function () {
-    return view("profile");
-}) -> name("profile");
+// Route::get("profile", function () {
+//     return view("profile");
+// }) -> name("profile");
 
 // Route::get("course/{subject}", function ($subject) {
 //     return view("$subject");

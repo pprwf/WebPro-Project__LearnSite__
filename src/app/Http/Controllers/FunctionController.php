@@ -9,8 +9,9 @@ use App\Models\User;
 
 class FunctionController extends Controller
 {
-    function registerAuth (Request $request) {
-        $request -> validate([
+    function registerAuth(Request $request)
+    {
+        $request->validate([
             "username" => "min: 4 | max: 15 | unique:users,username",
             "phone" => "size: 10 | unique:users,phone",
             "email" => "email | unique:users,email",
@@ -28,10 +29,10 @@ class FunctionController extends Controller
         ]);
 
         $insert = [
-            "username" => $request -> username,
-            "phone" => $request -> phone,
-            "email" => $request -> email,
-            "password" => $request -> password
+            "username" => $request->username,
+            "phone" => $request->phone,
+            "email" => $request->email,
+            "password" => $request->password
         ];
 
         Cookie::queue("data", json_encode($insert), 60);
@@ -39,16 +40,17 @@ class FunctionController extends Controller
         return redirect("register2");
     }
 
-    function registerDetail (Request $request) {
+    function registerDetail(Request $request)
+    {
         $data = json_decode(Cookie::get("data"), true);
         $insert = [
             "username" => $data["username"],
             "email" => $data["email"],
             "password" => bcrypt($data["password"]),
-            "fname" => $request -> fname,
-            "lname" => $request -> lname,
+            "fname" => $request->fname,
+            "lname" => $request->lname,
             "phone" => $data["phone"],
-            "role" => ($request -> role == 1) ? 1 : 0
+            "role" => ($request->role == 1) ? 1 : 0
         ];
 
         User::insert($insert);
@@ -58,29 +60,54 @@ class FunctionController extends Controller
         return redirect("/login");
     }
 
-    function login (Request $request) {
-        $request -> validate([
+    function login(Request $request)
+    {
+        $validatedData = $request->validate([
             "account" => "required",
-            "password" => "required | min: 8"
+            "password" => "required"
         ], [
-            "account.required" => "• กรุณาระบุชื่อผู้ใช้งานหรืออีเมลที่ท่านทำการลงทะเบียนไว้",
-            "password.required" => "• กรุณากรอกรหัสผ่านของท่านที่ลงทะเบียนไว้",
-            "password.min" => "• รหัสผ่านมีความยาวไม่ถึง 8 ตัวอักษร"
+            "account.required" => "กรุณาระบุชื่อผู้ใช้งานหรืออีเมลที่ท่านทำการลงทะเบียนไว้",
+            "password.required" => "กรุณากรอกรหัสผ่านของท่านที่ลงทะเบียนไว้",
         ]);
 
-        $query = User::where("username", $request -> account) -> orWhere("email", $request -> account) -> first();
 
-        if ($query != null && Hash::check($request -> password, $query -> password)) {
-            return redirect("register2");
+
+        $query = User::where("username", $validatedData['account'])
+            ->orWhere("email", $validatedData['account'])
+            ->first();
+
+        if ($query != null) {
+            if (Hash::check($validatedData['password'], $query->password)) {
+                // Save user data in session
+                $request->session()->put('user', $query);
+                return redirect()->route("profile", ['uid' => $query->uid]);
+            } else {
+                // Password is incorrect
+                $message = "รหัสผ่านผิด";
+                return redirect()->back()->with('error', $message);
+            }
         } else {
-            $message = "• รหัสผ่านผิด หรือ <br>บัญชีผู้ใช้ดังกล่าวยังไม่เคยถูกลงทะเบียน";
-            return redirect() -> back();
+            // Account does not exist
+            $message = "บัญชีผู้ใช้ดังกล่าวยังไม่เคยถูกลงทะเบียน";
+            return redirect()->back()->with('error', $message);
         }
     }
 
-    function showProfile(Request $request) {
-        $query = User::where("username", 'like', 'a%')->pluck('username');
-        return view('profile', ['usernames' => $query]);
-        
+
+
+
+
+    function showProfile(Request $request)
+    {
+        // ดึงข้อมูลผู้ใช้จาก session
+        $user = $request->session()->get('user');
+
+        // ตรวจสอบว่ามีข้อมูลผู้ใช้ใน session หรือไม่
+        if ($user) {
+            return view('profile', ['userData' => $user]); // Passing $user as 'userData'
+        } else {
+            // หากไม่พบข้อมูลผู้ใช้ใน session ให้เปลี่ยนเส้นทางไปยังหน้าล็อกอิน
+            return redirect("/login")->with('error', 'กรุณาล็อกอินเพื่อดูโปรไฟล์');
+        }
     }
 }
