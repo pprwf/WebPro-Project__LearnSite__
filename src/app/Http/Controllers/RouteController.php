@@ -24,4 +24,8 @@ class RouteController extends Controller
     function login () {
         return view("login");
     }
+
+    function profile(){
+        return view("profile");
+    }
 }

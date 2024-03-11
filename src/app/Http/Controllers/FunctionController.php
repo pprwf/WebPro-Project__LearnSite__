@@ -77,4 +77,9 @@ class FunctionController extends Controller
             return redirect() -> back();
         }
     }
+
+    function showProfile(Request $request) {
+        $query = User::where("username", 'like', 'a%')->pluck('username');
+        return view('profile', ['usernames' => $query]);
+    }
 }

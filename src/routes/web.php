@@ -18,6 +18,10 @@ Route::get("login", [RouteController::class, "login"]) -> name("login");
 
 Route::post("linog", [FunctionController::class, "login"]) -> name("login");
 
+Route::get("profile", [RouteController::class, "profile"]);
+
+Route::post("showProfile", [FunctionController::class, "showProfile"]);
+
 //front-end use
 Route::get("userhome", function () {
     return view("userhome");
