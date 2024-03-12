@@ -1,16 +1,13 @@
 <html data-theme="emerald">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnSite</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         .disable-click {
             pointer-events: none;
@@ -25,11 +22,9 @@
         }
     </style>
 </head>
-
 <body>
 
-    @include('components.navbar2')
-
+    @include('components.navbar')
 
     <!-- div under Hero (leftbar content rightbar)-->
     <div class="flex flex-row w-full m-auto">

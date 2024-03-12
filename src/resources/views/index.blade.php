@@ -12,6 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        body {
+            /* background-color: brown; */
+            scroll-behavior: smooth;
+        }
+
         .hero {
             height: 85%;
             background-image: url('assets/Learnsitebg.png');
@@ -29,7 +34,7 @@
     <!-- navbar (name => link)-->
     <?php
     $navList = array(
-        "คอร์สทั้งหมด" => "allcourse",
+        "คอร์สทั้งหมด" => "course",
         "สมัครสมาชิก" => "register",
         "เข้าสู่ระบบ" => "login",
     );
@@ -91,7 +96,7 @@
 
                 <div class="flex flex-row mt-16 ml-28 overflow-hidden">
                     <div class="relative flex flex-col items-center ml-20 overflow-hidden">
-                        <img src="https://ih1.redbubble.net/image.5059831822.1588/st,extra_large,507x507-pad,600x600,f8f8f8.jpg" class="size-48 rounded-full shadow-md" alt="">
+                        <img src="https://ih1.redbubble.net/image.5059831822.1588/st,extra_large,507x507-pad,600x600,f8f8f8.jpg"  class="size-48 rounded-full shadow-md" alt="">
                         <div class="absolute flex flex-col items-center size-48 top-32 rounded-2xl text-ellipsis">
                             <div class="bg-sky-400 w-fit rounded-2xl p-1 mt-12 min-w-24 text-center ">สมเกียร์ติ</div>
                             <p class="text-center mt-3 overflow-hidden">เชี่ยวชาญในการทำ Database นอกจากนั้นก็ทำอะไรไม่ได้เลย แต่อย่างน้อยเขาก็ทำ Database เก่งที่สุด</p>

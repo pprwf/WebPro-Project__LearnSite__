@@ -16,7 +16,7 @@
 <body>
 
     <nav>
-        @include('components.navbar2')
+        @include('components.navbar')
     </nav>
 
     <div class="flex flex-col md:flex-row w-full">

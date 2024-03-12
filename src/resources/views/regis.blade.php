@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html data-theme="emerald">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,10 +25,44 @@
             <div class="flex justify-center"><progress class="progress w-56 progress-warning"></progress></div>
             <div class="border-4 border-base-100 p-4">
                 <div class="space-y-4">
+                    <!-- page1 -->
 
+                    <?php if ($data == null): ?>
+                    <form action="register" method="POST">
+                        @csrf
+                        <div class="text-md text-neutral">ชื่อบัญชีผู้ใช้งาน</div>
+                        <input type="text" name="username" placeholder="Enter Username" class="text-base input input-bordered input-info w-full mt-1" required />
+                        @error("username")
+                        <div class="flex justify-center mt-5"><span class="text-error">{{ $message }}</span></div>
+                        @enderror
+                        <div class="text-md text-neutral mt-5">เบอร์โทร</div>
+                        <input type="number" name="phone" placeholder="Enter Phone number" class="text-base input input-bordered input-info w-full mt-1" required />
+                        @error("phone")
+                        <div class="flex justify-center mt-5"><span class="text-error">{{ $message }}</span></div>
+                        @enderror
+                        <div class="text-md text-neutral mt-5">อีเมล</div>
+                        <input type="text" name="email" placeholder="Enter Email Address" class="text-base input input-bordered input-info w-full mt-1" required />
+                        @error("email")
+                        <div class="flex justify-center mt-5"><span class="text-error">{{ $message }}</span></div>
+                        @enderror
+                        <div class="text-md text-neutral mt-5">รหัสผ่าน</div>
+                        <input type="password" name="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full mt-1" required />
+                        @error("password")
+                        <div class="flex justify-center mt-5"><span class="text-error">{{ $message }}</span></div>
+                        @enderror
+                        <div class="text-md text-neutral mt-5">ยืนยันรหัสผ่าน</div>
+                        <input type="password" name="password_confirmation" placeholder="Enter Confirm Password" class="text-base input input-bordered input-info w-full mt-1" required />
+                        @error("password")
+                            @if($message == "• กรุณากรอกรหัสผ่านให้ตรงกัน")
+                                <div class="flex justify-center mt-5"><span class="text-error">{{ $message }}</span></div>
+                            @endif
+                        @enderror
+                        <button class="btn btn-secondary text-xl w-full mt-8" name="next">ถัดไป</button>
+                    </form>
                     <!-- page2 -->
-                    <?php if($data == true): ?>
-                    <form action="/webregis2" method="POST">
+
+                    <?php else: ?>
+                    <form action="regsiter" method="POST">
                         @csrf
                         <div class="text-md text-neutral">ชื่อจริง</div>
                         <input type="text" name="fname" placeholder="Enter Firstname" class="text-base input input-bordered input-info w-full mt-1" required />
@@ -44,50 +77,13 @@
                         <button class="btn btn-secondary text-xl w-full mt-8">ลงทะเบียน</button>
                     </form>
 
-                    <!-- page1 -->
-
-                    <?php else: ?>
-                    <form action="/webregis" method="POST">
-                        @csrf
-                        <div class="text-md text-neutral">ชื่อบัญชีผู้ใช้งาน</div>
-                        <input type="text" name="username" placeholder="Enter Username" class="text-base input input-bordered input-info w-full mt-1" required />
-                        @error("username")
-                        <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
-                        @enderror
-                        <div class="text-md text-neutral mt-5">เบอร์โทร</div>
-                        <input type="number" name="phone" placeholder="Enter Phone number" class="text-base input input-bordered input-info w-full mt-1" required />
-                        @error("phone")
-                        <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
-                        @enderror
-                        <div class="text-md text-neutral mt-5">อีเมล</div>
-                        <input type="text" name="email" placeholder="Enter Email Address" class="text-base input input-bordered input-info w-full mt-1" required />
-                        @error("email")
-                        <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
-                        @enderror
-                        <div class="text-md text-neutral mt-5">รหัสผ่าน</div>
-                        <input type="password" name="password" placeholder="Enter Password" class="text-base input input-bordered input-info w-full mt-1" required />
-                        @error("password")
-                        <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
-                        @enderror
-                        <div class="text-md text-neutral mt-5">ยืนยันรหัสผ่าน</div>
-                        <input type="password" name="password_confirmation" placeholder="Enter Confirm Password" class="text-base input input-bordered input-info w-full mt-1" required />
-                        @error("password")
-                            @if($message == "• กรุณากรอกรหัสผ่านให้ตรงกัน")
-                                <div class="mt-5"><span class="text-error">{{ $message }}</span></div>
-                            @endif
-                        @enderror
-                        <button class="btn btn-secondary text-xl w-full mt-8" name="next">ถัดไป</button>
-                    </form>
-
                     <?php endif; ?>
-
                 </div>
             </div>
             <div class="text-center">
-                <a href="/login" class="text-lg link link-secondary">มีบัญชีอยู่แล้ว</a>
+                <a href="login" class="text-lg link link-secondary">มีบัญชีอยู่แล้ว</a>
             </div>
         </div>
     </div>
 </body>
-
 </html>

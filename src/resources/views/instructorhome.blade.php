@@ -6,13 +6,10 @@
     <title>LearnSite</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
-
         .disable-click {
             pointer-events: none;
         }
@@ -29,13 +26,8 @@
         }
     </style>
 </head>
-
 <body>
-    
-    @include('components.navbar2')
-
-
-
+    @include('components.navbar')
     <!-- modal when search -->
     <dialog id="my_modal_4" class="modal">
         <div class="modal-box w-11/12 max-w-5xl">
@@ -94,7 +86,6 @@
             </div>
         </div>
     </dialog>
-
     <div class="w-full h-[35%] grid bg-fuchsia-900 text-base-200 pt-10 pb-10 pl-24">
         <p class="text-2xl">HELLO Pakinza007</p>
         <p class="text-xs mt-2.5">Welcome back, Is that anything new today</p>
@@ -153,19 +144,12 @@
                         </div>
                     </div>
                 </a>
-
-
             </div>
-
-
             <br>
             <br>
-
-
 
             <!-- Recommended Course -->
             @include('components.recCourse')
-
         </div>
 
         <!-- rightbar (id to find => text) -->
@@ -180,8 +164,5 @@
     </div>
 
     @include('components.footer')
-
-
 </body>
-
 </html>

@@ -38,13 +38,6 @@ class Password implements Rule, DataAwareRule, ValidatorAwareRule
     protected $min = 8;
 
     /**
-     * The maximum size of the password.
-     *
-     * @var int
-     */
-    protected $max;
-
-    /**
      * If the password requires at least one uppercase and one lowercase letter.
      *
      * @var bool
@@ -200,7 +193,7 @@ class Password implements Rule, DataAwareRule, ValidatorAwareRule
     }
 
     /**
-     * Set the minimum size of the password.
+     * Sets the minimum size of the password.
      *
      * @param  int  $size
      * @return $this
@@ -208,19 +201,6 @@ class Password implements Rule, DataAwareRule, ValidatorAwareRule
     public static function min($size)
     {
         return new static($size);
-    }
-
-    /**
-     * Set the maximum size of the password.
-     *
-     * @param  int  $size
-     * @return $this
-     */
-    public function max($size)
-    {
-        $this->max = $size;
-
-        return $this;
     }
 
     /**
@@ -312,12 +292,7 @@ class Password implements Rule, DataAwareRule, ValidatorAwareRule
 
         $validator = Validator::make(
             $this->data,
-            [$attribute => [
-                'string',
-                'min:'.$this->min,
-                ...($this->max ? ['max:'.$this->max] : []),
-                ...$this->customRules,
-            ]],
+            [$attribute => array_merge(['string', 'min:'.$this->min], $this->customRules)],
             $this->validator->customMessages,
             $this->validator->customAttributes
         )->after(function ($validator) use ($attribute, $value) {

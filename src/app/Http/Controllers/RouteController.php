@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class RouteController extends Controller
 {
@@ -12,16 +11,26 @@ class RouteController extends Controller
     }
 
     function register () {
-        $data = false;
-        return view("regis", compact("data"));
-    }
-
-    function register2 () {
-        $data = true;
+        $data = session() -> get("data");
         return view("regis", compact("data"));
     }
     
     function login () {
-        return view("login");
+        $error = session() -> get("error");
+        return view("login", compact("error"));
+    }
+
+    function profile($uid)
+    {
+        
+        $user = User::find($uid);
+        
+    
+        if (!$user) {
+            abort(404); 
+        }
+        
+
+        return view("profile", compact("user"));
     }
 }

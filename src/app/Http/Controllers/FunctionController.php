@@ -36,7 +36,7 @@ class FunctionController extends Controller
 
         Cookie::queue("data", json_encode($insert), 60);
 
-        return redirect("register2");
+        return redirect() -> back() -> with("data", $insert);
     }
 
     function registerDetail (Request $request) {
@@ -55,7 +55,7 @@ class FunctionController extends Controller
 
         Cookie::queue(Cookie::forget("data"));
 
-        return redirect("/login");
+        return redirect("login");
     }
 
     function login (Request $request) {
@@ -63,18 +63,28 @@ class FunctionController extends Controller
             "account" => "required",
             "password" => "required | min: 8"
         ], [
-            "account.required" => "• กรุณาระบุชื่อผู้ใช้งานหรืออีเมลที่ท่านทำการลงทะเบียนไว้",
-            "password.required" => "• กรุณากรอกรหัสผ่านของท่านที่ลงทะเบียนไว้",
+            "account.required" => "• กรุณาระบุชื่อผู้ใช้งานหรืออีเมลที่ได้ลงทะเบียนไว้",
+            "password.required" => "• กรุณากรอกรหัสผ่านที่ท่านได้ลงทะเบียนไว้",
             "password.min" => "• รหัสผ่านมีความยาวไม่ถึง 8 ตัวอักษร"
         ]);
 
         $query = User::where("username", $request -> account) -> orWhere("email", $request -> account) -> first();
+        if ($query != null) {
+            $pass_check = Hash::check($request -> password, $query -> password);
+        }
 
-        if ($query != null && Hash::check($request -> password, $query -> password)) {
-            return redirect("register2");
+        if ($query != null && $pass_check) {
+            session() -> put("query", $query);
+            if ($query -> role == 1) {
+                return redirect("user");
+            } else if ($query -> role == 0) {
+                return redirect("instructor");
+            } else if ($query -> isManager != null) {
+                return redirect("manager");
+            }
         } else {
-            $message = "• รหัสผ่านผิด หรือ <br>บัญชีผู้ใช้ดังกล่าวยังไม่เคยถูกลงทะเบียน";
-            return redirect() -> back();
+            $error = ($query == null) ? "• บัญชีผู้ใช้งานไม่ถูกต้อง" : "• รหัสผ่านของท่านไม่ถูกต้อง";
+            return redirect() -> back() -> with("error", $error);
         }
     }
 }

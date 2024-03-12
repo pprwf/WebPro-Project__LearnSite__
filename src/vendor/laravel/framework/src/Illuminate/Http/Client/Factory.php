@@ -37,13 +37,6 @@ class Factory
     protected $globalMiddleware = [];
 
     /**
-     * The options to apply to every request.
-     *
-     * @var array
-     */
-    protected $globalOptions = [];
-
-    /**
      * The stub callables that will handle requests.
      *
      * @var \Illuminate\Support\Collection
@@ -126,19 +119,6 @@ class Factory
     public function globalResponseMiddleware($middleware)
     {
         $this->globalMiddleware[] = Middleware::mapResponse($middleware);
-
-        return $this;
-    }
-
-    /**
-     * Set the options to apply to every request.
-     *
-     * @param  array  $options
-     * @return $this
-     */
-    public function globalOptions($options)
-    {
-        $this->globalOptions = $options;
 
         return $this;
     }
@@ -420,7 +400,7 @@ class Factory
      */
     protected function newPendingRequest()
     {
-        return (new PendingRequest($this, $this->globalMiddleware))->withOptions($this->globalOptions);
+        return new PendingRequest($this, $this->globalMiddleware);
     }
 
     /**

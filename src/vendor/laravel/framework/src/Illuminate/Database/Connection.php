@@ -183,13 +183,6 @@ class Connection implements ConnectionInterface
     protected $pretending = false;
 
     /**
-     * All of the callbacks that should be invoked before a transaction is started.
-     *
-     * @var \Closure[]
-     */
-    protected $beforeStartingTransaction = [];
-
-    /**
      * All of the callbacks that should be invoked before a query is executed.
      *
      * @var \Closure[]
@@ -1026,19 +1019,6 @@ class Connection implements ConnectionInterface
         $this->setPdo(null)->setReadPdo(null);
 
         $this->doctrineConnection = null;
-    }
-
-    /**
-     * Register a hook to be run just before a database transaction is started.
-     *
-     * @param  \Closure  $callback
-     * @return $this
-     */
-    public function beforeStartingTransaction(Closure $callback)
-    {
-        $this->beforeStartingTransaction[] = $callback;
-
-        return $this;
     }
 
     /**
