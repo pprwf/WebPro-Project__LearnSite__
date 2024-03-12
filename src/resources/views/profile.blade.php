@@ -14,7 +14,7 @@
     <nav>
         @include('components.navbar')
     </nav>
-    <?php session() -> get("user"); ?>
+    <?php session() -> get("query"); ?>
     <div class="flex flex-col md:flex-row w-full">
         <aside class="leftbar md:w-1/12 flex-none border-orange-600 border-2">
         </aside>

@@ -5,6 +5,8 @@
     }
 </style>
 <?php
+    $query = session() -> get("query");
+    
     $default = array(
         "คอร์สทั้งหมด" => "course",
         "สมัครสมาชิก" => "register",
@@ -18,7 +20,7 @@
 
     $instructor = array(
         "คอร์สทั้งหมด" => "course",
-        "จัดการคอร์ส" => "instructor/course_manager"
+        "จัดการคอร์ส" => "course_manager"
     );
 
     $picture = asset('assets/nanachipfp.jpg');
@@ -36,7 +38,6 @@
     </div>
 </nav>
 @else
-    <?php $query = session() -> get("query"); ?>
     <nav id="navbar" class="navbar bg-secondary flex justify-between bg-sky-800 shadow-md">
         <a href="/">
             <img src="{{ asset('assets/LearnsiteLogo.jpg') }}" class="size-11 rounded-full ml-2">
@@ -54,13 +55,6 @@
                     <a class="btn btn-ghost text-xl text-slate-200" href="{{ $link }}">{{ $name }}</a>
                 @endforeach
             @endif
-            <?php
-                if ($query -> role == 0) {
-                    $role = "instructor";
-                } else {
-                    $role = "user";
-                }
-            ?>
             <div class="dropdown dropdown-end ml-3 mr-3">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                     <div class="w-25 rounded-full">
@@ -71,8 +65,8 @@
                     </div>
                 </div>
                 <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                    <li><a href="{{ $role }}/profile" class="justify-between">แก้ไขโปรไฟล์<span class="badge">ใหม่</span></a></li>
-                    <li><a href="/">ลงทะเบียนออก</a></li>
+                    <li><a href="profile" class="justify-between">แก้ไขโปรไฟล์<span class="badge">ใหม่</span></a></li>
+                    <li><a href="logout">ลงทะเบียนออก</a></li>
                 </ul>
             </div>
         </div>

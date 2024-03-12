@@ -87,4 +87,9 @@ class FunctionController extends Controller
             return redirect() -> back() -> with("error", $error);
         }
     }
+
+    function logout () {
+        session() -> forget("query");
+        return redirect("");
+    }
 }

@@ -1,16 +1,13 @@
 <html data-theme="emerald">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnSite</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         .disable-click {
             pointer-events: none;
@@ -25,17 +22,14 @@
         }
     </style>
 </head>
-
 <body>
-
-    @include('components.navbar')
-
+    <nav>
+        @include('components.navbar')
+    </nav>
     <!-- div under Hero (leftbar content rightbar)-->
     <div class="flex flex-col md:flex-row">
-
         <!-- just leftbar -->
         <div class="leftbar w-full md:w-auto border-orange-600 border-2"></div>
-
         <!-- content -->
         <div class="content flex flex-col flex-auto md:w-2/3 md:pl-4 md:pr-16">
             <div class="pl-4 mt-4">
@@ -106,16 +100,12 @@
                 );
                 $recCourseOrder = 0;
                 ?>
-
                 <?php foreach ($recCourseList as $recCourse) : ?>
                     <?php $recCourseOrder += 1; ?>
-
                     @include('components.recCourseItem')
                 <?php endforeach; ?>
             </div>
-
         </div>
-
         <!-- rightbar (id to find => text) -->
         <?php
         $rightbarList = array(
@@ -126,10 +116,6 @@
         ?>
         @include('components.rightbar')
     </div>
-
     @include('components.footer')
-
-
 </body>
-
 </html>
