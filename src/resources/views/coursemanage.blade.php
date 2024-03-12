@@ -38,25 +38,35 @@
             </div>
             <br>
             <div class="pl-4 mt-4">
-                <label for="" class="text-lg mt-2.5">เพิ่มคอร์ส</label><br>
-                <input type="text" placeholder="course name" class="input input-bordered input-sm w-full] max-w-xs text-base mt-2 text-info-content" accept="image/*" /><br>
-                <textarea placeholder="description" class="textarea textarea-bordered textarea-sm w-full max-w-xs text-base mt-2 text-info-content"></textarea><br>
-
-                <input type="file" class="file-input file-input-bordered w-full max-w-xs input-sm mt-2" accept="image/*" /><br>
-
-                <div class="flex mt-2">
-                    <input type="checkbox" checked="checked" class="checkbox" name="Lec" />
-                    <label for="" class="text-lx ml-1.5">ทฤษฎี</label>
-                </div>
-
-                <div class="flex mt-1.5">
-                    <input type="checkbox" checked="checked" class="checkbox" name="Lab" />
-                    <label for="" class="text-lx ml-1.5">ปฏิบัติ</label>
-                </div>
-            </div>
-            <div>
-                <form action="">
-
+                <label class="text-lg mt-2.5">เพิ่มคอร์ส</label><br>
+                <form action="/addCourse" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input type="text" name="name" placeholder="Course's Name" class="input input-bordered input-sm w-full max-w-xs text-base mt-2 text-info-content" /><br>
+                    @error("name")
+                        <div class="flex justify-center mt-5"><span class="text-error">{{ $message }}</span></div>
+                    @enderror
+                    <textarea placeholder="Description" name="detail" class="textarea textarea-bordered textarea-sm w-full max-w-xs text-base mt-2 text-info-content"></textarea><br>
+                    @error("detail")
+                        <div class="flex justify-center mt-5"><span class="text-error">{{ $message }}</span></div>
+                    @enderror
+                    <input type="file" name="cover" class="file-input file-input-bordered w-full max-w-xs input-sm mt-2" accept="image/*" /><br>
+                    @error("cover")
+                        <div class="flex justify-center mt-5"><span class="text-error">{{ $message }}</span></div>
+                    @enderror
+                    <div name="type">
+                        <div class="flex mt-2">
+                            <input type="checkbox" name="lecture" checked="checked" class="checkbox" value="Lec" />
+                            <label class="text-lx ml-1.5">ทฤษฎี</label>
+                        </div>
+                        <div class="flex mt-1.5">
+                            <input type="checkbox" name="lab" checked="checked" class="checkbox" value="Lab" />
+                            <label class="text-lx ml-1.5">ปฏิบัติ</label>
+                        </div>
+                    </div>
+                    @error("type")
+                        <div class="flex justify-center mt-5"><span class="text-error">{{ $message }}</span></div>
+                    @enderror
+                    <button class="btn btn-secondary text-xl w-full mt-8">เพิ่มคอร์สเรียน</button>
                 </form>
             </div>
             <h1 class="text-4xl pl-4 md:pl-16 font-bold mb-5 mt-8">ทุกคอร์ส</h1>

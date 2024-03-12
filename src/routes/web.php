@@ -6,6 +6,7 @@ use App\Http\Controllers\RouteController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\FunctionController;
+use Illuminate\Support\Facades\Schema;
 
 
 // home path
@@ -35,18 +36,20 @@ Route::get("logout", [FunctionController::class, "logout"]);
 // normal path
 
 Route::get("course", [RouteController::class, "showCourse"]);
+
 Route::get("profile", [RouteController::class, "profile"]);
 
 // student path
 
 // instructor path
-Route::get("course_manager", [InstructorController::class, "manage"]);
+
+Route::get("course_manager", [InstructorController::class, "courseManager"]);
+
+Route::post("addCourse", [InstructorController::class, "addCourse"]);
 
 // manager path
 
-Route::prefix("manager") -> group(function () {
-    
-});
+// Route::get();
 
 //front-end use
 
