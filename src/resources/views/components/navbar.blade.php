@@ -18,7 +18,7 @@
 
     $instructor = array(
         "คอร์สทั้งหมด" => "course",
-        "จัดการคอร์ส" => "course/manage"
+        "จัดการคอร์ส" => "instructor/course_manager"
     );
 
     $picture = asset('assets/nanachipfp.jpg');
@@ -44,14 +44,23 @@
         </a>
         <div class="mr-3">
             @if ($query -> role == 0)
+                <?php session() -> put("query", $query); ?>
                 @foreach ($instructor as $name => $link)
                     <a class="btn btn-ghost text-xl text-slate-200" href="{{ $link }}">{{ $name }}</a>
                 @endforeach
             @else
+                <?php session() -> put("query", $query); ?>
                 @foreach ($user as $name => $link)
                     <a class="btn btn-ghost text-xl text-slate-200" href="{{ $link }}">{{ $name }}</a>
                 @endforeach
             @endif
+            <?php
+                if ($query -> role == 0) {
+                    $role = "instructor";
+                } else {
+                    $role = "user";
+                }
+            ?>
             <div class="dropdown dropdown-end ml-3 mr-3">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                     <div class="w-25 rounded-full">
@@ -62,7 +71,7 @@
                     </div>
                 </div>
                 <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                    <li><a href="user/profile" class="justify-between">แก้ไขโปรไฟล์<span class="badge">ใหม่</span></a></li>
+                    <li><a href="{{ $role }}/profile" class="justify-between">แก้ไขโปรไฟล์<span class="badge">ใหม่</span></a></li>
                     <li><a href="/">ลงทะเบียนออก</a></li>
                 </ul>
             </div>

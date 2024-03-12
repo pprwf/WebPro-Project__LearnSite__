@@ -10,4 +10,9 @@ class InstructorController extends Controller
         $query = session() -> get("query");
         return view("instructorhome", compact("query"));
     }
+
+    function manage () {
+        $query = session() -> get("query");
+        return view("coursemanage", compact("query"));
+    }
 }

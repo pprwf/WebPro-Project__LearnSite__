@@ -20,27 +20,28 @@ Route::get("manager", [ManagerController::class, "index"]) -> name("managerhome"
 
 // non-user path
 
-Route::get("register", [RouteController::class, "register"]) -> name("register");
+Route::get("register", [RouteController::class, "register"]);
 
 Route::post("register", [FunctionController::class, "registerAuth"]);
 
 Route::post("regsiter", [FunctionController::class, "registerDetail"]);
 
-Route::get("login", [RouteController::class, "login"]) -> name("login");
+Route::get("login", [RouteController::class, "login"]);
 
 Route::post("login", [FunctionController::class, "login"]);
 
+// normal path
+
+Route::get("course", [RouteController::class, "showCourse"]);
+
 // student path
 
-Route::prefix("user") -> group(function () {
-    Route::get("profile", [RouteController::class, 'profile'])->name('profile');
-});
+Route::prefix("user") -> get("profile", [RouteController::class, "profile"])-> name('profile');
 
 // instructor path
 
-Route::prefix("instructor") -> group(function () {
-
-});
+Route::prefix("instructor") -> get("profile", [RouteController::class, "profile"])-> name('profile');
+Route::prefix("instructor") -> get("course_manager", [InstructorController::class, "manage"]) -> name("managecourse");
 
 // manager path
 
@@ -53,14 +54,6 @@ Route::prefix("manager") -> group(function () {
 Route::get("course/info", function () {
     return view("courseinfo");
 }) -> name("courseinfo");
-
-Route::get("course", function () {
-    return view("allcourse");
-}) -> name("course");
-
-Route::get("course/manage", function () {
-    return view("coursemanage");
-}) -> name("coursemanage");
 
 //front end use + test
 Route::get("course/quiz", function () {

@@ -20,17 +20,13 @@ class RouteController extends Controller
         return view("login", compact("error"));
     }
 
-    function profile($uid)
-    {
-        
-        $user = User::find($uid);
-        
-    
-        if (!$user) {
-            abort(404); 
-        }
-        
+    function showCourse () {
+        $query = session() -> get("query");
+        return view("allcourse", compact("query"));
+    }
 
+    function profile () {
+        $user = session() -> get("query");
         return view("profile", compact("user"));
     }
 }
