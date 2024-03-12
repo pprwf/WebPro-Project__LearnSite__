@@ -34,8 +34,9 @@
                 </div>
 
                 <div class="m-5">
-                    <form action="{{route("profile", $query->uid)}}" method="PUT">
+                    <form action="" method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="mb-3 text-xl">ชื่อ</div>
                         <input type="text" id="text1" name="fname" class="text-base input input-bordered w-96" value="{{ $query -> fname }}" disabled />
                         <div class="mb-3 mt-3 text-xl">นามสกุล</div>
