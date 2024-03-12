@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Courses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
@@ -91,5 +92,33 @@ class FunctionController extends Controller
     function logout () {
         session() -> forget("query");
         return redirect("");
+    }
+
+    function showCourseIndex () {
+        $name = Courses::where("courseID", 1)->pluck("courseName");
+        $detail = Courses::where("courseID", 1)->pluck("detail");
+        $img = Courses::where("courseID", 1)->pluck("courseImage");
+        return view("index", ["courseNames"=>$name], ["details"=>$detail], ["imgs"=>$img]);
+    }
+
+    function showCourseUser () {
+        $name = Courses::where("courseID", 1)->pluck("courseName");
+        $detail = Courses::where("courseID", 1)->pluck("detail");
+        $img = Courses::where("courseID", 1)->pluck("courseImage");
+        return view("index", ["courseNames"=>$name], ["details"=>$detail], ["imgs"=>$img]);
+    }
+
+    function showCourseInstructor () {
+        $name = Courses::where("courseID", 1)->pluck("courseName");
+        $detail = Courses::where("courseID", 1)->pluck("detail");
+        $img = Courses::where("courseID", 1)->pluck("courseImage");
+        return view("index", ["courseNames"=>$name], ["details"=>$detail], ["imgs"=>$img]);
+    }
+
+    function showCourseAllCourse () {
+        $name = Courses::where("courseID", 1)->pluck("courseName");
+        $detail = Courses::where("courseID", 1)->pluck("detail");
+        $img = Courses::where("courseID", 1)->pluck("courseImage");
+        return view("allcourse", ["courseNames"=>$name], ["details"=>$detail], ["imgs"=>$img]);
     }
 }
