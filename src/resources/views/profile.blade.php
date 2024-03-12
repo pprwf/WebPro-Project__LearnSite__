@@ -34,23 +34,22 @@
                 </div>
 
                 <div class="m-5">
-                    <form action="" method="POST">
+                    <form action="{{route("profile", $query->uid)}}" method="PUT">
                         @csrf
                         <div class="mb-3 text-xl">ชื่อ</div>
-                        <input type="text" id="text1" class="text-base input input-bordered w-96" value="{{ $query -> fname }}" disabled />
+                        <input type="text" id="text1" name="fname" class="text-base input input-bordered w-96" value="{{ $query -> fname }}" disabled />
                         <div class="mb-3 mt-3 text-xl">นามสกุล</div>
-                        <input type="text" id="text2" class="text-base input input-bordered w-96" value="{{ $query -> lname }}" disabled />
+                        <input type="text" id="text2" name="lname" class="text-base input input-bordered w-96" value="{{ $query -> lname }}" disabled />
                         <div class="mb-3 mt-3 text-xl">อีเมล</div>
-                        <input type="email" id="text3" class="text-base input input-bordered w-96" value="{{ $query -> email }}" disabled />
+                        <input type="email" id="text3" name="email" class="text-base input input-bordered w-96" value="{{ $query -> email }}" disabled />
                         <div class="mb-3 mt-3 text-xl">Username</div>
-                        <input type="text" id="text4" class="text-base input input-bordered w-96" value="{{ $query -> username }}" disabled />
+                        <input type="text" id="text4" name="username" class="text-base input input-bordered w-96" value="{{ $query -> username }}" disabled />
                         <div class="mb-3 mt-3 text-xl">เบอร์โทร</div>
-                        <input type="text" id="text5" class="text-base input input-bordered w-96" value="{{ $query -> phone }}" disabled />
+                        <input type="text" id="text5" name="phone" class="text-base input input-bordered w-96" value="{{ $query -> phone }}" disabled />
                         <div class="mb-3 mt-3 text-xl">รูปภาพ</div>
-                        <input type="file" class="file-input file-input-bordered w-full max-w-xs input-bordered w-96" accept="image/*" />
+                        <input type="file" class="file-input file-input-bordered w-full max-w-xs input-bordered w-96" accept="image/*" /><br>
+                        <button onclick="save()" class="mb-3 mt-3 text-xl" type="submit" style="border-radius: 8px;">บันทึก</button>
                     </form>
-                    <button onclick="save()" class="mb-3 mt-3 text-xl" id="button" type="submit" style="border-radius: 8px;">บันทึก</button>
-
                 </div>
             </div>
         </main>

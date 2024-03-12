@@ -92,4 +92,22 @@ class FunctionController extends Controller
         session() -> forget("query");
         return redirect("");
     }
+
+    function update(Request $request, $uid)
+    {   
+        $query = User::findOrFail($uid);
+        $query->fname = $request->input('name');
+        $query->lname = $request->input('lname');
+        $query->email = $request->input('email');
+        $query->username = $request->input('username');
+        $query->phone = $request->input('phone');
+        $query = User::whereId($uid) ->update($request->all());
+
+        return redirect()->route('profile');
+        // $query = User::findOrFail($uid);
+        // $query = User::select('fname', 'lname', 'username', 'email', 'phone')
+        //             ->where('uid', [$uid]);
+        // return redirect()->route('profile');
+    }
+    
 }
