@@ -22,10 +22,10 @@
             <img src="{{ asset('assets/nanachipfp.jpg') }}" class="size-48  rounded-full border-orange-600 border-4" alt="">
             <div class="card w-full bg-base-100 shadow-xl mt-8 md:ml-12 md:mt-0 rounded-lg border-orange-600 border-2">
                 <div class="bg-primary">
-                    <h1 class="text-3xl mt-5 ml-5">{{ $user -> fname . " " . $user -> lname }}</h1>
-                    <p class="text-base ml-5 mb-5">{{ "@" . $user -> username }}</p>
+                    <h1 class="text-3xl mt-5 ml-5">{{ $query -> fname . " " . $query -> lname }}</h1>
+                    <p class="text-base ml-5 mb-5">{{ "@" . $query -> username }}</p>
                     <h1 class="text-3xl mt-5 ml-5 mb-5 text-secondary">
-                        @if ($user -> role == 0)
+                        @if ($query -> role == 0)
                             Instructor
                         @else
                             Student
@@ -36,15 +36,15 @@
                     <form action="" method="POST">
                         @csrf
                         <div class="mb-3 text-xl">ชื่อ</div>
-                        <input type="text" class="text-base input input-bordered w-96" value="{{ $user -> fname }}" disabled />
+                        <input type="text" class="text-base input input-bordered w-96" value="{{ $query -> fname }}" disabled />
                         <div class="mb-3 mt-3 text-xl">นามสกุล</div>
-                        <input type="text" class="text-base input input-bordered w-96" value="{{ $user -> lname }}" disabled />
+                        <input type="text" class="text-base input input-bordered w-96" value="{{ $query -> lname }}" disabled />
                         <div class="mb-3 mt-3 text-xl">อีเมล</div>
-                        <input type="email" class="text-base input input-bordered w-96" value="{{ $user -> email }}" disabled />
+                        <input type="email" class="text-base input input-bordered w-96" value="{{ $query -> email }}" disabled />
                         <div class="mb-3 mt-3 text-xl">Username</div>
-                        <input type="text" class="text-base input input-bordered w-96" value="{{ $user -> username }}" disabled />
+                        <input type="text" class="text-base input input-bordered w-96" value="{{ $query -> username }}" disabled />
                         <div class="mb-3 mt-3 text-xl">เบอร์โทร</div>
-                        <input type="text" class="text-base input input-bordered w-96" value="{{ $user -> phone }}" disabled />
+                        <input type="text" class="text-base input input-bordered w-96" value="{{ $query -> phone }}" disabled />
                     </form>
                 </div>
             </div>
@@ -54,8 +54,8 @@
             <!-- Right Sidebar Content -->
             <?php
             $rightbarList = array(
-                "#name" => "<h1 class='text-lg'>{{ $user -> fname . ' ' . $user -> lname }}</h1>",
-                "#username" => "<p>{{ '@' . $user -> username }}</p>",
+                "#name" => "<h1 class='text-lg'>{{ $query -> fname . ' ' . $query -> lname }}</h1>",
+                "#username" => "<p>{{ '@' . $query -> username }}</p>",
                 "#editprofile" => "แก้ไขโปรไฟล์",
                 "#logout" => "ลงทะเบียนออก",
             );

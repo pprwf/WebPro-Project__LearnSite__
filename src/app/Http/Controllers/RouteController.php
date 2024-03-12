@@ -26,7 +26,7 @@ class RouteController extends Controller
     }
 
     function profile () {
-        $user = session() -> get("query");
-        return view("profile", compact("user"));
+        $query = session() -> get("query");
+        return view("profile", compact("query"));
     }
 }
