@@ -266,17 +266,15 @@ trait ConditionallyLoadsAttributes
             return value($default);
         }
 
-        $loadedValue = $this->resource->{$relationship};
-
         if (func_num_args() === 1) {
-            return $loadedValue;
+            return $this->resource->{$relationship};
         }
 
-        if ($loadedValue === null) {
+        if ($this->resource->{$relationship} === null) {
             return;
         }
 
-        return value($value, $loadedValue);
+        return value($value);
     }
 
     /**
@@ -322,10 +320,6 @@ trait ConditionallyLoadsAttributes
      */
     public function whenAggregated($relationship, $column, $aggregate, $value = null, $default = null)
     {
-        if (func_num_args() < 5) {
-            $default = new MissingValue;
-        }
-
         $attribute = (string) Str::of($relationship)->snake()->append('_')->append($aggregate)->append('_')->finish($column);
 
         if (! isset($this->resource->getAttributes()[$attribute])) {

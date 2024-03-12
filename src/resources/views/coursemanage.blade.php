@@ -28,28 +28,37 @@
 
 <body>
 
-    @include('components.navbar2')
-
+    @include('components.navbar')
 
     <!-- div under Hero (leftbar content rightbar)-->
-    <div class="flex flex-row w-full m-auto">
+    <div class="flex flex-col md:flex-row">
 
         <!-- just leftbar -->
         <div class="leftbar w-full md:w-auto border-orange-600 border-2"></div>
 
         <!-- content -->
-        <div class="content flex flex-col flex-auto md:w-full">
-            <div class="pl-4 md:pl-16">
-                <label for="" class="text-lx mt-2.5">ค้นหาคอร์ส</label><br>
-                <input type="text" placeholder="insert name" class="input input-bordered input-sm w-60 max-w-xs text-xs mt-1.5 text-info-content" />
+        <div class="content flex flex-col flex-auto md:w-2/3 md:pl-4 md:pr-16">
+            <div class="pl-4 mt-4">
+                <label for="" class="text-lg mt-2.5">ค้นหาคอร์ส</label><br>
+                <input type="text" placeholder="insert name" class="input input-bordered input-sm w-60 max-w-xs text-base mt-1.5 text-info-content" />
             </div>
             <br>
-            <div class="pl-4 md:pl-16">
-                <label for="" class="text-lx mt-2.5">เพิ่มคอร์ส</label><br>
-                <input type="text" placeholder="course name" class="input input-bordered input-sm w-60 max-w-xs text-xs mt-1.5 text-info-content" />
-                <input type="text" placeholder="description" class="input input-bordered input-sm w-60 max-w-xs text-xs mt-1.5 text-info-content" />
-                
-                <input type="file" class="file-input file-input-bordered w-full max-w-xs input-sm" />
+            <div class="pl-4 mt-4">
+                <label for="" class="text-lg mt-2.5">เพิ่มคอร์ส</label><br>
+                <input type="text" placeholder="course name" class="input input-bordered input-sm w-full] max-w-xs text-base mt-2 text-info-content" accept="image/*" /><br>
+                <textarea placeholder="description" class="textarea textarea-bordered textarea-sm w-full max-w-xs text-base mt-2 text-info-content"></textarea><br>
+
+                <input type="file" class="file-input file-input-bordered w-full max-w-xs input-sm mt-2" accept="image/*" /><br>
+
+                <div class="flex mt-2">
+                    <input type="checkbox" checked="checked" class="checkbox" name="Lec" />
+                    <label for="" class="text-lx ml-1.5">ทฤษฎี</label>
+                </div>
+
+                <div class="flex mt-1.5">
+                    <input type="checkbox" checked="checked" class="checkbox" name="Lab" />
+                    <label for="" class="text-lx ml-1.5">ปฏิบัติ</label>
+                </div>
             </div>
             <div>
                 <form action="">
@@ -57,7 +66,7 @@
                 </form>
             </div>
             <h1 class="text-4xl pl-4 md:pl-16 font-bold mb-5 mt-8">ทุกคอร์ส</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-0 mt-5 mb-5 ml-7 mr-7">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-0 mt-5 mb-5">
                 <!-- <p>create 12/12/62</p> -->
                 <?php
                 $recCourseList = array(

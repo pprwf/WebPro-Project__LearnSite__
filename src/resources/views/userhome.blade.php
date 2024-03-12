@@ -29,7 +29,7 @@
 
 <body>
     
-    @include('components.navbar2')
+    @include('components.navbar')
 
     <!-- modal when search -->
     <dialog id="my_modal_4" class="modal">

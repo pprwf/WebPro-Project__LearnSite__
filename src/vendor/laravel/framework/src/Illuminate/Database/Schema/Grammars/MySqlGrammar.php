@@ -43,21 +43,11 @@ class MySqlGrammar extends Grammar
      */
     public function compileCreateDatabase($name, $connection)
     {
-        $charset = $connection->getConfig('charset');
-        $collation = $connection->getConfig('collation');
-
-        if (! $charset || ! $collation) {
-            return sprintf(
-                'create database %s',
-                $this->wrapValue($name),
-            );
-        }
-
         return sprintf(
             'create database %s default character set %s default collate %s',
             $this->wrapValue($name),
-            $this->wrapValue($charset),
-            $this->wrapValue($collation),
+            $this->wrapValue($connection->getConfig('charset')),
+            $this->wrapValue($connection->getConfig('collation')),
         );
     }
 
@@ -98,7 +88,7 @@ class MySqlGrammar extends Grammar
         return sprintf(
             'select table_name as `name`, (data_length + index_length) as `size`, '
             .'table_comment as `comment`, engine as `engine`, table_collation as `collation` '
-            ."from information_schema.tables where table_schema = %s and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') "
+            ."from information_schema.tables where table_schema = %s and table_type = 'BASE TABLE' "
             .'order by table_name',
             $this->quoteString($database)
         );
@@ -416,7 +406,7 @@ class MySqlGrammar extends Grammar
      */
     public function compilePrimary(Blueprint $blueprint, Fluent $command)
     {
-        return sprintf('alter table %s add primary key %s(%s)',
+        return sprintf('alter table %s drop index if exists `PRIMARY`, add primary key %s(%s)',
             $this->wrapTable($blueprint),
             $command->algorithm ? 'using '.$command->algorithm : '',
             $this->columnize($command->columns)

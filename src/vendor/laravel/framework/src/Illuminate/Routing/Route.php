@@ -583,7 +583,7 @@ class Route
     {
         $key = array_search($parameter, array_keys($this->parameters));
 
-        if ($key === 0 || $key === false) {
+        if ($key === 0) {
             return;
         }
 

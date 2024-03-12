@@ -174,7 +174,7 @@
         "Login" => "login",
     );
     ?>
-    @include('components.navbar2')
+    @include('components.navbar')
 
     <div class="flex flex-row w-full ">
 

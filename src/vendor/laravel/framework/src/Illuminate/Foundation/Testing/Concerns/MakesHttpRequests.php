@@ -583,7 +583,7 @@ trait MakesHttpRequests
         );
 
         $response = $kernel->handle(
-            $request = $this->createTestRequest($symfonyRequest)
+            $request = Request::createFromBase($symfonyRequest)
         );
 
         $kernel->terminate($request, $response);
@@ -708,17 +708,6 @@ trait MakesHttpRequests
         }
 
         return $response;
-    }
-
-    /**
-     * Create the request instance used for testing from the given Symfony request.
-     *
-     * @param  \Symfony\Component\HttpFoundation\Request  $symfonyRequest
-     * @return \Illuminate\Http\Request
-     */
-    protected function createTestRequest($symfonyRequest)
-    {
-        return Request::createFromBase($symfonyRequest);
     }
 
     /**

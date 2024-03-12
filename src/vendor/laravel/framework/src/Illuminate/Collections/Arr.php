@@ -109,17 +109,17 @@ class Arr
      */
     public static function dot($array, $prepend = '')
     {
-        $results = [];
+        $results = [[]];
 
         foreach ($array as $key => $value) {
             if (is_array($value) && ! empty($value)) {
-                $results = array_merge($results, static::dot($value, $prepend.$key.'.'));
+                $results[] = static::dot($value, $prepend.$key.'.');
             } else {
-                $results[$prepend.$key] = $value;
+                $results[] = [$prepend.$key => $value];
             }
         }
 
-        return $results;
+        return array_merge(...$results);
     }
 
     /**
@@ -223,22 +223,6 @@ class Arr
         }
 
         return static::first(array_reverse($array, true), $callback, $default);
-    }
-
-    /**
-     * Take the first or last {$limit} items from an array.
-     *
-     * @param  array  $array
-     * @param  int  $limit
-     * @return array
-     */
-    public static function take($array, $limit)
-    {
-        if ($limit < 0) {
-            return array_slice($array, $limit, abs($limit));
-        }
-
-        return array_slice($array, 0, $limit);
     }
 
     /**
@@ -492,7 +476,9 @@ class Arr
      */
     public static function prependKeysWith($array, $prependWith)
     {
-        return static::mapWithKeys($array, fn ($item, $key) => [$prependWith.$key => $item]);
+        return Collection::make($array)->mapWithKeys(function ($item, $key) use ($prependWith) {
+            return [$prependWith.$key => $item];
+        })->all();
     }
 
     /**
@@ -505,32 +491,6 @@ class Arr
     public static function only($array, $keys)
     {
         return array_intersect_key($array, array_flip((array) $keys));
-    }
-
-    /**
-     * Select an array of values from an array.
-     *
-     * @param  array  $array
-     * @param  array|string  $keys
-     * @return array
-     */
-    public static function select($array, $keys)
-    {
-        $keys = static::wrap($keys);
-
-        return static::map($array, function ($item) use ($keys) {
-            $result = [];
-
-            foreach ($keys as $key) {
-                if (Arr::accessible($item) && Arr::exists($item, $key)) {
-                    $result[$key] = $item[$key];
-                } elseif (is_object($item) && isset($item->{$key})) {
-                    $result[$key] = $item->{$key};
-                }
-            }
-
-            return $result;
-        });
     }
 
     /**
