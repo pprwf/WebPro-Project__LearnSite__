@@ -1,5 +1,22 @@
-<div id="box<?php echo $recCourseOrder; ?>" class="w-full flex-none flex justify-center carousel-item">
-    <a href="<?php echo $recCourse["link"] ?>" class="flex flex-row justify-center">
+<?php
+    $courses = session() -> get("join");
+    $recCourseList = [];
+    foreach ($courses as $course) {
+        $picture = ($course -> picture == null) ? asset('assets/nanachipfp.jpg') : $course -> picture;
+        $recCourseList[] = [
+            "title" => $course -> courseName,
+            "titleImg" => asset("uploads/course_cover/biE2ZDC6cP2ZLmTSLSJNjQ3l9SrQ4nCy0kV7KEar.webp"),
+            "description" => $course -> detail,
+            "instructor1" => $picture,
+            "rating" => "0",
+            "time" => "0",
+            "link" => ""
+        ];
+    };
+?>
+@foreach ($recCourseList as $recCourse)
+<div class="w-full flex-none flex justify-center carousel-item">
+    <a href="{{ $recCourse['link'] }}" class="flex flex-row justify-center">
         <div class="sm:w-[25rem] md:w-[38rem]">
             <div class="flex-none w-full h-auto rounded-3xl overflow-hidden flex flex-col shadow-md ">
                 <!-- Course img -->
