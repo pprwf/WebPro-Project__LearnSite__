@@ -49,7 +49,7 @@
                     <p class="text-2xl">ยินดีต้อนรับเข้าสู่</p>
                     <h1 class="website_name font-bold text-8xl text-cyan-300 mt-12 ">LearnSite</h1>
                     <hr class="w-5/12">
-                    <p class="text-sm mt-4">ถ้าคุณกำลังมองหาเว็บไซต์สำหรับเรียนออนไลน์อยู่ล่ะก็ <strong>มาเข้าร่วมกับเราสิ!</strong>
+                    <p class="text-lg mt-4">ถ้าคุณกำลังมองหาเว็บไซต์สำหรับเรียนออนไลน์อยู่ล่ะก็ <strong><i><a href="login" class="text-yellow-400">มาเข้าร่วมกับเราสิ!</a></i></strong>
                         <br>พวกเรามีคอร์สเรียนมากมายที่คุณจะต้องชอบอย่างแน่นอน
                     </p>
                 </div>
