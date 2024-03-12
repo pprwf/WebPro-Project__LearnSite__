@@ -16,17 +16,12 @@
 ?>
 @foreach ($recCourseList as $recCourse)
 <?php $img = asset("/assets/" . $recCourse["titleImg"]); ?>
-<style>
-    .coursebg {
-        background-image: url("{{ $img }}");
-    }
-</style>
 <div class="w-full flex-none flex justify-center carousel-item">
     <a href="{{ $recCourse['link'] }}" class="flex flex-row justify-center">
         <div class="sm:w-[25rem] md:w-[38rem]">
             <div class="flex-none w-full h-auto rounded-3xl overflow-hidden flex flex-col shadow-md ">
                 <!-- Course img -->
-                <div class="coursebg w-full sm:h-[10rem] md:h-[15rem] bg-center bg-cover"></div>
+                <div class="w-full sm:h-[10rem] md:h-[15rem] bg-center bg-cover" style="background-image: url('{{ $img }}')"></div>
 
                 <!-- Course Descript -->
                 <div class="flex flex-col flex-auto justify-between p-4 bg-white">
