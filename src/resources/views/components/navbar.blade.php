@@ -36,9 +36,7 @@
     </div>
 </nav>
 @else
-    <?php
-        $query = session() -> get("query");
-    ?>
+    <?php $query = session() -> get("query"); ?>
     <nav id="navbar" class="navbar bg-secondary flex justify-between bg-sky-800 shadow-md">
         <a href="/">
             <img src="{{ asset('assets/LearnsiteLogo.jpg') }}" class="size-11 rounded-full ml-2">
