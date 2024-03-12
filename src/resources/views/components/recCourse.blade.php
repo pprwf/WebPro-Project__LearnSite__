@@ -44,7 +44,7 @@
         ?>
 
         <!-- Button -->
-        <div class="absolute flex justify-between top-1/2 left-1/2 -translate-x-1/2 w-[48rem] z-10">
+        <div class="absolute flex justify-between top-1/2 left-1/2 -translate-x-1/2 sm:w-[40rem] md:w-[48rem] z-10">
             <a id="btn-rc-l" class="btn btn-circle scale-110 btn-lg bg-white border-2 border-slate-500" href="#box0" onclick="changeOrderToLeft()">❮</a>
             <a id="btn-rc-r" class="btn btn-circle scale-110 btn-lg bg-white border-2 border-slate-500" href="#box2" onclick="changeOrderToRight()">❯</a>
         </div>
