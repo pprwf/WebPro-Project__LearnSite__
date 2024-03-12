@@ -3,13 +3,14 @@
 
 
     <div class="w-full carousel flex flex-row mt-6 " >
-
+    @foreach($courseNames as $courseName)
+    @foreach($details as $detail)
+    @foreach($imgs as $img)
         <?php
         $recCourseList = array(
             array(
-                "title" => "Elden Ring",
-                "titleImg" => "https://assets.xboxservices.com/assets/1d/5b/1d5bc84f-2135-4e2f-8ca6-bb000d97db7f.jpg?n=Elden-Ring_GLP-Poster-Image-1084_1920x1080.jpg",
-                "description" => "The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression",
+                "title" => "{$courseName}",
+                "titleImg" => "{$img}",
                 "instructor1" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
                 "instructor2" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
                 "instructor3" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
@@ -42,9 +43,12 @@
         );
         $recCourseOrder = 0;
         ?>
+@endforeach
+@endforeach
+@endforeach
 
         <!-- Button -->
-        <div class="absolute flex justify-between top-1/2 left-1/2 -translate-x-1/2 sm:w-[40rem] md:w-[48rem] z-10">
+        <div class="absolute flex justify-between top-1/2 left-1/2 -translate-x-1/2 w-[48rem] z-10">
             <a id="btn-rc-l" class="btn btn-circle scale-110 btn-lg bg-white border-2 border-slate-500" href="#box0" onclick="changeOrderToLeft()">❮</a>
             <a id="btn-rc-r" class="btn btn-circle scale-110 btn-lg bg-white border-2 border-slate-500" href="#box2" onclick="changeOrderToRight()">❯</a>
         </div>

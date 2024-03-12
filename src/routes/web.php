@@ -33,6 +33,11 @@ Route::post("login", [FunctionController::class, "login"]);
 
 Route::get("logout", [FunctionController::class, "logout"]);
 
+Route::get("/", [FunctionController::class, "showCourseIndex"]);
+Route::get("user", [FunctionController::class, "showCourseUser"]);
+Route::get("instructor", [FunctionController::class, "showCourseInstructor"]);
+Route::get("course", [FunctionController::class, "showCourseAllCourse"]);
+
 // normal path
 
 Route::get("course", [RouteController::class, "showCourse"]);
