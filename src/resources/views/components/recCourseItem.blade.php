@@ -5,7 +5,7 @@
         $picture = ($course -> picture == null) ? asset('assets/nanachipfp.jpg') : $course -> picture;
         $recCourseList[] = [
             "title" => $course -> courseName,
-            "titleImg" => asset("uploads/course_cover/biE2ZDC6cP2ZLmTSLSJNjQ3l9SrQ4nCy0kV7KEar.webp"),
+            "titleImg" => $course -> courseImage,
             "description" => $course -> detail,
             "instructor1" => $picture,
             "rating" => "0",
@@ -15,12 +15,18 @@
     };
 ?>
 @foreach ($recCourseList as $recCourse)
+<?php $img = asset("/assets/" . $recCourse["titleImg"]); ?>
+<style>
+    .coursebg {
+        background-image: url("{{ $img }}");
+    }
+</style>
 <div class="w-full flex-none flex justify-center carousel-item">
     <a href="{{ $recCourse['link'] }}" class="flex flex-row justify-center">
         <div class="sm:w-[25rem] md:w-[38rem]">
             <div class="flex-none w-full h-auto rounded-3xl overflow-hidden flex flex-col shadow-md ">
                 <!-- Course img -->
-                <div class=" w-full sm:h-[10rem] md:h-[15rem] bg-center bg-cover" style="background-image: url(<?php echo $recCourse["titleImg"] ?>);"></div>
+                <div class="coursebg w-full sm:h-[10rem] md:h-[15rem] bg-center bg-cover"></div>
 
                 <!-- Course Descript -->
                 <div class="flex flex-col flex-auto justify-between p-4 bg-white">
@@ -36,9 +42,7 @@
                         <div class="bg-orange-200 w-full md:w-auto rounded-3xl p-2 text-sm mt-4 md:mt-0 md:ml-4">
                             <div class="flex flex-row items-center">
                                 <p class="">instructor</p>
-                                <img class="rounded-full size-10 ml-2 max-w-full h-auto" src="<?php echo $recCourse["instructor1"] ?>" alt="">
-                                <img class="rounded-full size-10 ml-2 max-w-full h-auto" src="<?php echo $recCourse["instructor2"] ?>" alt="">
-                                <img class="rounded-full size-10 ml-2 max-w-full h-auto" src="<?php echo $recCourse["instructor3"] ?>" alt="">
+                                <img class="rounded-full size-10 ml-2 max-w-full h-auto" src="<?php echo $recCourse["instructor1"] ?>">
                             </div>
 
                             <div class="flex flex-row items-center mt-1">
@@ -66,3 +70,4 @@
         </div>
     </a>
 </div>
+@endforeach

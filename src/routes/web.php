@@ -35,7 +35,7 @@ Route::get("logout", [FunctionController::class, "logout"]);
 
 // normal path
 
-Route::get("course", [RouteController::class, "showCourse"]);
+Route::get("course", [FunctionController::class, "showCourse"]);
 
 Route::get("profile", [RouteController::class, "profile"]);
 

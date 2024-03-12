@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Courses;
 
 class RouteController extends Controller
 {
     function index() {
+        $courses = Courses::join("users", "courses.ownerID", "=", "users.uid") -> select("courses.*", "users.picture") -> get();
+        session() -> put("join", $courses);
         return view("index");
     }
 
@@ -18,11 +20,6 @@ class RouteController extends Controller
     function login () {
         $error = session() -> get("error");
         return view("login", compact("error"));
-    }
-
-    function showCourse () {
-        $query = session() -> get("query");
-        return view("allcourse", compact("query"));
     }
 
     function profile () {

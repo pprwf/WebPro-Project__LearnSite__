@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Courses;
 
 class FunctionController extends Controller
 {
@@ -86,6 +88,13 @@ class FunctionController extends Controller
             $error = ($query == null) ? "• บัญชีผู้ใช้งานไม่ถูกต้อง" : "• รหัสผ่านของท่านไม่ถูกต้อง";
             return redirect() -> back() -> with("error", $error);
         }
+    }
+
+    function showCourse () {
+        $courses = Courses::join("users", "courses.ownerID", "=", "users.uid") -> select("courses.*", "users.picture") -> get();
+        session() -> put("join", $courses);
+        $query = session() -> get("query");
+        return view("allcourse", compact("query"));
     }
 
     function logout () {

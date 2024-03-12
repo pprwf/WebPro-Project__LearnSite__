@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Courses;
 
 class InstructorController extends Controller
@@ -40,7 +41,7 @@ class InstructorController extends Controller
             "ownerID" => $query -> uid,
             "courseName" => $request -> name,
             "detail" => $request -> detail,
-            "courseImage" => $request -> file("cover") -> storeAs("course_images", $request -> file("cover") -> getClientOriginalName(), "public"),
+            "courseImage" => Storage::disk('public_uploads') -> put("course_cover", $request -> cover),
             "isLab" => $request -> has("lab") ? 1 : 0,
             "isLecture" => $request -> has("lecture") ? 1 : 0,
         ];
