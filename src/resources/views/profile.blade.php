@@ -32,20 +32,25 @@
                         @endif
                     </h1>
                 </div>
+
                 <div class="m-5">
                     <form action="" method="POST">
                         @csrf
                         <div class="mb-3 text-xl">ชื่อ</div>
-                        <input type="text" class="text-base input input-bordered w-96" value="{{ $query -> fname }}" disabled />
+                        <input type="text" id="text1" class="text-base input input-bordered w-96" value="{{ $query -> fname }}" disabled />
                         <div class="mb-3 mt-3 text-xl">นามสกุล</div>
-                        <input type="text" class="text-base input input-bordered w-96" value="{{ $query -> lname }}" disabled />
+                        <input type="text" id="text2" class="text-base input input-bordered w-96" value="{{ $query -> lname }}" disabled />
                         <div class="mb-3 mt-3 text-xl">อีเมล</div>
-                        <input type="email" class="text-base input input-bordered w-96" value="{{ $query -> email }}" disabled />
+                        <input type="email" id="text3" class="text-base input input-bordered w-96" value="{{ $query -> email }}" disabled />
                         <div class="mb-3 mt-3 text-xl">Username</div>
-                        <input type="text" class="text-base input input-bordered w-96" value="{{ $query -> username }}" disabled />
+                        <input type="text" id="text4" class="text-base input input-bordered w-96" value="{{ $query -> username }}" disabled />
                         <div class="mb-3 mt-3 text-xl">เบอร์โทร</div>
-                        <input type="text" class="text-base input input-bordered w-96" value="{{ $query -> phone }}" disabled />
+                        <input type="text" id="text5" class="text-base input input-bordered w-96" value="{{ $query -> phone }}" disabled />
+                        <div class="mb-3 mt-3 text-xl">รูปภาพ</div>
+                        <input type="file" class="file-input file-input-bordered w-full max-w-xs input-bordered w-96" accept="image/*" />
                     </form>
+                    <button onclick="save()" class="mb-3 mt-3 text-xl" id="button" type="submit" style="border-radius: 8px;">บันทึก</button>
+
                 </div>
             </div>
         </main>
@@ -62,7 +67,25 @@
             ?>
             @include('components.rightbar')
         </aside>
-
+        <script>
+            function editprofile(){
+                document.getElementById("text1").disabled = false;
+                document.getElementById("text2").disabled = false;
+                document.getElementById("text3").disabled = false;
+                document.getElementById("text4").disabled = false;
+                document.getElementById("text5").disabled = false;
+            }
+            function save(){
+                document.getElementById("text1").disabled = true;
+                document.getElementById("text2").disabled = true;
+                document.getElementById("text3").disabled = true;
+                document.getElementById("text4").disabled = true;
+                document.getElementById("text5").disabled = true;
+            }
+            function image(){
+                
+            }
+        </script>
     </div>
 
     <footer>

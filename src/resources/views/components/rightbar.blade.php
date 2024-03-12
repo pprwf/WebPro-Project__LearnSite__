@@ -9,7 +9,11 @@
             <hr class="mb-2 w-6/12 self-center">  
             <?php
                 foreach ($rightbarList as $id => $text){
-                    echo '<li><a class="" href="'.$id.'">'.$text.'</a></li>';
+                    if($id = '#editprofile'){
+                        echo '<li><a class="" href="'.$id.'" onclick="editprofile()">'.$text.'</a></li>';
+                    }else{
+                        echo '<li><a class="" href="'.$id.'">'.$text.'</a></li>';
+                    }
                 }
             ?>
         </ul>
