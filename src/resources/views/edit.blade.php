@@ -34,23 +34,22 @@
                 </div>
 
                 <div class="m-5">
-                    <form action="" method="POST">
+                    <form action="{{url('edit-data/'.$query->uid)}}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="mb-3 text-xl">ชื่อ</div>
-                        <input type="text" id="text1" class="text-base input input-bordered w-96" value="{{ $query -> fname }}" disabled />
+                        <input type="text" name="fname" class="text-base input input-bordered w-96" value="{{ $query -> fname }}"  />
                         <div class="mb-3 mt-3 text-xl">นามสกุล</div>
-                        <input type="text" id="text2" class="text-base input input-bordered w-96" value="{{ $query -> lname }}" disabled />
+                        <input type="text" name="lname" class="text-base input input-bordered w-96" value="{{ $query -> lname }}"  />
                         <div class="mb-3 mt-3 text-xl">อีเมล</div>
-                        <input type="email" id="text3" class="text-base input input-bordered w-96" value="{{ $query -> email }}" disabled />
+                        <input type="email" name="email" class="text-base input input-bordered w-96" value="{{ $query -> email }}"  />
                         <div class="mb-3 mt-3 text-xl">Username</div>
-                        <input type="text" id="text4" class="text-base input input-bordered w-96" value="{{ $query -> username }}" disabled />
+                        <input type="text" name="username" class="text-base input input-bordered w-96" value="{{ $query -> username }}"  />
                         <div class="mb-3 mt-3 text-xl">เบอร์โทร</div>
-                        <input type="text" id="text5" class="text-base input input-bordered w-96" value="{{ $query -> phone }}" disabled />
+                        <input type="text" name="phone" class="text-base input input-bordered w-96" value="{{ $query -> phone }}"  />
                         <div class="mb-3 mt-3 text-xl">รูปภาพ</div>
                         <input type="file" class="file-input file-input-bordered w-full max-w-xs input-bordered w-96" accept="image/*" /><br>
-                        <a href="{{ url('edit/'.$query->uid)}}" class="btn btn-danger">แก้ไข</a>
-                        <!-- <a href="" class="btn btn-success">บันทึก</a> -->
+                        <button type="submit" class="btn btn-primary">บันทึก</button>
                     </form>
                 </div>
             </div>
