@@ -178,9 +178,17 @@
 
     <div class="flex flex-row w-full ">
 
+
+        <?php
+            if(isset($_POST['click'])){
+                $temp = "WOOOOOOOOOOOOOOOOO";
+            }else{
+                $temp = "no data";
+            }
+        ?>
         <!-- just leftbar -->
         <div class="leftbar w-[2%] flex-none border-sky-600 border-r-2 "></div>
-
+        
         <!-- content -->
         <div class="content flex flex-col flex-auto">
 
@@ -191,7 +199,7 @@
                     <img class="w-8/12 h-60 rounded-xl mt-5" src="https://assets.xboxservices.com/assets/1d/5b/1d5bc84f-2135-4e2f-8ca6-bb000d97db7f.jpg?n=Elden-Ring_GLP-Poster-Image-1084_1920x1080.jpg" alt="">
 
                     <div class="w-8/12">
-                        <p class="mt-5">INTRODUCTION TO NETWORK SYSTEMS / COMPUTER NETWORK (1/2023)</p>
+                        <p class="mt-5"><?php echo $temp; ?></p>
                         <p>approximate time 2532 hr</p>
                         <!-- rating -->
                         <div class="flex flex-row items-center mt-1">

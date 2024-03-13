@@ -53,9 +53,11 @@ Route::post("addCourse", [InstructorController::class, "addCourse"]);
 
 //front-end use
 
-Route::get("info", function () {
+Route::get("course/{{uid}}", function () {
     return view("courseinfo");
 });
+
+// Route::post("info", [InstructorController::class, "showinfo"]);
 
 //front end use + test
 Route::get("quiz", function () {
