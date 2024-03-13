@@ -14,12 +14,18 @@
     <nav>
         @include('components.navbar')
     </nav>
-    <?php session() -> get("query"); ?>
+    <?php session() -> get("query");
+        if ($query -> picture != "assets/profile.jpg"):
+            $picture = asset("/assets/" . $query -> picture);
+        else:
+            $picture = $query -> picture;
+        endif;
+    ?>
     <div class="flex flex-col md:flex-row w-full">
         <aside class="leftbar md:w-1/12 flex-none border-orange-600 border-2">
         </aside>
         <main class="flex flex-col md:flex-row w-full md:w-3/4 p-4">
-            <img src="{{ asset('assets/profile.jpg') }}" class="size-48  rounded-full border-orange-600 border-4" alt="">
+            <img src="{{ $picture }}" class="size-48  rounded-full border-orange-600 border-4" alt="">
             <div class="card w-full bg-base-100 shadow-xl mt-8 md:ml-12 md:mt-0 rounded-lg border-orange-600 border-2">
                 <div class="bg-primary">
                     <h1 class="text-3xl mt-5 ml-5">{{ $query -> fname . " " . $query -> lname }}</h1>
@@ -34,7 +40,7 @@
                 </div>
 
                 <div class="m-5">
-                    <form action="" method="POST">
+                    <form method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="mb-3 text-xl">ชื่อ</div>
@@ -47,6 +53,8 @@
                         <input type="text" id="text4" class="text-base input input-bordered w-96" value="{{ $query -> username }}" disabled />
                         <div class="mb-3 mt-3 text-xl">เบอร์โทร</div>
                         <input type="text" id="text5" class="text-base input input-bordered w-96" value="{{ $query -> phone }}" disabled />
+                        <div class="mb-3 mt-3 text-xl">รูปภาพ</div>
+                        <input type="file" class="file-input file-input-bordered w-full max-w-xs input-bordered w-96" accept="image/*" disabled/><br>
                         <br><br>
                         <a href="{{ url('edit/'.$query->uid)}}" class="btn btn-error">แก้ไข</a>
                     </form>

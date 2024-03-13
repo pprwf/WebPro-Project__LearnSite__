@@ -22,8 +22,6 @@
         "คอร์สทั้งหมด" => "course",
         "จัดการคอร์ส" => "course_manager"
     );
-
-    $picture = asset('assets/profile.jpg');
 ?>
 @if (!isset($query))
 <nav id="navbar" class="navbar bg-secondary flex justify-between bg-slate-50 shadow-md">
@@ -58,9 +56,13 @@
             <div class="dropdown dropdown-end ml-3 mr-3">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                     <div class="w-25 rounded-full">
-                        @if ($query -> picture != null)
-                            $picture = $query -> picture;
-                        @endif
+                        <?php
+                            if ($query -> picture != "assets/profile.jpg"):
+                                $picture = asset("/assets/" . $query -> picture);
+                            else:
+                                $picture = $query -> picture;
+                            endif;
+                        ?>
                         <img src="{{ $picture }}" class="size-48  rounded-full border-orange-600 border-4">
                     </div>
                 </div>

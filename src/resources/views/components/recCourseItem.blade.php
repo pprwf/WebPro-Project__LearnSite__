@@ -2,7 +2,7 @@
     $courses = session() -> get("join");
     $recCourseList = [];
     foreach ($courses as $course) {
-        $picture = ($course -> picture == null) ? asset('assets/profile.jpg') : $course -> picture;
+        $picture = ($course -> picture == null) ? asset('assets/profile.jpg') : asset("/assets/" . $course -> picture);
         $recCourseList[] = [
             "title" => $course -> courseName,
             "titleImg" => $course -> courseImage,

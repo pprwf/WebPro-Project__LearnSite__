@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 use App\Models\Courses;
 
@@ -50,7 +50,8 @@ class FunctionController extends Controller
             "fname" => $request -> fname,
             "lname" => $request -> lname,
             "phone" => $data["phone"],
-            "role" => ($request -> role == 1) ? 1 : 0
+            "role" => ($request -> role == 1) ? 1 : 0,
+            "picture" => "assets/profile.jpg"
         ];
 
         User::insert($insert);
@@ -107,16 +108,17 @@ class FunctionController extends Controller
         return view('edit', compact("query"));
     }
     
-    function update(Request $request,$uid){
+    function update(Request $request,$uid) {
         $query = User::find($uid);
         $query->fname = $request->input('fname');
         $query->lname = $request->input('lname');
         $query->email = $request->input('email');
         $query->username = $request->input('username');
         $query->phone = $request->input('phone');
+        $query->picture = Storage::disk('public_uploads') -> put("profile_picture", $request -> cover);
         $query->update();
 
-        return redirect('profile');
+        return redirect('profile') -> with('query', $query);
     }
 }
 
