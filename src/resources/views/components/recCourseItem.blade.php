@@ -8,9 +8,9 @@
             "titleImg" => $course -> courseImage,
             "description" => $course -> detail,
             "instructor1" => $picture,
-            "rating" => "0",
-            "time" => "0",
-            "link" => ""
+            "rating" => $course -> rating,
+            "time" => $course -> time,
+            "link" => $course -> courseID
         ];
     };
 ?>
@@ -18,7 +18,7 @@
 @foreach ($recCourseList as $recCourse)
 <?php $img = asset("/assets/" . $recCourse["titleImg"]); ?>
 <div id="box<?php echo $boxcount++;?>" class="w-full flex-none flex justify-center carousel-item">
-    <a href="{{ $recCourse['link'] }}" class="flex flex-row justify-center">
+    <a href="info_{{ $recCourse['link'] }}" class="flex flex-row justify-center">
         <div class="sm:w-[25rem] md:w-[38rem]">
             <div class="flex-none w-full h-auto rounded-3xl overflow-hidden flex flex-col shadow-md ">
                 <!-- Course img -->

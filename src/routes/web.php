@@ -67,6 +67,10 @@ Route::get("quiz", function () {
 //profile
 Route::get('edit/{uid}', [FunctionController::class,'edit']);
 Route::put('edit-data/{uid}', [FunctionController::class,'update']);
+Route::put('edit-data/{uid}', [FunctionController::class,'back']);
+
+//Info
+Route::get('info_{id}', [InstructorController::class, 'showInfo']);
 
 Route::fallback(function() {
     return view("error");

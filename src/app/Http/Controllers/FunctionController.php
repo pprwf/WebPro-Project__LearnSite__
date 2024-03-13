@@ -104,8 +104,9 @@ class FunctionController extends Controller
     }
 
     function edit($uid){
-        $query = User::find($uid);
-        return view('edit', compact("query"));
+        $edit = User::find($uid);
+        $query = session() -> get("query");
+        return view('edit', compact("query", "edit"));
     }
     
     function update(Request $request,$uid) {
@@ -119,6 +120,10 @@ class FunctionController extends Controller
         $query->update();
 
         return redirect('profile') -> with('query', $query);
+    }
+
+    function back(){
+        return redirect('profile');
     }
 }
 
