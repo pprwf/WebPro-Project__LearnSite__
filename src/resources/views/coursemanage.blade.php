@@ -29,7 +29,7 @@
     <!-- div under Hero (leftbar content rightbar)-->
     <div class="flex flex-col md:flex-row">
         <!-- just leftbar -->
-        <div class="leftbar w-full md:w-auto border-orange-600 border-2"></div>
+        <div class="leftbar w-full md:w-auto border border-2"></div>
         <!-- content -->
         <div class="content flex flex-col flex-auto md:w-2/3 md:pl-4 md:pr-16">
             <div class="pl-4 mt-4">
