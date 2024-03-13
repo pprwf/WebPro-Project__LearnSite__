@@ -39,7 +39,7 @@
 </head>
 
 <body>
-
+@foreach ($cid as $recCourse)
 <!--Card For Rating and Review-->
 
     <dialog id="my_modal_4" class="modal">
@@ -151,29 +151,6 @@
     </dialog>
 
 <!-- END CARD -->
-
-    <?php
-    $recCourse = array(
-        "title" => "Minecraft",
-        "titleImg" => "https://store-images.s-microsoft.com/image/apps.60323.13774133678237924.758ba261-9ad2-4b6c-aae4-54f1307835d0.5c6bbf61-af87-400b-ae20-330496c5a9ac?q=90&w=480&h=270",
-        "description" => "The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression",
-        "instructor1" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-        "instructor2" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-        "instructor3" => "https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg",
-        "rating" => "3.4",
-        "time" => "25",
-        "link" => "https://www.minecraft.net/en-us"
-    );
-    ?>
-
-    <!-- navbar (name => link)-->
-    <?php
-    $navList = array(
-        "Course" => "course",
-        "Register" => "register",
-        "Login" => "login",
-    );
-    ?>
     @include('components.navbar')
 
     <div class="flex flex-row w-full ">
@@ -223,12 +200,14 @@
                         <!-- USE showModal() For Show Card -->
                     </div>
                 </div>
-
+                <?php
+                dd($query)
+                ?>
                 <!-- name & description -->
                 <div class="bg-cyan-100 h-full flex-auto">
 
                     <div class="h-auto bg-cyan-400 text-3xl font-medium p-3">
-                        <div class="ml-5 font-medium">INTRODUCTION TO NETWORK SYSTEMS / COMPUTER NETWORK (1/2023)</div>
+                        <div class="ml-5 font-medium"></div>
                     </div>
 
                     <div class="relative m-5">
@@ -322,6 +301,7 @@
             </div>
 
         </div>
+        @endforeach
 
         <!-- rightbar (id to find => text) -->
         <?php

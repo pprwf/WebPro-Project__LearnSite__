@@ -50,4 +50,10 @@ class InstructorController extends Controller
 
         return redirect() -> back() -> with("query", $query);
     }
+
+    function showInfo($id){
+        $cid = Courses::find($id);
+        $query = session() -> get("query");
+        return view("courseinfo", compact("cid", "query"));
+    }
 }
