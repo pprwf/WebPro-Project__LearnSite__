@@ -218,7 +218,7 @@
                                             $pic = asset($cid -> picture); 
                                         endif;
                                     ?>
-                                    <img class="rounded-full h-full" src="{{$pic}}" alt="">
+                                    <img class="rounded-full h-full" src="{{ $pic }}">
                                     <div class="ml-2">
                                         <p class="text-sm sm:text-sm md:text-sm lg:text-lg xl:text-lg">Teacher</p>
                                         <p class="text-xs sm:text-xs md:text-xs lg:text-sm xl:text-sm">20 lectures 5 quizs</p>

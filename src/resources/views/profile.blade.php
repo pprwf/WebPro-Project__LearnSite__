@@ -55,7 +55,7 @@
                         <div class="mb-3 mt-3 text-xl">รูปภาพ</div>
                         <input type="file" class="file-input file-input-bordered w-full max-w-xs input-bordered w-96" accept="image/*" disabled/><br>
                         <br><br>
-                        <a href="{{ url('edit/'.$query->uid)}}" class="btn btn-error">แก้ไข</a>
+                        <a href="{{ url('edit-'.$query->uid)}}" class="btn btn-error">แก้ไข</a>
                     </form>
                 </div>
             </div>

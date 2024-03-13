@@ -109,20 +109,22 @@ class FunctionController extends Controller
         return view('edit', compact("query", "edit"));
     }
     
-    function update(Request $request,$uid) {
+    function update(Request $request, $uid) {
         $query = User::find($uid);
-        $query->fname = $request->input('fname');
-        $query->lname = $request->input('lname');
-        $query->email = $request->input('email');
-        $query->username = $request->input('username');
-        $query->phone = $request->input('phone');
-        $query->picture = Storage::disk('public_uploads') -> put("profile_picture", $request -> cover);
-        $query->update();
+        $query -> fname = $request -> input('fname');
+        $query -> lname = $request -> input('lname');
+        $query -> email = $request -> input('email');
+        $query -> username = $request -> input('username');
+        $query -> phone = $request -> input('phone');
+        if ($request -> cover != null) {
+            $query -> picture = Storage::disk('public_uploads') -> put("profile_picture", $request -> cover);
+        }
+        $query -> update();
 
         return redirect('profile') -> with('query', $query);
     }
 
-    function back(){
+    function back() {
         return redirect('profile');
     }
 }

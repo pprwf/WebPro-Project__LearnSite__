@@ -57,13 +57,13 @@
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                     <div class="w-25 rounded-full">
                         <?php  
-                            if ($cid -> picture != "assets/profile.jpg"):
-                                $pic = asset("/assets/" . $cid -> picture);
+                            if ($query -> picture != "assets/profile.jpg"):
+                                $pic = asset("/assets/" . $query -> picture);
                             else:
-                                $pic = asset($cid -> picture); 
+                                $pic = asset($query -> picture); 
                             endif;
                         ?>
-                        <img src="{{ $picture }}" class="size-48  rounded-full border-orange-600 border-4">
+                        <img src="{{ $pic }}" class="size-48  rounded-full border-orange-600 border-4">
                     </div>
                 </div>
                 <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
