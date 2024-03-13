@@ -2,7 +2,7 @@
     $courses = session() -> get("join");
     $recCourseList = [];
     foreach ($courses as $course) {
-        $picture = ($course -> picture == null) ? asset('assets/nanachipfp.jpg') : $course -> picture;
+        $picture = ($course -> picture == null) ? asset('assets/profile.jpg') : $course -> picture;
         $recCourseList[] = [
             "title" => $course -> courseName,
             "titleImg" => $course -> courseImage,
@@ -14,10 +14,9 @@
         ];
     };
 ?>
-<?php $boxcounter=1 ?>
 @foreach ($recCourseList as $recCourse)
 <?php $img = asset("/assets/" . $recCourse["titleImg"]); ?>
-<div id="box<?php echo $boxcounter++; ?>" class="w-full flex-none flex justify-center carousel-item">
+<div class="w-full flex-none flex justify-center carousel-item">
     <a href="{{ $recCourse['link'] }}" class="flex flex-row justify-center">
         <div class="sm:w-[25rem] md:w-[38rem]">
             <div class="flex-none w-full h-auto rounded-3xl overflow-hidden flex flex-col shadow-md ">
