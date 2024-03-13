@@ -14,9 +14,10 @@
         ];
     };
 ?>
+<?php $boxcounter=1 ?>
 @foreach ($recCourseList as $recCourse)
 <?php $img = asset("/assets/" . $recCourse["titleImg"]); ?>
-<div class="w-full flex-none flex justify-center carousel-item">
+<div id="box<?php echo $boxcounter++; ?>" class="w-full flex-none flex justify-center carousel-item">
     <a href="{{ $recCourse['link'] }}" class="flex flex-row justify-center">
         <div class="sm:w-[25rem] md:w-[38rem]">
             <div class="flex-none w-full h-auto rounded-3xl overflow-hidden flex flex-col shadow-md ">

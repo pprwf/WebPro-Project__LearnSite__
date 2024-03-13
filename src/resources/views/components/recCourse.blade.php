@@ -95,12 +95,8 @@
             }
         </script>
 
-
-        <?php foreach ($recCourseList as $recCourse) : ?>
-            <?php $recCourseOrder += 1; ?>
-            @include('components.recCourseItem')
-        <?php endforeach; ?>
-
+        
+        @include('components.recCourseItem')
 
     </div>
 </div>
