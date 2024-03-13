@@ -14,11 +14,11 @@
     <nav>
         @include('components.navbar')
     </nav>
-    <?php session() -> get("query");
-        if ($query -> picture != "assets/profile.jpg"):
-            $picture = asset("/assets/" . $query -> picture);
+    <?php  
+        if ($cid -> picture != "assets/profile.jpg"):
+            $pic = asset("/assets/" . $cid -> picture);
         else:
-            $picture = $query -> picture;
+            $pic = asset($cid -> picture); 
         endif;
     ?>
     <div class="flex flex-col md:flex-row w-full">

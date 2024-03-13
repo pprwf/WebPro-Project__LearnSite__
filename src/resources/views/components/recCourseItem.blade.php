@@ -45,17 +45,17 @@
                                 <div class="flex flex-row items-center mt-1">
                                     <p class="">rating</p>
                                     <div class="rating rating-sm ml-2">
-                                        <?php
+                                        <!-- <?php
                                         $checked = false;
                                         for ($i = 1; $i <= 5; $i++) {
                                             echo '<input type="radio" name="rating-6" class="mask disable-click mask-star-2 bg-red-600"';
-                                            if ($recCourse["rating"] * 10 < $i * 10 + 5 && $checked == false) {
-                                                echo 'checked';
-                                                $checked = true;
-                                            }
+                                                if ($recCourse["rating"] * 10 < $i * 10 + 5 && $checked == false) {
+                                                    echo 'checked';
+                                                    $checked = true;
+                                                }
                                             echo '/>';
                                         }
-                                        ?>
+                                        ?> -->
                                     </div>
 
                                 </div>

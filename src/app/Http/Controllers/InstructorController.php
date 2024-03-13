@@ -52,7 +52,7 @@ class InstructorController extends Controller
     }
 
     function showInfo($id){
-        $cid = Courses::find($id);
+        $cid = Courses::join("users", "courses.ownerID", "=", "users.uid") -> select("*")-> find($id);
         $query = session() -> get("query");
         return view("courseinfo", compact("cid", "query"));
     }

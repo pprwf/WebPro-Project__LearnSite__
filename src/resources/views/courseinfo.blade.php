@@ -39,7 +39,6 @@
 </head>
 
 <body>
-@foreach ($cid as $recCourse)
 <!--Card For Rating and Review-->
 
     <dialog id="my_modal_4" class="modal">
@@ -156,14 +155,8 @@
     <div class="flex flex-row w-full ">
 
 
-        <?php
-            if(isset($_POST['click'])){
-                $temp = "WOOOOOOOOOOOOOOOOO";
-            }else{
-                $temp = "no data";
-            }
-        ?>
-        <!-- just leftbar -->
+
+        <!--just leftbar-->
         <div class="leftbar w-[2%] flex-none border-sky-600 border-r-2 "></div>
         
         <!-- content -->
@@ -173,10 +166,11 @@
             <div class="flex flex-row grid-cols-2 w-full h-[60%]">
                 <!-- img & review -->
                 <div class="bg-cyan-100 w-1/2 h-full flex-none items-center flex flex-col">
-                    <img class="w-8/12 h-60 rounded-xl mt-5" src="https://assets.xboxservices.com/assets/1d/5b/1d5bc84f-2135-4e2f-8ca6-bb000d97db7f.jpg?n=Elden-Ring_GLP-Poster-Image-1084_1920x1080.jpg" alt="">
+                    <?php $pic = asset('assets/' . $cid -> courseImage); ?>
+                    <img class="w-8/12 h-60 rounded-xl mt-5" src="{{ $pic }}" alt="">
 
                     <div class="w-8/12">
-                        <p class="mt-5"><?php echo $temp; ?></p>
+                        <p class="mt-5">{{$cid -> courseName}}</p>
                         <p>approximate time 2532 hr</p>
                         <!-- rating -->
                         <div class="flex flex-row items-center mt-1">
@@ -184,14 +178,16 @@
                             <div class="rating rating-sm ml-2">
                                 <?php
                                 $checked = false;
-                                for ($i = 1; $i <= 5; $i++) {
-                                    echo '<input type="radio" name="rating-6" class="mask disable-click mask-star-2 bg-red-600"';
-                                    if ($recCourse["rating"] * 10 < $i * 10 + 5 && $checked == false) {
-                                        echo 'checked';
-                                        $checked = true;
+                                if (isset($recCourse["rating"]) && isset($recCourse["time"]))
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        echo '<input type="radio" name="rating-6" class="mask disable-click mask-star-2 bg-red-600"';
+                                            if ($recCourse["rating"] * 10 < $i * 10 + 5 && $checked == false) {
+                                                echo 'checked';
+                                                $checked = true;
+                                            }
+                                        
+                                        echo '/>';
                                     }
-                                    echo '/>';
-                                }
                                 ?>
                             </div>
                         </div>
@@ -200,32 +196,34 @@
                         <!-- USE showModal() For Show Card -->
                     </div>
                 </div>
-                <?php
-                dd($query)
-                ?>
                 <!-- name & description -->
                 <div class="bg-cyan-100 h-full flex-auto">
 
                     <div class="h-auto bg-cyan-400 text-3xl font-medium p-3">
-                        <div class="ml-5 font-medium"></div>
+                        <div class="ml-5 font-medium">{{$cid -> courseName}}</div>
                     </div>
 
                     <div class="relative m-5">
-                        <p class="sm:text-sm lg:text-md xl:text-base">The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapon progression The amazingly flexible weapon progression and tuning system, rock-solid gunplay, and some really awesome and inventive new modes on huge maps chippi chippi chappa chappa dubi The amazingly flexible weapo</p>
+                        <p class="sm:text-sm lg:text-md xl:text-base">{{$cid -> detail}}</p>
 
                         <input type="submit" onclick="my_modal_5.showModal()" value="leave course" class="absolute btn btn-sm w-10s text-xs mt-1.5 text-gray-100 bg-red-500 bottom-3 right-3 sm:bottom-5 sm:right-5 md:w-20 lg:w-24 xl:w-28 shadow-md" />
                         <hr class="mt-3 border-[1] border-slate-500">
                         <!-- instructor -->
                         <div class="grid mt-3">
-                            <?php for ($i = 0; $i < 3; $i++) : ?>
                                 <div class="flex flex-row h-16 sm:h-16 md:h-16 lg:h-16 xl:h-16 m-2">
-                                    <img class="rounded-full h-full" src="{{ asset('assets/nanachipfp.jpg') }}" alt="">
+                                    <?php  
+                                        if ($cid -> picture != "assets/profile.jpg"):
+                                            $pic = asset("/assets/" . $cid -> picture);
+                                        else:
+                                            $pic = asset($cid -> picture); 
+                                        endif;
+                                    ?>
+                                    <img class="rounded-full h-full" src="{{$pic}}" alt="">
                                     <div class="ml-2">
-                                        <p class="text-sm sm:text-sm md:text-sm lg:text-lg xl:text-lg">Ms. Nanachi made in abyss</p>
+                                        <p class="text-sm sm:text-sm md:text-sm lg:text-lg xl:text-lg">Teacher</p>
                                         <p class="text-xs sm:text-xs md:text-xs lg:text-sm xl:text-sm">20 lectures 5 quizs</p>
                                     </div>
                                 </div>
-                            <?php endfor; ?>
                         </div>
                     </div>
                 </div>
@@ -237,12 +235,12 @@
                 <div class="flex flex-row w-full justify-center">
                     <input type="submit" onclick="modal_add_label.showModal()" class=" btn btn-sm btn-outline border-dashed text-xs mt-6 mb-8 text-gray-800 shadow-md rounded-full" value="+ Add label" />
                 </div>
-                <?php for ($a = 0; $a < 3; $a++) : ?>
+                
                     <!-- week label -->
                     <div class="flex flex-row w-full min-h-60 px-16 mb-12">
                         <!-- content -->
                         <div class="grid bg-gray-100 flex-1 content-start p-2 pl-4">
-                            <h1 class="text-lg mb-2">Week 01: Introducing Today Technology [Kitsuchart Pasupa]</h1>
+                            <h1 class="text-lg mb-2">Week 01: {{$cid -> courseName}}</h1>
                             <?php for ($i = 0; $i < 3; $i++) : ?>
                                 <div class="flex flex-row p-1 ml-5 mb-2">
                                     <p class="flex flex-row w-full"><a href="" class="underline">Course Syllabus - Lecture</a></p>
@@ -281,7 +279,7 @@
                             <button class="btn btn-xs btn-square">down</button>
                         </div>
                     </div>
-                <?php endfor; ?>
+
 
                 <script>
                     function settingVisibleControll(target) {
@@ -301,7 +299,6 @@
             </div>
 
         </div>
-        @endforeach
 
         <!-- rightbar (id to find => text) -->
         <?php

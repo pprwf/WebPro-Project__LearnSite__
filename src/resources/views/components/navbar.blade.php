@@ -56,11 +56,11 @@
             <div class="dropdown dropdown-end ml-3 mr-3">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                     <div class="w-25 rounded-full">
-                        <?php
-                            if ($query -> picture != "assets/profile.jpg"):
-                                $picture = asset("/assets/" . $query -> picture);
+                        <?php  
+                            if ($cid -> picture != "assets/profile.jpg"):
+                                $pic = asset("/assets/" . $cid -> picture);
                             else:
-                                $picture = $query -> picture;
+                                $pic = asset($cid -> picture); 
                             endif;
                         ?>
                         <img src="{{ $picture }}" class="size-48  rounded-full border-orange-600 border-4">
