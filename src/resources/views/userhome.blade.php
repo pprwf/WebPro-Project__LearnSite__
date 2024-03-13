@@ -104,7 +104,7 @@
     <div class="flex flex-row w-full ">
 
         <!-- just leftbar -->
-        <div class="leftbar w-[2%] flex-none border-orange-600 border-2"></div>
+        <div class="leftbar flex-none w-[2%] border-r-2 border-sky-600"></div>
 
         <!-- content -->
         <div class="content flex flex-col flex-auto">

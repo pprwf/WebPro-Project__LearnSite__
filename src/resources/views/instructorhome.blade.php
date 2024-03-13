@@ -86,7 +86,7 @@
             </div>
         </div>
     </dialog>
-    <div class="w-full h-[35%] grid bg-fuchsia-900 text-base-200 pt-10 pb-10 pl-24">
+    <div class="w-full h-[35%] grid bg-fuchsia-600 text-base-200 pt-10 pb-10 pl-24">
         <p class="text-2xl">สวัสดี {{ $query -> username }}</p>
         <p class="text-xs mt-2.5">ยินดีต้อนรับกลับ, คุณได้เรียนอะไรไปบ้างหรือยังในวันนี้</p>
         <div class="mt-5">
@@ -100,50 +100,18 @@
     <div class="flex flex-row w-full ">
 
         <!-- just leftbar -->
-        <div class="leftbar w-[2%] flex-none border-orange-600 border-2"></div>
+        <div class="leftbar flex-none w-[2%] border-r-2 border-sky-600"></div>
 
         <!-- content -->
         <div class="content flex flex-col flex-auto">
             <h1 class="text-4xl pl-16 font-bold mt-12">คอร์สของคุณ</h1>
 
-            <div class="grid grid-cols-4 justify-items-center pl-[15%] pr-[15%] pt-10">
+            <div class="grid grid-cols-4 justify-items-center pl-[10%] pr-[10%] pt-10">
 
                 @include('components.smallcourseitem')
                 @include('components.smallcourseitem')
                 @include('components.smallcourseitem')
-                
-                <a href="">
-                    <div class="card card-compact w-60 bg-base-100 shadow-xl m-2">
-                        <figure><img src="https://assets.xboxservices.com/assets/1d/5b/1d5bc84f-2135-4e2f-8ca6-bb000d97db7f.jpg?n=Elden-Ring_GLP-Poster-Image-1084_1920x1080.jpg" alt="Shoes" /></figure>
-                        <div class="card-body overflow-hidden green rounded-b-2xl">
-                            <h2 class="card-title text-lg">Elden Ring</h2>
-                            <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-                            <div class="flex flex-row items-center">
-                                <progress class="progress w-40" value="69" max="100"></progress>
-                                <p class="ml-4">69%</p>
-                            </div>
-                            <div class="card-actions justify-start mt-3">
-                                <div class="avatar-group -space-x-6 rtl:space-x-reverse">
-                                    <div class="avatar">
-                                        <div class="w-8">
-                                            <img src="https://i.kym-cdn.com/photos/images/original/002/195/257/c89.jpg" />
-                                        </div>
-                                    </div>
-                                    <div class="avatar">
-                                        <div class="w-8">
-                                            <img src="https://tr.rbxcdn.com/a71f2918a69a2c57946264dbcaf875ab/420/420/Image/Png" />
-                                        </div>
-                                    </div>
-                                    <div class="avatar">
-                                        <div class="w-8">
-                                            <img src="{{ asset('assets/nanachipfp.jpg') }}" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+
             </div>
             <br>
             <br>
