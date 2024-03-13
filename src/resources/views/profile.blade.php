@@ -19,7 +19,7 @@
         <aside class="leftbar md:w-1/12 flex-none border-orange-600 border-2">
         </aside>
         <main class="flex flex-col md:flex-row w-full md:w-3/4 p-4">
-            <img src="{{ asset('assets/nanachipfp.jpg') }}" class="size-48  rounded-full border-orange-600 border-4" alt="">
+            <img src="{{ asset('assets/profile.jpg') }}" class="size-48  rounded-full border-orange-600 border-4" alt="">
             <div class="card w-full bg-base-100 shadow-xl mt-8 md:ml-12 md:mt-0 rounded-lg border-orange-600 border-2">
                 <div class="bg-primary">
                     <h1 class="text-3xl mt-5 ml-5">{{ $query -> fname . " " . $query -> lname }}</h1>
@@ -36,6 +36,7 @@
                 <div class="m-5">
                     <form action="" method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="mb-3 text-xl">ชื่อ</div>
                         <input type="text" id="text1" class="text-base input input-bordered w-96" value="{{ $query -> fname }}" disabled />
                         <div class="mb-3 mt-3 text-xl">นามสกุล</div>
@@ -46,46 +47,13 @@
                         <input type="text" id="text4" class="text-base input input-bordered w-96" value="{{ $query -> username }}" disabled />
                         <div class="mb-3 mt-3 text-xl">เบอร์โทร</div>
                         <input type="text" id="text5" class="text-base input input-bordered w-96" value="{{ $query -> phone }}" disabled />
-                        <div class="mb-3 mt-3 text-xl">รูปภาพ</div>
-                        <input type="file" class="file-input file-input-bordered w-full max-w-xs input-bordered w-96" accept="image/*" />
+                        <br><br>
+                        <a href="{{ url('edit/'.$query->uid)}}" class="btn btn-error">แก้ไข</a>
                     </form>
-                    <button onclick="save()" class="mb-3 mt-3 text-xl" id="button" type="submit" style="border-radius: 8px;">บันทึก</button>
-
                 </div>
             </div>
         </main>
 
-        <aside class="w-full md:w-1/4 bg-base-200 p-4 md:border-l md:border-gray-300">
-            <!-- Right Sidebar Content -->
-            <?php
-            $rightbarList = array(
-                "#name" => "<h1 class='text-lg'>{{ $query -> fname . ' ' . $query -> lname }}</h1>",
-                "#username" => "<p>{{ '@' . $query -> username }}</p>",
-                "#editprofile" => "แก้ไขโปรไฟล์",
-                "#logout" => "ลงทะเบียนออก",
-            );
-            ?>
-            @include('components.rightbar')
-        </aside>
-        <script>
-            function editprofile(){
-                document.getElementById("text1").disabled = false;
-                document.getElementById("text2").disabled = false;
-                document.getElementById("text3").disabled = false;
-                document.getElementById("text4").disabled = false;
-                document.getElementById("text5").disabled = false;
-            }
-            function save(){
-                document.getElementById("text1").disabled = true;
-                document.getElementById("text2").disabled = true;
-                document.getElementById("text3").disabled = true;
-                document.getElementById("text4").disabled = true;
-                document.getElementById("text5").disabled = true;
-            }
-            function image(){
-                
-            }
-        </script>
     </div>
 
     <footer>

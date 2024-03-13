@@ -91,7 +91,7 @@
     </dialog>
 
     <div class="w-full h-[35%] grid bg-sky-800 text-base-200 pt-10 pb-10 pl-24">
-        <p class="text-2xl">สวัสดี Pakinza007</p>
+        <p class="text-2xl">สวัสดี {{ $query -> username }}</p>
         <p class="text-xs mt-2.5">ยินดีต้อนรับกลับ, คุณได้เรียนอะไรไปบ้างหรือยังในวันนี้</p>
         <div class="mt-5">
             <p class="text-xs mt-2.5">ค้นหาคอร์ส</p>

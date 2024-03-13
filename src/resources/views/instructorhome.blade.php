@@ -87,12 +87,12 @@
         </div>
     </dialog>
     <div class="w-full h-[35%] grid bg-fuchsia-900 text-base-200 pt-10 pb-10 pl-24">
-        <p class="text-2xl">HELLO Pakinza007</p>
-        <p class="text-xs mt-2.5">Welcome back, Is that anything new today</p>
+        <p class="text-2xl">สวัสดี {{ $query -> username }}</p>
+        <p class="text-xs mt-2.5">ยินดีต้อนรับกลับ, คุณได้เรียนอะไรไปบ้างหรือยังในวันนี้</p>
         <div class="mt-5">
-            <p class="text-xs mt-2.5">finding course</p>
-            <input type="text" placeholder="insert name" class="input input-bordered input-sm w-1/5 max-w-xs text-xs mt-1.5 text-info-content" />
-            <input type="submit" onclick="my_modal_4.showModal()" class=" btn  btn-sm w-10s text-xs mt-1.5 text-base-200"/>
+            <p class="text-xs mt-2.5">ค้นหาคอร์ส</p>
+            <input type="text" placeholder="ค้นหาคอร์ส" class="input input-bordered input-sm w-1/5 max-w-xs text-xs mt-1.5 text-info-content" />
+            <input type="submit" value="ยืนยัน" onclick="my_modal_4.showModal()" class=" btn  btn-sm w-10s text-xs mt-1.5 text-base-200"/>
         </div>
     </div>
 
@@ -104,7 +104,7 @@
 
         <!-- content -->
         <div class="content flex flex-col flex-auto">
-            <h1 class="text-4xl pl-16 font-bold mt-12">Owned course</h1>
+            <h1 class="text-4xl pl-16 font-bold mt-12">คอร์สของคุณ</h1>
 
             <div class="grid grid-cols-4 justify-items-center pl-[15%] pr-[15%] pt-10">
 
@@ -148,8 +148,6 @@
             <br>
             <br>
 
-            <!-- Recommended Course -->
-            @include('components.recCourse')
         </div>
 
         <!-- rightbar (id to find => text) -->

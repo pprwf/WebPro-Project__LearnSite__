@@ -23,7 +23,7 @@
         "จัดการคอร์ส" => "course_manager"
     );
 
-    $picture = asset('assets/nanachipfp.jpg');
+    $picture = asset('assets/profile.jpg');
 ?>
 @if (!isset($query))
 <nav id="navbar" class="navbar bg-secondary flex justify-between bg-slate-50 shadow-md">

@@ -101,4 +101,22 @@ class FunctionController extends Controller
         session() -> forget("query");
         return redirect("");
     }
+
+    function edit($uid){
+        $query = User::find($uid);
+        return view('edit', compact("query"));
+    }
+    
+    function update(Request $request,$uid){
+        $query = User::find($uid);
+        $query->fname = $request->input('fname');
+        $query->lname = $request->input('lname');
+        $query->email = $request->input('email');
+        $query->username = $request->input('username');
+        $query->phone = $request->input('phone');
+        $query->update();
+
+        return redirect('profile');
+    }
 }
+
